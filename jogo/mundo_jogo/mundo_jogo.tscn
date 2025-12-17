@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=3 uid="uid://chsijyi1x1s3"]
 
-[ext_resource type="PackedScene" uid="uid://455f8bih0bus" path="res://mundo_jogo/terrenos/terreno_casa.tscn" id="1_4mwex"]
 [ext_resource type="PackedScene" uid="uid://dscfkde3tti8f" path="res://mundo_jogo/terrenos/terreno_fazenda.tscn" id="1_848jc"]
 [ext_resource type="Script" uid="uid://l8io2jla45id" path="res://mundo_jogo/mundo_jogo.gd" id="1_rswm3"]
+[ext_resource type="PackedScene" uid="uid://455f8bih0bus" path="res://mundo_jogo/terrenos/terreno_casa.tscn" id="1_4mwex"]
 [ext_resource type="PackedScene" uid="uid://v1uk871srys8" path="res://mundo_jogo/animacoes/transicao_cenario/transicao_cenario.tscn" id="2_b3703"]
 [ext_resource type="PackedScene" uid="uid://c48mo1nwpwjc7" path="res://mundo_jogo/passagem/passagem.tscn" id="2_gcw66"]
 [ext_resource type="PackedScene" uid="uid://bperut1ryhs0o" path="res://mundo_jogo/jogador/jogador.tscn" id="2_ytvii"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://b2bp5aw8nemn1" path="res://mundo_jogo/animais/vaca.tscn" id="15_s2wpm"]
 [ext_resource type="PackedScene" uid="uid://yc0e2qahfkik" path="res://mundo_jogo/animais/galinha.tscn" id="16_dy05v"]
 [ext_resource type="PackedScene" uid="uid://83xun8fp8ysk" path="res://mundo_jogo/animais/porco.tscn" id="17_muyhw"]
+[ext_resource type="Script" uid="uid://bx58o7yh3ibda" path="res://mundo_jogo/tapeteInterativo.gd" id="11_dy05v"]
+[ext_resource type="PackedScene" uid="uid://b7w8yxijr424" path="res://mundo_jogo/terrenos/terreno_bunker.tscn" id="11_xkeb6"]
+[ext_resource type="Texture2D" uid="uid://cvmhhkg2ewojj" path="res://assets/imagens/retro_interior/TopDownHouse_FurnitureState1.png" id="13_muyhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp83p"]
 size = Vector2(12, 11)
@@ -35,7 +38,13 @@ height = 12.0
 radius = 35.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51u5e"]
-size = Vector2(28, 4)
+size = Vector2(4, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy05v"]
+size = Vector2(66, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muyhw"]
+size = Vector2(62.3334, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h23k8"]
 size = Vector2(64, 9)
@@ -51,6 +60,7 @@ script = ExtResource("1_rswm3")
 position = Vector2(23, 107)
 
 [node name="Passagem1" parent="TerrenoFazenda" instance=ExtResource("2_gcw66")]
+visible = false
 position = Vector2(150, 38)
 terreno_destino = "TerrenoCasa"
 passagem_destino = "Passagem2"
@@ -132,7 +142,7 @@ shape = SubResource("CircleShape2D_wlrp0")
 
 [node name="TerrenoCasa" parent="." instance=ExtResource("1_4mwex")]
 y_sort_enabled = true
-position = Vector2(-1372, -54.000004)
+position = Vector2(-995, -90)
 
 [node name="Passagem2" parent="TerrenoCasa" instance=ExtResource("2_gcw66")]
 position = Vector2(48, 192)
@@ -206,6 +216,57 @@ shape = SubResource("RectangleShape2D_dy05v")
 
 [node name="Marker2D" type="Marker2D" parent="TerrenoMoinho/Passagem6"]
 position = Vector2(6, 4)
+[node name="TapeteInterativo" type="StaticBody2D" parent="TerrenoCasa"]
+position = Vector2(290.667, 10.6667)
+script = ExtResource("11_dy05v")
+terreno_destino = "TerrenoBunker"
+passagem_destino = "Passagem3"
+
+[node name="Sprite" type="Sprite2D" parent="TerrenoCasa/TapeteInterativo"]
+position = Vector2(3.05176e-05, -2.86102e-06)
+scale = Vector2(1.30556, 0.958333)
+texture = ExtResource("13_muyhw")
+region_enabled = true
+region_rect = Rect2(160, 32, 48, 32)
+
+[node name="Animador" type="AnimationPlayer" parent="TerrenoCasa/TapeteInterativo"]
+
+[node name="LabelInteracao" type="Label" parent="TerrenoCasa/TapeteInterativo"]
+offset_left = -21.3333
+offset_top = -34.6667
+offset_right = 91.6667
+offset_bottom = -11.6667
+scale = Vector2(0.4, 0.4)
+text = "[E] para entrar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerrenoCasa/TapeteInterativo"]
+position = Vector2(-1.33337, -0.666664)
+shape = SubResource("RectangleShape2D_dy05v")
+
+[node name="AreaDeteccao" type="Area2D" parent="TerrenoCasa/TapeteInterativo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerrenoCasa/TapeteInterativo/AreaDeteccao"]
+position = Vector2(-1.33337, -9.53674e-07)
+shape = SubResource("RectangleShape2D_muyhw")
+
+[node name="PosicaoSpawn" type="Marker2D" parent="TerrenoCasa/TapeteInterativo"]
+position = Vector2(1.33331, 0)
+
+[node name="TerrenoBunker" parent="." instance=ExtResource("11_xkeb6")]
+position = Vector2(-910, -584)
+
+[node name="Passagem3" parent="TerrenoBunker" instance=ExtResource("2_gcw66")]
+position = Vector2(77, 9)
+terreno_destino = "TerrenoCasa"
+passagem_destino = "TapeteInterativo"
+
+[node name="ColisaoDetecao" parent="TerrenoBunker/Passagem3" index="0"]
+shape = SubResource("RectangleShape2D_51u5e")
+
+[node name="PosicaoSpawn" parent="TerrenoBunker/Passagem3" index="1"]
+position = Vector2(16, 8)
 
 [node name="Jogador" parent="." instance=ExtResource("2_ytvii")]
 position = Vector2(174, 174)
@@ -232,3 +293,4 @@ position = Vector2(654, -206)
 [editable path="TerrenoCasa/Passagem2"]
 [editable path="TerrenoCasa/Missao2"]
 [editable path="TerrenoCasa/Missao3"]
+[editable path="TerrenoBunker/Passagem3"]
