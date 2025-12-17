@@ -1,0 +1,242 @@
+[gd_scene load_steps=12 format=3 uid="uid://21hji81cbghv"]
+
+[ext_resource type="Script" path="res://interface_jogo/interface_menu_inicial/interface_menu_inicial.gd" id="1_3wpea"]
+[ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_7cy5n"]
+[ext_resource type="FontFile" uid="uid://8dyl8sjpwyl2" path="res://assets/fontes/ExpressionPro.ttf" id="1_76ion"]
+[ext_resource type="Texture2D" uid="uid://c0nen18pu7m5g" path="res://assets/imagens/fundo_menu_principal.jpg" id="1_tb5av"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tteiq"]
+texture = ExtResource("1_tb5av")
+modulate_color = Color(0.411747, 0.411747, 0.411747, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gobhx"]
+texture = ExtResource("1_7cy5n")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(59, 107, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tbpb"]
+texture = ExtResource("1_7cy5n")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(107, 107, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eyvdb"]
+texture = ExtResource("1_7cy5n")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4n6h"]
+texture = ExtResource("1_7cy5n")
+texture_margin_left = 4.0
+texture_margin_top = 6.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(869, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0883e"]
+texture = ExtResource("1_7cy5n")
+texture_margin_left = 4.0
+texture_margin_top = 6.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(869, 100, 22, 24)
+modulate_color = Color(0.768627, 0.603922, 0.423529, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghi8w"]
+texture = ExtResource("1_7cy5n")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(837, 100, 22, 24)
+
+[node name="InterfaceMenuInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3wpea")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tteiq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_right = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Titulo" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="VBoxContainer/Titulo"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("1_76ion")
+theme_override_font_sizes/font_size = 32
+text = "Code Farm - Aprendendo Python"
+
+[node name="PainelBotoes" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+
+[node name="FundoEditorTexto" type="NinePatchRect" parent="VBoxContainer/PainelBotoes"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("1_7cy5n")
+region_rect = Rect2(11, 11, 26, 28)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PainelBotoes"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PainelBotoes/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="BotaoNovoJogo" type="Button" parent="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(45, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_76ion")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxTexture_gobhx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0tbpb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eyvdb")
+text = "Novo Jogo"
+text_overrun_behavior = 1
+
+[node name="BotaoContinuar" type="Button" parent="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(45, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_76ion")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxTexture_gobhx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0tbpb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eyvdb")
+text = "Continuar"
+text_overrun_behavior = 1
+
+[node name="BotaoSair" type="Button" parent="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(45, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_76ion")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxTexture_gobhx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0tbpb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eyvdb")
+text = "Sair"
+text_overrun_behavior = 1
+
+[node name="BotaoCreditos" type="Button" parent="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(45, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_76ion")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxTexture_gobhx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0tbpb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eyvdb")
+text = "Créditos
+"
+text_overrun_behavior = 1
+
+[node name="PainelCreditos" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PainelCreditos"]
+layout_mode = 2
+
+[node name="BotaoFecharCreditos" type="Button" parent="VBoxContainer/PainelCreditos/VBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = SubResource("StyleBoxTexture_u4n6h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0883e")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ghi8w")
+text_overrun_behavior = 1
+
+[node name="FundoEditorTexto" type="NinePatchRect" parent="VBoxContainer/PainelCreditos/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_7cy5n")
+region_rect = Rect2(11, 11, 26, 28)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PainelCreditos/VBoxContainer/FundoEditorTexto"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PainelCreditos/VBoxContainer/FundoEditorTexto/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_76ion")
+theme_override_font_sizes/normal_font_size = 16
+text = "Lorem ipsum is a dummy text used in the design and publishing industry, originating from a scrambled passage of Cicero's work from the 15th century. It serves as a placeholder text in graphic design, web development, and publishing to focus attention on design elements rather than content. The text has been the industry's standard since the 1500s and remains widely used today. You can also generate \"Lorem ipsum\" text using various online tools. 
+Lorem ipsum is a dummy text used in the design and publishing industry, originating from a scrambled passage of Cicero's work from the 15th century. It serves as a placeholder text in graphic design, web development, and publishing to focus attention on design elements rather than content. The text has been the industry's standard since the 1500s and remains widely used today. You can also generate \"Lorem ipsum\" text using various online tools. "
+
+[connection signal="pressed" from="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer/BotaoNovoJogo" to="." method="_ao_clicar_novo_jogo"]
+[connection signal="pressed" from="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer/BotaoContinuar" to="." method="_ao_clicar_continuar_jogo"]
+[connection signal="pressed" from="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer/BotaoSair" to="." method="_ao_clicar_sair_jogo"]
+[connection signal="pressed" from="VBoxContainer/PainelBotoes/MarginContainer/VBoxContainer/BotaoCreditos" to="." method="_ao_clicar_creditos"]
+[connection signal="pressed" from="VBoxContainer/PainelCreditos/VBoxContainer/BotaoFecharCreditos" to="." method="_ao_clicar_fechar_creditos"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0hqb31q6ghlp"]
+
+[ext_resource type="Script" path="res://interface_jogo/interface_padrao/hotbar.gd" id="1_7aimq"]
+[ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/Sprout Lands - UI/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_wsf06"]
+[ext_resource type="PackedScene" uid="uid://dujl6ijvm1jas" path="res://interface_jogo/interface_padrao/slot_hotbar.tscn" id="3_28rs7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7joi"]
+atlas = ExtResource("2_wsf06")
+region = Rect2(148, 148, 24, 25)
+
+[node name="SecaoHotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7aimq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -80.0
+offset_right = 125.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Fundo" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_wsf06")
+region_rect = Rect2(153, 9, 30, 30)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+columns = 6
+
+[node name="Slot1" parent="MarginContainer/MarginContainer/GridContainer" instance=ExtResource("3_28rs7")]
+layout_mode = 2
+
+[node name="Slot2" parent="MarginContainer/MarginContainer/GridContainer" instance=ExtResource("3_28rs7")]
+layout_mode = 2
+
+[node name="Slot3" parent="MarginContainer/MarginContainer/GridContainer" instance=ExtResource("3_28rs7")]
+layout_mode = 2
+
+[node name="Slot4" parent="MarginContainer/MarginContainer/GridContainer" instance=ExtResource("3_28rs7")]
+layout_mode = 2
+
+[node name="Slot5" parent="MarginContainer/MarginContainer/GridContainer" instance=ExtResource("3_28rs7")]
+layout_mode = 2
+
+[node name="Slot6" parent="MarginContainer/MarginContainer/GridContainer" instance=ExtResource("3_28rs7")]
+layout_mode = 2
+
+[node name="Seletor" type="NinePatchRect" parent="MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_d7joi")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[editable path="MarginContainer/MarginContainer/GridContainer/Slot1"]
+[editable path="MarginContainer/MarginContainer/GridContainer/Slot2"]
+[editable path="MarginContainer/MarginContainer/GridContainer/Slot3"]
+[editable path="MarginContainer/MarginContainer/GridContainer/Slot4"]
+[editable path="MarginContainer/MarginContainer/GridContainer/Slot5"]
+[editable path="MarginContainer/MarginContainer/GridContainer/Slot6"]

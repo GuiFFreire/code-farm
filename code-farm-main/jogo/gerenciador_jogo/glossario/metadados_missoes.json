@@ -1,0 +1,41 @@
+{
+	"npc": {
+		"nome": "Lia",
+		"foto": "res://assets/imagens/Tiny Wonder Forest/characters/main character old/portrait female.png"
+	},
+	
+	"missoes": {
+		"1": {
+			"objeto_interativo": "Missao1",
+			"dialogos": [
+				{
+					"dialogo": "Bem-vindo à sua nova fazenda! Está empolgado para começar? Vamos começar a deixá-la com a sua cara."
+				},
+				{
+					"dialogo": "Antes de mais nada, que tal escolher um nome para sua nova fazenda? Assim você pode marcar o início dessa jornada que começa com muita energia positiva!"
+				},
+				{
+					"dialogo": "Para isso, vamos usar um comando muito importante em Python chamado print(). Esse comando é usado para exibir mensagens na tela."
+				},
+				{
+					"dialogo": "Basta colocar o texto que você deseja imprimir entre aspas dentro da função. Por exemplo, se eu quiser exibir 'Olá mundo do Code Farm!', eu usaria o seguinte código:"
+				},
+				{
+					"codigo": "print(\"Olá mundo do Code Farm!\")"
+				},
+				{
+					"dialogo": "Agora é sua vez! Escreva o nome da sua fazenda, para que você o veja sempre que chegar em casa. Algo como ‘Fazenda Code Farm' ou o que preferir!"
+				}
+			]
+		}
+	},
+	
+	"glossario": {
+		"print": {
+			"nome": "print",
+			"descricao": "Usado para exibir mensagens no console.",
+			"exemplo": "print(\"Olá, mundo!\")",
+			"missao": 1
+		}
+	}
+}

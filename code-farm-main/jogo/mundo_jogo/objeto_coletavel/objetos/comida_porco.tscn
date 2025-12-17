@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://drwa3i5axhw0q"]
+
+[ext_resource type="PackedScene" uid="uid://7pk4ytvxy4kb" path="res://mundo_jogo/objeto_coletavel/objeto_coletavel.tscn" id="1_hq64d"]
+[ext_resource type="Texture2D" uid="uid://1446d4da6pw8" path="res://assets/imagens/Farm RPG/Farm RPG FREE 16x16 - Tiny Asset Pack/Objects/Spring Crops.png" id="2_atmej"]
+[ext_resource type="Script" path="res://gerenciador_jogo/inventario/item.gd" id="3_p7nef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghv7g"]
+atlas = ExtResource("2_atmej")
+region = Rect2(114, 82, 12, 14)
+
+[sub_resource type="Resource" id="Resource_o7gtj"]
+script = ExtResource("3_p7nef")
+nome = "Comida Porco"
+icone = SubResource("AtlasTexture_ghv7g")
+pode_empilhar = true
+descricao = "Use para alimentar porcos"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fks4g"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc24g"]
+radius = 12.0
+
+[node name="ComidaPorco" instance=ExtResource("1_hq64d")]
+item = SubResource("Resource_o7gtj")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_atmej")
+offset = Vector2(0, -8)
+hframes = 14
+vframes = 4
+frame = 35
+
+[node name="Colisao" parent="." index="1"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fks4g")
+
+[node name="Colisao" parent="AreaDetecao" index="0"]
+shape = SubResource("CircleShape2D_yc24g")

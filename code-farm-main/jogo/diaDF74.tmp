@@ -1,0 +1,66 @@
+{
+  "npc_padrao": {
+	"nome": "Lia",
+	"foto": "res://assets/Tiny Wonder Forest/characters/main character old/portrait female.png"
+  },
+  "fases": {
+	"1": {
+	  "objeto_nome": "Fase1",
+	  "dialogo": [
+		{
+		  "dialogo": "Bem-vindo à sua nova fazenda! Está empolgado para começar? Vamos começar a deixá-la com a sua cara."
+		},
+		{
+		  "dialogo": "Antes de mais nada, que tal escolher um nome para sua nova fazenda? Assim você pode marcar o início dessa jornada que começa com muita energia positiva!"
+		},
+		{
+		  "dialogo": "Para isso, vamos usar um comando muito importante em Python chamado print(). Esse comando é usado para exibir mensagens na tela."
+		},
+		{
+		  "dialogo": "Basta colocar o texto que você deseja imprimir entre aspas dentro da função. Por exemplo, se eu quiser exibir 'Olá mundo do Code Farm!', eu usaria o seguinte código:"
+		},
+		{
+		  "dialogo": "print(\"Olá mundo do Code Farm!\")"
+		},
+		{
+		  "dialogo": "Agora é sua vez! Escreva o nome da sua fazenda, para que você o veja sempre que chegar em casa. Algo como ‘Fazenda Code Farm' ou o que preferir!"
+		}
+	  ]
+	},
+	"2": {
+	  "objeto_nome": "Fase2",
+	  "dialogo": [
+		{
+		  "dialogo": "Ótimo trabalho no seu primeiro código! Agora precisamos planejar melhor o que vamos fazer."
+		},
+		{
+		  "dialogo": "Programadores costumam usar algo chamado comentários para fazer anotações no código. Comentários de uma linha começam com o símbolo # e ajudam a documentar o que o código faz. Diferente do comando print(), o texto que você colocar em um comentário será ignorado pelo programa, servindo apenas para organizar e explicar partes do código."
+		},
+		{
+		  "dialogo": "Por exemplo, se você quiser anotar suas tarefas do dia, poderia usar o símbolo # antes de cada nota. Veja só:"
+		},
+		{
+		  "dialogo": "# Lista de tarefas do dia\n# 1. Organizar a sala\n# 2. Plantar sementes no quintal"
+		},
+		{
+		  "dialogo": "Agora é sua vez! Use comentários de uma linha para listar 3 tarefas que você precisa fazer na casa nova. Pode ser algo como '1. Limpar a cozinha' ou '2. Comprar móveis'!"
+		},
+		{
+		  "dialogo": "Ótimo! Agora que você já sabe comentar uma linha, vamos aprender a comentar várias linhas de uma vez."
+		},
+		{
+		  "dialogo": "Em Python, você pode usar três aspas duplas \"\"\" para criar comentários que ocupam várias linhas. Isso é útil para descrições mais longas ou para desativar trechos inteiros de código temporariamente."
+		},
+		{
+		  "dialogo": "Por exemplo, você pode descrever todo o propósito do seu código assim:"
+		},
+		{
+		  "dialogo": "\"\"\"\nEste código organiza as tarefas da casa nova. É importante manter tudo bem documentado para não esquecer nada!\n\"\"\""
+		},
+		{
+		  "dialogo": "Experimente adicionar um comentário de várias linhas no início do seu código, explicando o que ele faz e por que ele é útil para você!"
+		}
+	  ]
+	}
+  }
+}

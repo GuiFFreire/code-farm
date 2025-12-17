@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://v1uk871srys8"]
+
+[ext_resource type="Script" path="res://mundo_jogo/animacoes/transicao_cenario/transicao_cenario.gd" id="1_0yktl"]
+[ext_resource type="Shader" path="res://mundo_jogo/animacoes/transicao_cenario/transicao_cenario.gdshader" id="2_abwfs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7djdt"]
+shader = ExtResource("2_abwfs")
+shader_parameter/radius = 1.5
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/smoothness = 0.05
+
+[node name="TransicaoCenario" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_0yktl")
+
+[node name="CirculoTransicao" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7djdt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

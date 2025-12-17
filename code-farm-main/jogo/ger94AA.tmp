@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtab8xt5qgvur"]
+
+[ext_resource type="Script" path="res://gerenciador_jogo.gd" id="1_dwcgv"]
+[ext_resource type="PackedScene" uid="uid://chsijyi1x1s3" path="res://mundo_jogo/mundo_jogo.tscn" id="2_ubfib"]
+[ext_resource type="PackedScene" uid="uid://bj0447rfnfvpv" path="res://interface_jogo/interface_jogo.tscn" id="3_inpde"]
+
+[node name="GerenciadorJogo" type="Node" node_paths=PackedStringArray("mundo_jogo", "interface_jogo")]
+script = ExtResource("1_dwcgv")
+mundo_jogo = NodePath("MundoJogo")
+interface_jogo = NodePath("InterfaceJogo")
+
+[node name="MundoJogo" parent="." instance=ExtResource("2_ubfib")]
+
+[node name="InterfaceJogo" parent="." instance=ExtResource("3_inpde")]
+
+[editable path="InterfaceJogo"]

@@ -1,0 +1,22 @@
+# Godot
+.import/
+.godot/
+.export/
+export.cfg
+export_presets.cfg
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.env
+
+# Geral
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
