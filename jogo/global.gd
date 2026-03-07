@@ -109,7 +109,8 @@ func verificar_dados_slot(slot_id: int) -> Dictionary:
 		return {
 			"existe": true,
 			"nome_fazenda": save_temp.nome_fazenda,
-			"missao": save_temp.missao_atual
+			"missao": save_temp.missao_atual,
+			"data_hora": save_temp.data_hora # 👈 ADICIONAR ISSO
 		}
 	else:
 		return {"existe": false}

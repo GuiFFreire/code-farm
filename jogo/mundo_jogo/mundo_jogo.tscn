@@ -55,6 +55,7 @@ size = Vector2(48, 8)
 [node name="MundoJogo" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_rswm3")
+metadata/_edit_horizontal_guides_ = [-276.0]
 
 [node name="TerrenoFazenda" parent="." instance=ExtResource("1_848jc")]
 position = Vector2(23, 107)

@@ -47,7 +47,17 @@ func _atualizar_nomes_botoes():
 		
 		if dados["existe"]:
 			# Se tiver save: "Slot 1 [Quebra Linha] Nome da Fazenda (Missão X)"
-			botao.text = "Slot %d\n%s" % [slot_real, dados["nome_fazenda"]]
+			var dt = dados["data_hora"]
+
+			var data_formatada = "%02d/%02d/%04d às %02d:%02d" % [
+				dt.day,
+				dt.month,
+				dt.year,
+				dt.hour,
+				dt.minute
+			]
+
+			botao.text = "%s\n%s" % [dados["nome_fazenda"],data_formatada]
 		else:
 			botao.text = "Save Slot %d" % slot_real # Ou "Vazio", como preferir
 			
