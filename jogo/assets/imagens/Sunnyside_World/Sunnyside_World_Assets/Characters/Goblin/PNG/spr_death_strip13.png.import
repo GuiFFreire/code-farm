@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cj7bfjo01336e"
-path="res://.godot/imported/spr_death_strip13.png-07a30b0d6525d043c80d04b6e88e7cbf.ctex"
+path="res://.godot/imported/spr_death_strip13.png-8d796ecd3a4ea53a791cbe17a865e5f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_death_strip13.png"
-dest_files=["res://.godot/imported/spr_death_strip13.png-07a30b0d6525d043c80d04b6e88e7cbf.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_death_strip13.png"
+dest_files=["res://.godot/imported/spr_death_strip13.png-8d796ecd3a4ea53a791cbe17a865e5f0.ctex"]
 
 [params]
 

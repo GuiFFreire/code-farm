@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c17j63jgslyfn"
-path="res://.godot/imported/46fdc002-5c85-4d51-96f9-f570d4c10841.png-7af0af51ea8e1b979ed93ac8e890af14.ctex"
+path="res://.godot/imported/46fdc002-5c85-4d51-96f9-f570d4c10841.png-6a7c1236ce9c3759337560b56e304cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/skeleton_death/layers/d23c88d6-f51c-40f1-a296-b6b7266fb83d/46fdc002-5c85-4d51-96f9-f570d4c10841.png"
-dest_files=["res://.godot/imported/46fdc002-5c85-4d51-96f9-f570d4c10841.png-7af0af51ea8e1b979ed93ac8e890af14.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/skeleton_death/layers/d23c88d6-f51c-40f1-a296-b6b7266fb83d/46fdc002-5c85-4d51-96f9-f570d4c10841.png"
+dest_files=["res://.godot/imported/46fdc002-5c85-4d51-96f9-f570d4c10841.png-6a7c1236ce9c3759337560b56e304cd6.ctex"]
 
 [params]
 

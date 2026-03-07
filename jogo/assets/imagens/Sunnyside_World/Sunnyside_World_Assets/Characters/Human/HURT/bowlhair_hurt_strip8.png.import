@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ykid4hk2ggk"
-path="res://.godot/imported/bowlhair_hurt_strip8.png-edfc39d4855180dbfcd1f558b1e7c640.ctex"
+path="res://.godot/imported/bowlhair_hurt_strip8.png-78738b5d61a7e581b19b7f2284c27c33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/HURT/bowlhair_hurt_strip8.png"
-dest_files=["res://.godot/imported/bowlhair_hurt_strip8.png-edfc39d4855180dbfcd1f558b1e7c640.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/HURT/bowlhair_hurt_strip8.png"
+dest_files=["res://.godot/imported/bowlhair_hurt_strip8.png-78738b5d61a7e581b19b7f2284c27c33.ctex"]
 
 [params]
 

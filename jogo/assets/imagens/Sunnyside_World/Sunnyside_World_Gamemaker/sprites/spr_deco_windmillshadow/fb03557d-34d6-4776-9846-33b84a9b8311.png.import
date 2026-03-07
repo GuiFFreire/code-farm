@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2dvjampkhc57"
-path="res://.godot/imported/fb03557d-34d6-4776-9846-33b84a9b8311.png-4b5cb521002554d31b31699736e10e27.ctex"
+path="res://.godot/imported/fb03557d-34d6-4776-9846-33b84a9b8311.png-ec40c2e3750893799c8c61e9c9bff223.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_deco_windmillshadow/fb03557d-34d6-4776-9846-33b84a9b8311.png"
-dest_files=["res://.godot/imported/fb03557d-34d6-4776-9846-33b84a9b8311.png-4b5cb521002554d31b31699736e10e27.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_deco_windmillshadow/fb03557d-34d6-4776-9846-33b84a9b8311.png"
+dest_files=["res://.godot/imported/fb03557d-34d6-4776-9846-33b84a9b8311.png-ec40c2e3750893799c8c61e9c9bff223.ctex"]
 
 [params]
 

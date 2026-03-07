@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo6wmmcrsbcj"
-path="res://.godot/imported/7c4e2b91-d3b6-4265-86cf-0c37f07ccf45.png-4eb1fd7b08e3d8681b9313649cf2cef3.ctex"
+path="res://.godot/imported/7c4e2b91-d3b6-4265-86cf-0c37f07ccf45.png-a3d4caeec747e4c9ec55b6186ad84e31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/longhair_watering_strip5/7c4e2b91-d3b6-4265-86cf-0c37f07ccf45.png"
-dest_files=["res://.godot/imported/7c4e2b91-d3b6-4265-86cf-0c37f07ccf45.png-4eb1fd7b08e3d8681b9313649cf2cef3.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/longhair_watering_strip5/7c4e2b91-d3b6-4265-86cf-0c37f07ccf45.png"
+dest_files=["res://.godot/imported/7c4e2b91-d3b6-4265-86cf-0c37f07ccf45.png-a3d4caeec747e4c9ec55b6186ad84e31.ctex"]
 
 [params]
 

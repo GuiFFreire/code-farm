@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bia5sukxcrp2l"
-path="res://.godot/imported/rod alt.png-3080466d1236a31bd89db36ec316719b.ctex"
+path="res://.godot/imported/rod alt.png-588e3181760563ad09698ce21f576e3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/rod alt.png"
-dest_files=["res://.godot/imported/rod alt.png-3080466d1236a31bd89db36ec316719b.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/rod alt.png"
+dest_files=["res://.godot/imported/rod alt.png-588e3181760563ad09698ce21f576e3a.ctex"]
 
 [params]
 

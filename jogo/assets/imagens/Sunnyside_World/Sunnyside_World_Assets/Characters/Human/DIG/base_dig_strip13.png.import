@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6jdjlc6sjov6"
-path="res://.godot/imported/base_dig_strip13.png-bffded18b5f4a4a4558e7f056e6086ae.ctex"
+path="res://.godot/imported/base_dig_strip13.png-976a9fedfd9b2c6d2c8fa2307355df84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/DIG/base_dig_strip13.png"
-dest_files=["res://.godot/imported/base_dig_strip13.png-bffded18b5f4a4a4558e7f056e6086ae.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/DIG/base_dig_strip13.png"
+dest_files=["res://.godot/imported/base_dig_strip13.png-976a9fedfd9b2c6d2c8fa2307355df84.ctex"]
 
 [params]
 

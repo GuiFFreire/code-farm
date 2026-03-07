@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1004ujymjovl"
-path="res://.godot/imported/hand_closed_01.png-1790f91068ac74c514c841fc1d4c4195.ctex"
+path="res://.godot/imported/hand_closed_01.png-36db934abc0abb3e0fc369857159761a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/hand_closed_01.png"
-dest_files=["res://.godot/imported/hand_closed_01.png-1790f91068ac74c514c841fc1d4c4195.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/hand_closed_01.png"
+dest_files=["res://.godot/imported/hand_closed_01.png-36db934abc0abb3e0fc369857159761a.ctex"]
 
 [params]
 

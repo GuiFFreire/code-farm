@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cktsypd263orf"
-path="res://.godot/imported/6a4fd77a-c18a-4f29-a79e-0c5efd9b6e68.png-90d7d4cd70c53bdf708fd0a39675b550.ctex"
+path="res://.godot/imported/6a4fd77a-c18a-4f29-a79e-0c5efd9b6e68.png-1a6c2b916bbfdb35fde8f901b7afdb74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/mophair_mining_strip10/6a4fd77a-c18a-4f29-a79e-0c5efd9b6e68.png"
-dest_files=["res://.godot/imported/6a4fd77a-c18a-4f29-a79e-0c5efd9b6e68.png-90d7d4cd70c53bdf708fd0a39675b550.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/mophair_mining_strip10/6a4fd77a-c18a-4f29-a79e-0c5efd9b6e68.png"
+dest_files=["res://.godot/imported/6a4fd77a-c18a-4f29-a79e-0c5efd9b6e68.png-1a6c2b916bbfdb35fde8f901b7afdb74.ctex"]
 
 [params]
 

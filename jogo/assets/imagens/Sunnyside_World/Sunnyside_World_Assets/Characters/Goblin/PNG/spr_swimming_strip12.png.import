@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcf2jfma5cu5q"
-path="res://.godot/imported/spr_swimming_strip12.png-79e9a64a9f16c61ef4acc5e5707b7b3d.ctex"
+path="res://.godot/imported/spr_swimming_strip12.png-7d613a31147e2b36dd1734c779e34b00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_swimming_strip12.png"
-dest_files=["res://.godot/imported/spr_swimming_strip12.png-79e9a64a9f16c61ef4acc5e5707b7b3d.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_swimming_strip12.png"
+dest_files=["res://.godot/imported/spr_swimming_strip12.png-7d613a31147e2b36dd1734c779e34b00.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bny1nsexgi7x5"
-path="res://.godot/imported/fb9e12d7-2582-405e-8534-74a6d5826bd7.png-d74d280884d30270735e97cddb7ccdda.ctex"
+path="res://.godot/imported/fb9e12d7-2582-405e-8534-74a6d5826bd7.png-be52120cdf67a430f79f19a338c5bfb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/chimneysmoke_01/fb9e12d7-2582-405e-8534-74a6d5826bd7.png"
-dest_files=["res://.godot/imported/fb9e12d7-2582-405e-8534-74a6d5826bd7.png-d74d280884d30270735e97cddb7ccdda.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/chimneysmoke_01/fb9e12d7-2582-405e-8534-74a6d5826bd7.png"
+dest_files=["res://.godot/imported/fb9e12d7-2582-405e-8534-74a6d5826bd7.png-be52120cdf67a430f79f19a338c5bfb7.ctex"]
 
 [params]
 

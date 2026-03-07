@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpwmhis6g2yir"
-path="res://.godot/imported/0a55f81f-0862-4db0-8eaa-91613ff7f1cc.png-ebe276a53da5a127d4286e4beab57e01.ctex"
+path="res://.godot/imported/0a55f81f-0862-4db0-8eaa-91613ff7f1cc.png-1c9e893a87720bda663277b255930eff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/curlyhair_roll_strip10/layers/7f90c786-97a4-438f-817e-a193f0b68aaf/0a55f81f-0862-4db0-8eaa-91613ff7f1cc.png"
-dest_files=["res://.godot/imported/0a55f81f-0862-4db0-8eaa-91613ff7f1cc.png-ebe276a53da5a127d4286e4beab57e01.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/curlyhair_roll_strip10/layers/7f90c786-97a4-438f-817e-a193f0b68aaf/0a55f81f-0862-4db0-8eaa-91613ff7f1cc.png"
+dest_files=["res://.godot/imported/0a55f81f-0862-4db0-8eaa-91613ff7f1cc.png-1c9e893a87720bda663277b255930eff.ctex"]
 
 [params]
 

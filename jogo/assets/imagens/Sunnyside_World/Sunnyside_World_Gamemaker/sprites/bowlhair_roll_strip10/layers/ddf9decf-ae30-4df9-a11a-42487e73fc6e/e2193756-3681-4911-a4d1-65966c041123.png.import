@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgip8ymnt5ooh"
-path="res://.godot/imported/e2193756-3681-4911-a4d1-65966c041123.png-20a13ee02ca0d05c92493f2388baa996.ctex"
+path="res://.godot/imported/e2193756-3681-4911-a4d1-65966c041123.png-0698b0af0bd2fc3b8be1e846f3d66804.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/bowlhair_roll_strip10/layers/ddf9decf-ae30-4df9-a11a-42487e73fc6e/e2193756-3681-4911-a4d1-65966c041123.png"
-dest_files=["res://.godot/imported/e2193756-3681-4911-a4d1-65966c041123.png-20a13ee02ca0d05c92493f2388baa996.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/bowlhair_roll_strip10/layers/ddf9decf-ae30-4df9-a11a-42487e73fc6e/e2193756-3681-4911-a4d1-65966c041123.png"
+dest_files=["res://.godot/imported/e2193756-3681-4911-a4d1-65966c041123.png-0698b0af0bd2fc3b8be1e846f3d66804.ctex"]
 
 [params]
 

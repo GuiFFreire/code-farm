@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw5burrdpoltw"
-path="res://.godot/imported/2f91b825-bbff-494c-9303-1a8999664c1d.png-424ff4ad0cb5c3b2ae5c3ea4fb0d6a84.ctex"
+path="res://.godot/imported/2f91b825-bbff-494c-9303-1a8999664c1d.png-645d8e0e2836a29fb87e338349f0decc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_deco_cook_chinmney/layers/31ab948f-42c9-47ce-9cb7-456406ed0139/2f91b825-bbff-494c-9303-1a8999664c1d.png"
-dest_files=["res://.godot/imported/2f91b825-bbff-494c-9303-1a8999664c1d.png-424ff4ad0cb5c3b2ae5c3ea4fb0d6a84.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_deco_cook_chinmney/layers/31ab948f-42c9-47ce-9cb7-456406ed0139/2f91b825-bbff-494c-9303-1a8999664c1d.png"
+dest_files=["res://.godot/imported/2f91b825-bbff-494c-9303-1a8999664c1d.png-645d8e0e2836a29fb87e338349f0decc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2qkivn7sbwwb"
-path="res://.godot/imported/de3b4a0e-ce92-4502-89f3-f7db5346d02f.png-d8354bb8628ba1d7e6fb788cbe0c42e3.ctex"
+path="res://.godot/imported/de3b4a0e-ce92-4502-89f3-f7db5346d02f.png-d8ea4fc42103431411482c87711711da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_deco_waterbowl/layers/fb5f5698-0641-4a29-aad1-d97504abe0d6/de3b4a0e-ce92-4502-89f3-f7db5346d02f.png"
-dest_files=["res://.godot/imported/de3b4a0e-ce92-4502-89f3-f7db5346d02f.png-d8354bb8628ba1d7e6fb788cbe0c42e3.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_deco_waterbowl/layers/fb5f5698-0641-4a29-aad1-d97504abe0d6/de3b4a0e-ce92-4502-89f3-f7db5346d02f.png"
+dest_files=["res://.godot/imported/de3b4a0e-ce92-4502-89f3-f7db5346d02f.png-d8ea4fc42103431411482c87711711da.ctex"]
 
 [params]
 

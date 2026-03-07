@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tivv244qxucc"
-path="res://.godot/imported/parsnip_01.png-ca8ce8624c3eb7d5c99b836058c6e603.ctex"
+path="res://.godot/imported/parsnip_01.png-de791d2cf99a4fa50c22e7dc56875657.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/parsnip_01.png"
-dest_files=["res://.godot/imported/parsnip_01.png-ca8ce8624c3eb7d5c99b836058c6e603.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Crops/parsnip_01.png"
+dest_files=["res://.godot/imported/parsnip_01.png-de791d2cf99a4fa50c22e7dc56875657.ctex"]
 
 [params]
 

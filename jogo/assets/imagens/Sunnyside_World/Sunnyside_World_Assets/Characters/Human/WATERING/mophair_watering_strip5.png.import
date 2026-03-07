@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://catwhjd57crvc"
-path="res://.godot/imported/mophair_watering_strip5.png-9a8e5ebc9f6205cac048bec96e060561.ctex"
+path="res://.godot/imported/mophair_watering_strip5.png-083438b6caead752e32f73fc680b4d1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/WATERING/mophair_watering_strip5.png"
-dest_files=["res://.godot/imported/mophair_watering_strip5.png-9a8e5ebc9f6205cac048bec96e060561.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/WATERING/mophair_watering_strip5.png"
+dest_files=["res://.godot/imported/mophair_watering_strip5.png-083438b6caead752e32f73fc680b4d1e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh3idt28rnbsv"
-path="res://.godot/imported/3f40e0b6-b810-41df-b8ec-614a7fb287bd.png-fa01f15930c4aae382a91b945daf7762.ctex"
+path="res://.godot/imported/3f40e0b6-b810-41df-b8ec-614a7fb287bd.png-bca9b4903d4e48aa88d809bab0f28fc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/bowlhair_watering_strip5/layers/7769a66d-f507-4b12-a910-626062c0f2e4/3f40e0b6-b810-41df-b8ec-614a7fb287bd.png"
-dest_files=["res://.godot/imported/3f40e0b6-b810-41df-b8ec-614a7fb287bd.png-fa01f15930c4aae382a91b945daf7762.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/bowlhair_watering_strip5/layers/7769a66d-f507-4b12-a910-626062c0f2e4/3f40e0b6-b810-41df-b8ec-614a7fb287bd.png"
+dest_files=["res://.godot/imported/3f40e0b6-b810-41df-b8ec-614a7fb287bd.png-bca9b4903d4e48aa88d809bab0f28fc1.ctex"]
 
 [params]
 

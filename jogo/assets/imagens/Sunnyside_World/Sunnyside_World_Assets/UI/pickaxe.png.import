@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvil44g7uvgqr"
-path="res://.godot/imported/pickaxe.png-d1c758d364d2f3e2e36b4660451f06ba.ctex"
+path="res://.godot/imported/pickaxe.png-6615ee733d9ff1db6f872b21caef6b04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/pickaxe.png"
-dest_files=["res://.godot/imported/pickaxe.png-d1c758d364d2f3e2e36b4660451f06ba.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/pickaxe.png"
+dest_files=["res://.godot/imported/pickaxe.png-6615ee733d9ff1db6f872b21caef6b04.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd0a4s01ns5vs"
-path="res://.godot/imported/selectbox_bl.png-d9ce9b530a4ba5c539db0e1cd1f9192f.ctex"
+path="res://.godot/imported/selectbox_bl.png-f79b88a83847ecb374dca89da4927aeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/selectbox_bl.png"
-dest_files=["res://.godot/imported/selectbox_bl.png-d9ce9b530a4ba5c539db0e1cd1f9192f.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/selectbox_bl.png"
+dest_files=["res://.godot/imported/selectbox_bl.png-f79b88a83847ecb374dca89da4927aeb.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://druh0r4nqmhyu"
-path="res://.godot/imported/fish.png-a783f76319aa03bcf658fd13c997f507.ctex"
+path="res://.godot/imported/fish.png-aeb589b3d0d50e4874a04063cd8bae02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/fish.png"
-dest_files=["res://.godot/imported/fish.png-a783f76319aa03bcf658fd13c997f507.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Crops/fish.png"
+dest_files=["res://.godot/imported/fish.png-aeb589b3d0d50e4874a04063cd8bae02.ctex"]
 
 [params]
 

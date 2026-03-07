@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs7l1g2egytyb"
-path="res://.godot/imported/spikeyhair_casting_strip15.png-29c4069d59b9c840df56722d07eac066.ctex"
+path="res://.godot/imported/spikeyhair_casting_strip15.png-2c87fea45ffff6af8f24783856d16fd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/CASTING/spikeyhair_casting_strip15.png"
-dest_files=["res://.godot/imported/spikeyhair_casting_strip15.png-29c4069d59b9c840df56722d07eac066.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/CASTING/spikeyhair_casting_strip15.png"
+dest_files=["res://.godot/imported/spikeyhair_casting_strip15.png-2c87fea45ffff6af8f24783856d16fd6.ctex"]
 
 [params]
 

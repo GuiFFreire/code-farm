@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2xjg8j0yqiwc"
-path="res://.godot/imported/2bc57924-380d-4168-8429-3f0f71efd528.png-36d4c72934c66bb5553fd33ed6ceb83f.ctex"
+path="res://.godot/imported/2bc57924-380d-4168-8429-3f0f71efd528.png-0f79132fb26b36831ebcf0dac52eca95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/shorthair_carry_strip8/2bc57924-380d-4168-8429-3f0f71efd528.png"
-dest_files=["res://.godot/imported/2bc57924-380d-4168-8429-3f0f71efd528.png-36d4c72934c66bb5553fd33ed6ceb83f.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/shorthair_carry_strip8/2bc57924-380d-4168-8429-3f0f71efd528.png"
+dest_files=["res://.godot/imported/2bc57924-380d-4168-8429-3f0f71efd528.png-0f79132fb26b36831ebcf0dac52eca95.ctex"]
 
 [params]
 

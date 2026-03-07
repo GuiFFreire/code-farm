@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hx0sdrhtkkir"
-path="res://.godot/imported/dccf9a58-bb66-470b-a383-cd92b544bdc0.png-b52108d6d8ad27c15324bda391a4b148.ctex"
+path="res://.godot/imported/dccf9a58-bb66-470b-a383-cd92b544bdc0.png-384003f8b065f028ce4876655ede4e81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_deco_plate_knifeandfork/dccf9a58-bb66-470b-a383-cd92b544bdc0.png"
-dest_files=["res://.godot/imported/dccf9a58-bb66-470b-a383-cd92b544bdc0.png-b52108d6d8ad27c15324bda391a4b148.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_deco_plate_knifeandfork/dccf9a58-bb66-470b-a383-cd92b544bdc0.png"
+dest_files=["res://.godot/imported/dccf9a58-bb66-470b-a383-cd92b544bdc0.png-384003f8b065f028ce4876655ede4e81.ctex"]
 
 [params]
 

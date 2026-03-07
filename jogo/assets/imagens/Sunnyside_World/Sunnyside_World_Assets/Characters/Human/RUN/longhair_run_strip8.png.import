@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjeqd7u4h1m58"
-path="res://.godot/imported/longhair_run_strip8.png-c8bcfb83b076c0a4b4296d5a9e87145b.ctex"
+path="res://.godot/imported/longhair_run_strip8.png-e34f2f52d44768e836f3bdbca028f183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/RUN/longhair_run_strip8.png"
-dest_files=["res://.godot/imported/longhair_run_strip8.png-c8bcfb83b076c0a4b4296d5a9e87145b.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/RUN/longhair_run_strip8.png"
+dest_files=["res://.godot/imported/longhair_run_strip8.png-e34f2f52d44768e836f3bdbca028f183.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3v6p4o6pd3lu"
-path="res://.godot/imported/39d2f356-0bba-49c4-a86b-9943c43940f7.png-44c30d5481bf0abaac8a184fa8a60f95.ctex"
+path="res://.godot/imported/39d2f356-0bba-49c4-a86b-9943c43940f7.png-3e82dbd188fe3b93aff16d00a341ef68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/bowlhair_casting_strip15/39d2f356-0bba-49c4-a86b-9943c43940f7.png"
-dest_files=["res://.godot/imported/39d2f356-0bba-49c4-a86b-9943c43940f7.png-44c30d5481bf0abaac8a184fa8a60f95.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/bowlhair_casting_strip15/39d2f356-0bba-49c4-a86b-9943c43940f7.png"
+dest_files=["res://.godot/imported/39d2f356-0bba-49c4-a86b-9943c43940f7.png-3e82dbd188fe3b93aff16d00a341ef68.ctex"]
 
 [params]
 

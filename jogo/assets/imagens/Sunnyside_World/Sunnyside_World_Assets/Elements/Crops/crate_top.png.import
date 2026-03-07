@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0b4yi122jcj5"
-path="res://.godot/imported/crate_top.png-292f69e47594a4805bb21579c0836c79.ctex"
+path="res://.godot/imported/crate_top.png-f7b9485f04b14de246a8ee39074a4a1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/crate_top.png"
-dest_files=["res://.godot/imported/crate_top.png-292f69e47594a4805bb21579c0836c79.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Crops/crate_top.png"
+dest_files=["res://.godot/imported/crate_top.png-f7b9485f04b14de246a8ee39074a4a1d.ctex"]
 
 [params]
 

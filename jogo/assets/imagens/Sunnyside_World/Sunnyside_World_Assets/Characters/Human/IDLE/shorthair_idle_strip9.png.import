@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp13dgdryvsky"
-path="res://.godot/imported/shorthair_idle_strip9.png-cbb7c2f5ed7650f05a211935167a16e8.ctex"
+path="res://.godot/imported/shorthair_idle_strip9.png-cab6850a48de3cf8862e1f3f1a3d10ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/IDLE/shorthair_idle_strip9.png"
-dest_files=["res://.godot/imported/shorthair_idle_strip9.png-cbb7c2f5ed7650f05a211935167a16e8.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/IDLE/shorthair_idle_strip9.png"
+dest_files=["res://.godot/imported/shorthair_idle_strip9.png-cab6850a48de3cf8862e1f3f1a3d10ae.ctex"]
 
 [params]
 

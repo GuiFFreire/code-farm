@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfh6q06cntjod"
-path="res://.godot/imported/117e0d35-906f-4e51-a973-324d0e18d633.png-24e4d1ed8016d713d888b3aa9a03e5f3.ctex"
+path="res://.godot/imported/117e0d35-906f-4e51-a973-324d0e18d633.png-7fc4bf28cc788e010b2aa5989328ada8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/fish/117e0d35-906f-4e51-a973-324d0e18d633.png"
-dest_files=["res://.godot/imported/117e0d35-906f-4e51-a973-324d0e18d633.png-24e4d1ed8016d713d888b3aa9a03e5f3.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/fish/117e0d35-906f-4e51-a973-324d0e18d633.png"
+dest_files=["res://.godot/imported/117e0d35-906f-4e51-a973-324d0e18d633.png-7fc4bf28cc788e010b2aa5989328ada8.ctex"]
 
 [params]
 

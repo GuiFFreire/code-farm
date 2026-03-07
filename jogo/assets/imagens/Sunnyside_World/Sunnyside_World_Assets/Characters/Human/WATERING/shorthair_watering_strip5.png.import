@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnk7ivew1sddy"
-path="res://.godot/imported/shorthair_watering_strip5.png-6fe43538d71b0a398d28ff410182195b.ctex"
+path="res://.godot/imported/shorthair_watering_strip5.png-7c4caf8495377e156b15b9f7656d362d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/WATERING/shorthair_watering_strip5.png"
-dest_files=["res://.godot/imported/shorthair_watering_strip5.png-6fe43538d71b0a398d28ff410182195b.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/WATERING/shorthair_watering_strip5.png"
+dest_files=["res://.godot/imported/shorthair_watering_strip5.png-7c4caf8495377e156b15b9f7656d362d.ctex"]
 
 [params]
 

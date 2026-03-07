@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drl4xd8gdjxjk"
-path="res://.godot/imported/24b0f5b9-eac0-4a66-a7cc-cb46b095ce6a.png-2a5fc540b3903ebfdce6d9a5919513bd.ctex"
+path="res://.godot/imported/24b0f5b9-eac0-4a66-a7cc-cb46b095ce6a.png-7d29207497260db76f7200f447938407.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/skeleton_attack/24b0f5b9-eac0-4a66-a7cc-cb46b095ce6a.png"
-dest_files=["res://.godot/imported/24b0f5b9-eac0-4a66-a7cc-cb46b095ce6a.png-2a5fc540b3903ebfdce6d9a5919513bd.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/skeleton_attack/24b0f5b9-eac0-4a66-a7cc-cb46b095ce6a.png"
+dest_files=["res://.godot/imported/24b0f5b9-eac0-4a66-a7cc-cb46b095ce6a.png-7d29207497260db76f7200f447938407.ctex"]
 
 [params]
 

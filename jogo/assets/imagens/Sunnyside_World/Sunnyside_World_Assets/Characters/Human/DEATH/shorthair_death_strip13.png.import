@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d33jw5pk3nnth"
-path="res://.godot/imported/shorthair_death_strip13.png-5204cfe5df70bab7ec0783d200225db9.ctex"
+path="res://.godot/imported/shorthair_death_strip13.png-e18b26a5efe1d063681ebba5fdab2c66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/DEATH/shorthair_death_strip13.png"
-dest_files=["res://.godot/imported/shorthair_death_strip13.png-5204cfe5df70bab7ec0783d200225db9.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/DEATH/shorthair_death_strip13.png"
+dest_files=["res://.godot/imported/shorthair_death_strip13.png-e18b26a5efe1d063681ebba5fdab2c66.ctex"]
 
 [params]
 

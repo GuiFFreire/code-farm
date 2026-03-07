@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnhelo2grglan"
-path="res://.godot/imported/f4e64d82-7a77-4ca3-ac28-bfb116396a40.png-73a34ca6b41a0d5f8e4b869cfeb30bbe.ctex"
+path="res://.godot/imported/f4e64d82-7a77-4ca3-ac28-bfb116396a40.png-84bf2eb61ea25397b7c0ef211f9b3792.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/longhair_carry_strip8/f4e64d82-7a77-4ca3-ac28-bfb116396a40.png"
-dest_files=["res://.godot/imported/f4e64d82-7a77-4ca3-ac28-bfb116396a40.png-73a34ca6b41a0d5f8e4b869cfeb30bbe.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/longhair_carry_strip8/f4e64d82-7a77-4ca3-ac28-bfb116396a40.png"
+dest_files=["res://.godot/imported/f4e64d82-7a77-4ca3-ac28-bfb116396a40.png-84bf2eb61ea25397b7c0ef211f9b3792.ctex"]
 
 [params]
 

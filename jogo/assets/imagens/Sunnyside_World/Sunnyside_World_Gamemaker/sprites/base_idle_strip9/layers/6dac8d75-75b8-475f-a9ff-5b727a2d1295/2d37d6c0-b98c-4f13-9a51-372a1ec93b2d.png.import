@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bovia7okkg4dl"
-path="res://.godot/imported/2d37d6c0-b98c-4f13-9a51-372a1ec93b2d.png-e1d7b6d5cd239fe1ce392347475cb350.ctex"
+path="res://.godot/imported/2d37d6c0-b98c-4f13-9a51-372a1ec93b2d.png-49ae2cd71de3719d8a725ee798cb76bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/base_idle_strip9/layers/6dac8d75-75b8-475f-a9ff-5b727a2d1295/2d37d6c0-b98c-4f13-9a51-372a1ec93b2d.png"
-dest_files=["res://.godot/imported/2d37d6c0-b98c-4f13-9a51-372a1ec93b2d.png-e1d7b6d5cd239fe1ce392347475cb350.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/base_idle_strip9/layers/6dac8d75-75b8-475f-a9ff-5b727a2d1295/2d37d6c0-b98c-4f13-9a51-372a1ec93b2d.png"
+dest_files=["res://.godot/imported/2d37d6c0-b98c-4f13-9a51-372a1ec93b2d.png-49ae2cd71de3719d8a725ee798cb76bf.ctex"]
 
 [params]
 

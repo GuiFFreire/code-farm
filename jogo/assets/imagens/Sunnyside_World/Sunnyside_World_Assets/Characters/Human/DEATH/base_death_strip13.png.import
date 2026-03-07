@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f2xfha37bdev"
-path="res://.godot/imported/base_death_strip13.png-b31cea0c7c058b0ccd6eb0821e5e1894.ctex"
+path="res://.godot/imported/base_death_strip13.png-9bdf23db36095b36f97ecc633cd60fad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/DEATH/base_death_strip13.png"
-dest_files=["res://.godot/imported/base_death_strip13.png-b31cea0c7c058b0ccd6eb0821e5e1894.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/DEATH/base_death_strip13.png"
+dest_files=["res://.godot/imported/base_death_strip13.png-9bdf23db36095b36f97ecc633cd60fad.ctex"]
 
 [params]
 

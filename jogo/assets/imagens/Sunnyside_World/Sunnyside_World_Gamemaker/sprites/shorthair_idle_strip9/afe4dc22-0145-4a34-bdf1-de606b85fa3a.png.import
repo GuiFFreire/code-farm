@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csx80cfqnjkcl"
-path="res://.godot/imported/afe4dc22-0145-4a34-bdf1-de606b85fa3a.png-62b3ebafa091df85e25aa3129e7f9e0d.ctex"
+path="res://.godot/imported/afe4dc22-0145-4a34-bdf1-de606b85fa3a.png-ec76b5c08f243057a2cff8e0bf8d4178.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/shorthair_idle_strip9/afe4dc22-0145-4a34-bdf1-de606b85fa3a.png"
-dest_files=["res://.godot/imported/afe4dc22-0145-4a34-bdf1-de606b85fa3a.png-62b3ebafa091df85e25aa3129e7f9e0d.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/shorthair_idle_strip9/afe4dc22-0145-4a34-bdf1-de606b85fa3a.png"
+dest_files=["res://.godot/imported/afe4dc22-0145-4a34-bdf1-de606b85fa3a.png-ec76b5c08f243057a2cff8e0bf8d4178.ctex"]
 
 [params]
 

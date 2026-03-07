@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blfafnuc21p5u"
-path="res://.godot/imported/beetroot_04.png-0cedf61f3de688841d12837b244b7810.ctex"
+path="res://.godot/imported/beetroot_04.png-cd7990289b604b2799f79864156ed62a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/beetroot_04.png"
-dest_files=["res://.godot/imported/beetroot_04.png-0cedf61f3de688841d12837b244b7810.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Crops/beetroot_04.png"
+dest_files=["res://.godot/imported/beetroot_04.png-cd7990289b604b2799f79864156ed62a.ctex"]
 
 [params]
 

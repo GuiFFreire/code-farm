@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt1jhixnp4ebh"
-path="res://.godot/imported/spr_carry_strip8.png-d477ace2c9257b406bc39d88ad0bc0be.ctex"
+path="res://.godot/imported/spr_carry_strip8.png-3d1009ec1da75e8cc38917833ab605d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_carry_strip8.png"
-dest_files=["res://.godot/imported/spr_carry_strip8.png-d477ace2c9257b406bc39d88ad0bc0be.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_carry_strip8.png"
+dest_files=["res://.godot/imported/spr_carry_strip8.png-3d1009ec1da75e8cc38917833ab605d4.ctex"]
 
 [params]
 

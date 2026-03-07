@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6w2rbd67kuj3"
-path="res://.godot/imported/sandtimer.png-9f75e00cb9944bd9876e2d47769bc546.ctex"
+path="res://.godot/imported/sandtimer.png-a8d7485269e3f81c91330b251dcb04d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/sandtimer.png"
-dest_files=["res://.godot/imported/sandtimer.png-9f75e00cb9944bd9876e2d47769bc546.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/sandtimer.png"
+dest_files=["res://.godot/imported/sandtimer.png-a8d7485269e3f81c91330b251dcb04d5.ctex"]
 
 [params]
 

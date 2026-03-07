@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2arfylqumgxf"
-path="res://.godot/imported/spikeyhair_carry_strip8.png-c02a9157a44b4ebd882ff4aabd2a798c.ctex"
+path="res://.godot/imported/spikeyhair_carry_strip8.png-ea0fe4927944e72b3f8c2da8d19e61b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/CARRY/spikeyhair_carry_strip8.png"
-dest_files=["res://.godot/imported/spikeyhair_carry_strip8.png-c02a9157a44b4ebd882ff4aabd2a798c.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/CARRY/spikeyhair_carry_strip8.png"
+dest_files=["res://.godot/imported/spikeyhair_carry_strip8.png-ea0fe4927944e72b3f8c2da8d19e61b8.ctex"]
 
 [params]
 

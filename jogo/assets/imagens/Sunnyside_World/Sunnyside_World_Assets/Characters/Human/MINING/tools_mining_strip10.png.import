@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vys4s7l867r7"
-path="res://.godot/imported/tools_mining_strip10.png-2f9ffa8ba868084077e26c62b81d3f9f.ctex"
+path="res://.godot/imported/tools_mining_strip10.png-f7ff3c35644f249d145147f6181dbfd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/MINING/tools_mining_strip10.png"
-dest_files=["res://.godot/imported/tools_mining_strip10.png-2f9ffa8ba868084077e26c62b81d3f9f.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/MINING/tools_mining_strip10.png"
+dest_files=["res://.godot/imported/tools_mining_strip10.png-f7ff3c35644f249d145147f6181dbfd2.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0rxgsvw5c8tv"
-path="res://.godot/imported/b94f0448-6f20-4037-9d30-abfd9b4d9e0d.png-ced6c8c4fd56f861129ec33d3746d38c.ctex"
+path="res://.godot/imported/b94f0448-6f20-4037-9d30-abfd9b4d9e0d.png-bcea250d77342d65798e2f5ebbbeb3de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/longhair_hurt_strip8/layers/4977b520-9774-4298-9fe5-42a7ef0500df/b94f0448-6f20-4037-9d30-abfd9b4d9e0d.png"
-dest_files=["res://.godot/imported/b94f0448-6f20-4037-9d30-abfd9b4d9e0d.png-ced6c8c4fd56f861129ec33d3746d38c.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/longhair_hurt_strip8/layers/4977b520-9774-4298-9fe5-42a7ef0500df/b94f0448-6f20-4037-9d30-abfd9b4d9e0d.png"
+dest_files=["res://.godot/imported/b94f0448-6f20-4037-9d30-abfd9b4d9e0d.png-bcea250d77342d65798e2f5ebbbeb3de.ctex"]
 
 [params]
 

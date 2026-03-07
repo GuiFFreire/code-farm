@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6q7h66shwpuv"
-path="res://.godot/imported/0a693872-9e06-4e12-ab98-8dcea8d84fa8.png-2756acf9f338a16b55950722e7b0ef88.ctex"
+path="res://.godot/imported/0a693872-9e06-4e12-ab98-8dcea8d84fa8.png-fec74db8044d61443540ab1e6303275b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/bowlhair_jump_strip9/layers/5e847790-8608-4d0a-8c90-39b4a8feaacb/0a693872-9e06-4e12-ab98-8dcea8d84fa8.png"
-dest_files=["res://.godot/imported/0a693872-9e06-4e12-ab98-8dcea8d84fa8.png-2756acf9f338a16b55950722e7b0ef88.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/bowlhair_jump_strip9/layers/5e847790-8608-4d0a-8c90-39b4a8feaacb/0a693872-9e06-4e12-ab98-8dcea8d84fa8.png"
+dest_files=["res://.godot/imported/0a693872-9e06-4e12-ab98-8dcea8d84fa8.png-fec74db8044d61443540ab1e6303275b.ctex"]
 
 [params]
 

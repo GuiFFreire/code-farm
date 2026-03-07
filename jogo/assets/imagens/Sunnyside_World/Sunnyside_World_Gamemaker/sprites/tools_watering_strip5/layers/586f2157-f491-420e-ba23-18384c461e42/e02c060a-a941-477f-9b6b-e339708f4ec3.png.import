@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7qa3atuihmvm"
-path="res://.godot/imported/e02c060a-a941-477f-9b6b-e339708f4ec3.png-b4d602218818840d61cadad929c56bbb.ctex"
+path="res://.godot/imported/e02c060a-a941-477f-9b6b-e339708f4ec3.png-e523fe9d289cd3715e67cd7f64509972.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/tools_watering_strip5/layers/586f2157-f491-420e-ba23-18384c461e42/e02c060a-a941-477f-9b6b-e339708f4ec3.png"
-dest_files=["res://.godot/imported/e02c060a-a941-477f-9b6b-e339708f4ec3.png-b4d602218818840d61cadad929c56bbb.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/tools_watering_strip5/layers/586f2157-f491-420e-ba23-18384c461e42/e02c060a-a941-477f-9b6b-e339708f4ec3.png"
+dest_files=["res://.godot/imported/e02c060a-a941-477f-9b6b-e339708f4ec3.png-e523fe9d289cd3715e67cd7f64509972.ctex"]
 
 [params]
 

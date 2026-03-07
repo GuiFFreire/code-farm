@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh164w83k2f3m"
-path="res://.godot/imported/ff5d2c72-7638-45e9-b4b4-0ad866d54d9d.png-232c942618249be0ce6f2262000f145c.ctex"
+path="res://.godot/imported/ff5d2c72-7638-45e9-b4b4-0ad866d54d9d.png-6a902b6c9cceb6a23a36e0aa2163748b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_deco_buckect_rope/layers/b594dcb2-acad-4436-9c37-783f762cd98c/ff5d2c72-7638-45e9-b4b4-0ad866d54d9d.png"
-dest_files=["res://.godot/imported/ff5d2c72-7638-45e9-b4b4-0ad866d54d9d.png-232c942618249be0ce6f2262000f145c.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_deco_buckect_rope/layers/b594dcb2-acad-4436-9c37-783f762cd98c/ff5d2c72-7638-45e9-b4b4-0ad866d54d9d.png"
+dest_files=["res://.godot/imported/ff5d2c72-7638-45e9-b4b4-0ad866d54d9d.png-6a902b6c9cceb6a23a36e0aa2163748b.ctex"]
 
 [params]
 

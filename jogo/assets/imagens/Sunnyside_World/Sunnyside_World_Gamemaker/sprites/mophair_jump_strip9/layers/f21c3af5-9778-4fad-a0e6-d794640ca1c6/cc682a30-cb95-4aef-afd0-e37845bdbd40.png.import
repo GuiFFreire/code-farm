@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6qdndd65qgxo"
-path="res://.godot/imported/cc682a30-cb95-4aef-afd0-e37845bdbd40.png-1b16ca2abcb73e042f4b678b689f413e.ctex"
+path="res://.godot/imported/cc682a30-cb95-4aef-afd0-e37845bdbd40.png-47e9a65ad7d0e82a358ac704df26bb0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/mophair_jump_strip9/layers/f21c3af5-9778-4fad-a0e6-d794640ca1c6/cc682a30-cb95-4aef-afd0-e37845bdbd40.png"
-dest_files=["res://.godot/imported/cc682a30-cb95-4aef-afd0-e37845bdbd40.png-1b16ca2abcb73e042f4b678b689f413e.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/mophair_jump_strip9/layers/f21c3af5-9778-4fad-a0e6-d794640ca1c6/cc682a30-cb95-4aef-afd0-e37845bdbd40.png"
+dest_files=["res://.godot/imported/cc682a30-cb95-4aef-afd0-e37845bdbd40.png-47e9a65ad7d0e82a358ac704df26bb0f.ctex"]
 
 [params]
 

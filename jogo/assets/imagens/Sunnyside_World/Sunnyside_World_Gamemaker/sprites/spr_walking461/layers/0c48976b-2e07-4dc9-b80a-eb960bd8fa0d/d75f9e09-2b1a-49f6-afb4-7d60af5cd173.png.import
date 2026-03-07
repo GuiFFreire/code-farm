@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba2ntanuwcq0m"
-path="res://.godot/imported/d75f9e09-2b1a-49f6-afb4-7d60af5cd173.png-3046668403d1e2a550efab113328fc69.ctex"
+path="res://.godot/imported/d75f9e09-2b1a-49f6-afb4-7d60af5cd173.png-2cf8bb1cb5bb93a06e7d6a658f06a493.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_walking461/layers/0c48976b-2e07-4dc9-b80a-eb960bd8fa0d/d75f9e09-2b1a-49f6-afb4-7d60af5cd173.png"
-dest_files=["res://.godot/imported/d75f9e09-2b1a-49f6-afb4-7d60af5cd173.png-3046668403d1e2a550efab113328fc69.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_walking461/layers/0c48976b-2e07-4dc9-b80a-eb960bd8fa0d/d75f9e09-2b1a-49f6-afb4-7d60af5cd173.png"
+dest_files=["res://.godot/imported/d75f9e09-2b1a-49f6-afb4-7d60af5cd173.png-2cf8bb1cb5bb93a06e7d6a658f06a493.ctex"]
 
 [params]
 

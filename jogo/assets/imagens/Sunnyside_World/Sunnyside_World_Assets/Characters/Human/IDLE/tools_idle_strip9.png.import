@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bowllef8u8hw"
-path="res://.godot/imported/tools_idle_strip9.png-f04f590a45ac98500b9e20d5fbf8f283.ctex"
+path="res://.godot/imported/tools_idle_strip9.png-fcb9a70ade795580ce41288cf3d24cda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/IDLE/tools_idle_strip9.png"
-dest_files=["res://.godot/imported/tools_idle_strip9.png-f04f590a45ac98500b9e20d5fbf8f283.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/IDLE/tools_idle_strip9.png"
+dest_files=["res://.godot/imported/tools_idle_strip9.png-fcb9a70ade795580ce41288cf3d24cda.ctex"]
 
 [params]
 

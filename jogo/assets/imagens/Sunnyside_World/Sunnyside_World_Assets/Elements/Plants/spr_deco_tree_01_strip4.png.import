@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpdjhiisarr80"
-path="res://.godot/imported/spr_deco_tree_01_strip4.png-6bd419a2970344548d9d4fa9b1e6ade5.ctex"
+path="res://.godot/imported/spr_deco_tree_01_strip4.png-2c3889a5f528164a5c66fb91e6fe0b71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Plants/spr_deco_tree_01_strip4.png"
-dest_files=["res://.godot/imported/spr_deco_tree_01_strip4.png-6bd419a2970344548d9d4fa9b1e6ade5.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Plants/spr_deco_tree_01_strip4.png"
+dest_files=["res://.godot/imported/spr_deco_tree_01_strip4.png-2c3889a5f528164a5c66fb91e6fe0b71.ctex"]
 
 [params]
 

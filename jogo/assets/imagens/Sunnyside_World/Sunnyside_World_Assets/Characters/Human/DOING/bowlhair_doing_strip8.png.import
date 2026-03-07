@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caqmc35dduyxf"
-path="res://.godot/imported/bowlhair_doing_strip8.png-8a2699a879f1c05ffe557fe1c7e7b6b3.ctex"
+path="res://.godot/imported/bowlhair_doing_strip8.png-2f22cc3cae3db76ec7e0a11069f6eb2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/DOING/bowlhair_doing_strip8.png"
-dest_files=["res://.godot/imported/bowlhair_doing_strip8.png-8a2699a879f1c05ffe557fe1c7e7b6b3.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/DOING/bowlhair_doing_strip8.png"
+dest_files=["res://.godot/imported/bowlhair_doing_strip8.png-2f22cc3cae3db76ec7e0a11069f6eb2c.ctex"]
 
 [params]
 

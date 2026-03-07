@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oldj7po6w3p4"
-path="res://.godot/imported/wood.png-fc88f967b52c006ce1b74754c6a0e33b.ctex"
+path="res://.godot/imported/wood.png-128c84420abe3ca1b8cba4c5a1effd11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/wood.png"
-dest_files=["res://.godot/imported/wood.png-fc88f967b52c006ce1b74754c6a0e33b.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Crops/wood.png"
+dest_files=["res://.godot/imported/wood.png-128c84420abe3ca1b8cba4c5a1effd11.ctex"]
 
 [params]
 

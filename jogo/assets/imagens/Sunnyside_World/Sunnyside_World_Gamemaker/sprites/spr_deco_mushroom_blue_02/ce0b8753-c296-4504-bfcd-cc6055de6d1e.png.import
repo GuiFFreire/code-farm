@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck0ab30xby0bx"
-path="res://.godot/imported/ce0b8753-c296-4504-bfcd-cc6055de6d1e.png-057b6607d7f303f25789cf6aea7d6e42.ctex"
+path="res://.godot/imported/ce0b8753-c296-4504-bfcd-cc6055de6d1e.png-85cc7e83bece2e635aa980682a1f31c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_deco_mushroom_blue_02/ce0b8753-c296-4504-bfcd-cc6055de6d1e.png"
-dest_files=["res://.godot/imported/ce0b8753-c296-4504-bfcd-cc6055de6d1e.png-057b6607d7f303f25789cf6aea7d6e42.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_deco_mushroom_blue_02/ce0b8753-c296-4504-bfcd-cc6055de6d1e.png"
+dest_files=["res://.godot/imported/ce0b8753-c296-4504-bfcd-cc6055de6d1e.png-85cc7e83bece2e635aa980682a1f31c8.ctex"]
 
 [params]
 

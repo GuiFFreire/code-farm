@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da7dvud6ju26c"
-path="res://.godot/imported/label_middle.png-44f2efcaea6f48594f68197460912580.ctex"
+path="res://.godot/imported/label_middle.png-a6a952ae504d6e1de7d5e89026a34004.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/label_middle.png"
-dest_files=["res://.godot/imported/label_middle.png-44f2efcaea6f48594f68197460912580.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/label_middle.png"
+dest_files=["res://.godot/imported/label_middle.png-a6a952ae504d6e1de7d5e89026a34004.ctex"]
 
 [params]
 

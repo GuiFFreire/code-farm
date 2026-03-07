@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baogy0p0dqcb0"
-path="res://.godot/imported/d341ef0a-1c5d-43e8-9668-89fc3dc15dca.png-6f57a608f4c908e5139692d11dc6e0bf.ctex"
+path="res://.godot/imported/d341ef0a-1c5d-43e8-9668-89fc3dc15dca.png-334f224adcf673beb6dc74d1ef0c48c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_deco_ore_coal/d341ef0a-1c5d-43e8-9668-89fc3dc15dca.png"
-dest_files=["res://.godot/imported/d341ef0a-1c5d-43e8-9668-89fc3dc15dca.png-6f57a608f4c908e5139692d11dc6e0bf.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_deco_ore_coal/d341ef0a-1c5d-43e8-9668-89fc3dc15dca.png"
+dest_files=["res://.godot/imported/d341ef0a-1c5d-43e8-9668-89fc3dc15dca.png-334f224adcf673beb6dc74d1ef0c48c4.ctex"]
 
 [params]
 

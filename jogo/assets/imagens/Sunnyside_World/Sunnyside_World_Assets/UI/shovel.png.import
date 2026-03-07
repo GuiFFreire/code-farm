@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1e7mbniv13s1"
-path="res://.godot/imported/shovel.png-cb4faf296b0ac942b6d50de49b10229e.ctex"
+path="res://.godot/imported/shovel.png-1e1f8c9adc14336ebd6d0c4288b0695f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/shovel.png"
-dest_files=["res://.godot/imported/shovel.png-cb4faf296b0ac942b6d50de49b10229e.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/shovel.png"
+dest_files=["res://.godot/imported/shovel.png-1e1f8c9adc14336ebd6d0c4288b0695f.ctex"]
 
 [params]
 

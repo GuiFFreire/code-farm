@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgdv162ejbuwn"
-path="res://.godot/imported/base_doing_strip8.png-a365dd0b4be2ad69a348dbfa338f1fba.ctex"
+path="res://.godot/imported/base_doing_strip8.png-56aa4ec922777e295202a484dc1f2f0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/DOING/base_doing_strip8.png"
-dest_files=["res://.godot/imported/base_doing_strip8.png-a365dd0b4be2ad69a348dbfa338f1fba.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/DOING/base_doing_strip8.png"
+dest_files=["res://.godot/imported/base_doing_strip8.png-56aa4ec922777e295202a484dc1f2f0b.ctex"]
 
 [params]
 

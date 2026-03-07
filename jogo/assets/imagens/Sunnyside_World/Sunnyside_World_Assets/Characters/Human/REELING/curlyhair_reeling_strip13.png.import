@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6sv0w3aprkkt"
-path="res://.godot/imported/curlyhair_reeling_strip13.png-a5f4c46fdb33e7c0ee778f1a48b6daec.ctex"
+path="res://.godot/imported/curlyhair_reeling_strip13.png-4969c894bb633875810ed478fbf2fd71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/REELING/curlyhair_reeling_strip13.png"
-dest_files=["res://.godot/imported/curlyhair_reeling_strip13.png-a5f4c46fdb33e7c0ee778f1a48b6daec.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/REELING/curlyhair_reeling_strip13.png"
+dest_files=["res://.godot/imported/curlyhair_reeling_strip13.png-4969c894bb633875810ed478fbf2fd71.ctex"]
 
 [params]
 

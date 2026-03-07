@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w5dvwsn7kyje"
-path="res://.godot/imported/sunflower_05.png-814ace894b8e2b7f2f9b7f4441f21697.ctex"
+path="res://.godot/imported/sunflower_05.png-eca36e04066107351e23f843c1e99a6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/sunflower_05.png"
-dest_files=["res://.godot/imported/sunflower_05.png-814ace894b8e2b7f2f9b7f4441f21697.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Crops/sunflower_05.png"
+dest_files=["res://.godot/imported/sunflower_05.png-eca36e04066107351e23f843c1e99a6d.ctex"]
 
 [params]
 

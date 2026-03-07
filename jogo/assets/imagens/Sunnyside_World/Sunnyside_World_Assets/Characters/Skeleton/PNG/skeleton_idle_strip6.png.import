@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1glnoksmf65m"
-path="res://.godot/imported/skeleton_idle_strip6.png-d7024ead0f307b3f498cb632a2addf27.ctex"
+path="res://.godot/imported/skeleton_idle_strip6.png-6d2f11a06c25c5d6e3c70debf694a49f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Skeleton/PNG/skeleton_idle_strip6.png"
-dest_files=["res://.godot/imported/skeleton_idle_strip6.png-d7024ead0f307b3f498cb632a2addf27.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Skeleton/PNG/skeleton_idle_strip6.png"
+dest_files=["res://.godot/imported/skeleton_idle_strip6.png-6d2f11a06c25c5d6e3c70debf694a49f.ctex"]
 
 [params]
 

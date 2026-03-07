@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csv1kqf4fi20v"
-path="res://.godot/imported/spikeyhair_roll_strip10.png-4d5c0873d885a2e9472e8e5b65449442.ctex"
+path="res://.godot/imported/spikeyhair_roll_strip10.png-cda3799fd3c174b4e5784389b6d4c568.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/ROLL/spikeyhair_roll_strip10.png"
-dest_files=["res://.godot/imported/spikeyhair_roll_strip10.png-4d5c0873d885a2e9472e8e5b65449442.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/ROLL/spikeyhair_roll_strip10.png"
+dest_files=["res://.godot/imported/spikeyhair_roll_strip10.png-cda3799fd3c174b4e5784389b6d4c568.ctex"]
 
 [params]
 

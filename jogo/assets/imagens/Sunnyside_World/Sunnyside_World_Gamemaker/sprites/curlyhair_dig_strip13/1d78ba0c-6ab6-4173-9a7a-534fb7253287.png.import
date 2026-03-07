@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpl5hgpnm5kmg"
-path="res://.godot/imported/1d78ba0c-6ab6-4173-9a7a-534fb7253287.png-9cbeeeb7f463a2edbe729f56b6efb85d.ctex"
+path="res://.godot/imported/1d78ba0c-6ab6-4173-9a7a-534fb7253287.png-783f9fded88e11909fa97088ba120c08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/curlyhair_dig_strip13/1d78ba0c-6ab6-4173-9a7a-534fb7253287.png"
-dest_files=["res://.godot/imported/1d78ba0c-6ab6-4173-9a7a-534fb7253287.png-9cbeeeb7f463a2edbe729f56b6efb85d.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/curlyhair_dig_strip13/1d78ba0c-6ab6-4173-9a7a-534fb7253287.png"
+dest_files=["res://.godot/imported/1d78ba0c-6ab6-4173-9a7a-534fb7253287.png-783f9fded88e11909fa97088ba120c08.ctex"]
 
 [params]
 

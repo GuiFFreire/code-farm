@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdayd1nyhytgg"
-path="res://.godot/imported/140a5768-9d21-426f-b656-49f2dc6de8e0.png-fd083ef31889ed5bce0cf37ba3e58ca1.ctex"
+path="res://.godot/imported/140a5768-9d21-426f-b656-49f2dc6de8e0.png-b930150dad13c09f6c29989d6d7b86c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/dust_run_strip8/layers/355bbbc7-1586-4dce-ae75-46a48a668ae5/140a5768-9d21-426f-b656-49f2dc6de8e0.png"
-dest_files=["res://.godot/imported/140a5768-9d21-426f-b656-49f2dc6de8e0.png-fd083ef31889ed5bce0cf37ba3e58ca1.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/dust_run_strip8/layers/355bbbc7-1586-4dce-ae75-46a48a668ae5/140a5768-9d21-426f-b656-49f2dc6de8e0.png"
+dest_files=["res://.godot/imported/140a5768-9d21-426f-b656-49f2dc6de8e0.png-b930150dad13c09f6c29989d6d7b86c0.ctex"]
 
 [params]
 

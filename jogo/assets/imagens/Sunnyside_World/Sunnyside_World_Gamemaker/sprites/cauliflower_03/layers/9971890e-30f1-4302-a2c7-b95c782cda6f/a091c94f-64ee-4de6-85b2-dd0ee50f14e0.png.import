@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3p3x5484els4"
-path="res://.godot/imported/a091c94f-64ee-4de6-85b2-dd0ee50f14e0.png-458bdc29e54f3a5fffeb88f2056caa18.ctex"
+path="res://.godot/imported/a091c94f-64ee-4de6-85b2-dd0ee50f14e0.png-6b165d9b9afdc22a1eddac6fefeac7d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/cauliflower_03/layers/9971890e-30f1-4302-a2c7-b95c782cda6f/a091c94f-64ee-4de6-85b2-dd0ee50f14e0.png"
-dest_files=["res://.godot/imported/a091c94f-64ee-4de6-85b2-dd0ee50f14e0.png-458bdc29e54f3a5fffeb88f2056caa18.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/cauliflower_03/layers/9971890e-30f1-4302-a2c7-b95c782cda6f/a091c94f-64ee-4de6-85b2-dd0ee50f14e0.png"
+dest_files=["res://.godot/imported/a091c94f-64ee-4de6-85b2-dd0ee50f14e0.png-6b165d9b9afdc22a1eddac6fefeac7d7.ctex"]
 
 [params]
 

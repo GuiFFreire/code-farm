@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1x8hcnorm8hq"
-path="res://.godot/imported/fd1e0283-82d1-45d7-8279-56f6bd80c5ed.png-fd4aba43f6ac29131b05683360b4e088.ctex"
+path="res://.godot/imported/fd1e0283-82d1-45d7-8279-56f6bd80c5ed.png-c8e068cb5250077c80d50051d9ef5989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/mophair_death_strip13/fd1e0283-82d1-45d7-8279-56f6bd80c5ed.png"
-dest_files=["res://.godot/imported/fd1e0283-82d1-45d7-8279-56f6bd80c5ed.png-fd4aba43f6ac29131b05683360b4e088.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/mophair_death_strip13/fd1e0283-82d1-45d7-8279-56f6bd80c5ed.png"
+dest_files=["res://.godot/imported/fd1e0283-82d1-45d7-8279-56f6bd80c5ed.png-c8e068cb5250077c80d50051d9ef5989.ctex"]
 
 [params]
 

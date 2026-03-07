@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daaqagjur3b02"
-path="res://.godot/imported/a88a90d0-edcc-4e3b-8e6b-2dda4a740b23.png-b6758df9825807504515f7add651381e.ctex"
+path="res://.godot/imported/a88a90d0-edcc-4e3b-8e6b-2dda4a740b23.png-044ccb6d5d96373858c6d89e126d583a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spikeyhair_waiting_strip9/layers/93a946bf-5921-4c02-a17c-375774d1f83e/a88a90d0-edcc-4e3b-8e6b-2dda4a740b23.png"
-dest_files=["res://.godot/imported/a88a90d0-edcc-4e3b-8e6b-2dda4a740b23.png-b6758df9825807504515f7add651381e.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spikeyhair_waiting_strip9/layers/93a946bf-5921-4c02-a17c-375774d1f83e/a88a90d0-edcc-4e3b-8e6b-2dda4a740b23.png"
+dest_files=["res://.godot/imported/a88a90d0-edcc-4e3b-8e6b-2dda4a740b23.png-044ccb6d5d96373858c6d89e126d583a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crhac4kbovcy1"
-path="res://.godot/imported/spr_deco_bird_01_strip4.png-4362413c4b3b909aef8ffb477a06fbc3.ctex"
+path="res://.godot/imported/spr_deco_bird_01_strip4.png-5a507fe3cc45e55500faf7cb51f4098c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Animals/spr_deco_bird_01_strip4.png"
-dest_files=["res://.godot/imported/spr_deco_bird_01_strip4.png-4362413c4b3b909aef8ffb477a06fbc3.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Animals/spr_deco_bird_01_strip4.png"
+dest_files=["res://.godot/imported/spr_deco_bird_01_strip4.png-5a507fe3cc45e55500faf7cb51f4098c.ctex"]
 
 [params]
 

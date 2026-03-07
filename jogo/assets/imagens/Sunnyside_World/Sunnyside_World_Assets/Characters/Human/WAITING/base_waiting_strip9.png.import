@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx4cvenw0itlw"
-path="res://.godot/imported/base_waiting_strip9.png-5d99c6d35f58cbbaa590fe0c8a48d3f0.ctex"
+path="res://.godot/imported/base_waiting_strip9.png-b44434f9c607dcb4571f04eb9f8491a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/WAITING/base_waiting_strip9.png"
-dest_files=["res://.godot/imported/base_waiting_strip9.png-5d99c6d35f58cbbaa590fe0c8a48d3f0.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Characters/Human/WAITING/base_waiting_strip9.png"
+dest_files=["res://.godot/imported/base_waiting_strip9.png-b44434f9c607dcb4571f04eb9f8491a9.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr57u07derxfq"
-path="res://.godot/imported/carrot_00.png-fb0bf10e51e795725c00d69711593c50.ctex"
+path="res://.godot/imported/carrot_00.png-bd345a28b0a1967bd34bd99f963d4156.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/carrot_00.png"
-dest_files=["res://.godot/imported/carrot_00.png-fb0bf10e51e795725c00d69711593c50.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/Elements/Crops/carrot_00.png"
+dest_files=["res://.godot/imported/carrot_00.png-bd345a28b0a1967bd34bd99f963d4156.ctex"]
 
 [params]
 

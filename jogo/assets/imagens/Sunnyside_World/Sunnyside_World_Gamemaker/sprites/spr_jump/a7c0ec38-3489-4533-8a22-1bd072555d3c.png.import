@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwdx4io7ng46v"
-path="res://.godot/imported/a7c0ec38-3489-4533-8a22-1bd072555d3c.png-6d847f74be0d32c647e0866d7794abba.ctex"
+path="res://.godot/imported/a7c0ec38-3489-4533-8a22-1bd072555d3c.png-f24f762faaef382ea625a40cc1954fbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/sprites/spr_jump/a7c0ec38-3489-4533-8a22-1bd072555d3c.png"
-dest_files=["res://.godot/imported/a7c0ec38-3489-4533-8a22-1bd072555d3c.png-6d847f74be0d32c647e0866d7794abba.ctex"]
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/spr_jump/a7c0ec38-3489-4533-8a22-1bd072555d3c.png"
+dest_files=["res://.godot/imported/a7c0ec38-3489-4533-8a22-1bd072555d3c.png-f24f762faaef382ea625a40cc1954fbb.ctex"]
 
 [params]
 
