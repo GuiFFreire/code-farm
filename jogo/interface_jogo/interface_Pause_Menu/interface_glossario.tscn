@@ -1,6 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://isj1s76o4ek4"]
 
+<<<<<<< HEAD:jogo/interface_jogo/interface_Pause_Menu/interface_glossario.tscn
 [ext_resource type="Script" uid="uid://bowh2y8ka4rix" path="res://interface_jogo/interface_Pause_Menu/interface_glossario.gd" id="1_ejanw"]
+=======
+[ext_resource type="Script" uid="uid://dx84hmeqvyrvd" path="res://interface_jogo/interface_glossario/interface_glossario.gd" id="1_ejanw"]
+>>>>>>> bf786dfe (Subindo repo gustavo):jogo/interface_jogo/interface_glossario/interface_glossario.tscn
 [ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/Sprout Lands - UI/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_vh8qg"]
 [ext_resource type="PackedScene" uid="uid://dw887bsydvhg7" path="res://interface_jogo/interface_Pause_Menu/textura_animada_interface/animated_texture_rect.tscn" id="2_v50ty"]
 [ext_resource type="FontFile" uid="uid://8dyl8sjpwyl2" path="res://assets/fontes/ExpressionPro.ttf" id="3_wuabr"]
