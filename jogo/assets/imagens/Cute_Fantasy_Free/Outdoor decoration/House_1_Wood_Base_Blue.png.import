@@ -2,24 +2,47 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dv6jawy3s74d2"
 path="res://.godot/imported/House_1_Wood_Base_Blue.png-c396e4aed878a02805871e71fb561c57.ctex"
+=======
+<<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/axe.png.import
+uid="uid://cpv2mb8qn1hn4"
+path="res://.godot/imported/axe.png-d3db4f961d074a9cd91a5889aed1a98a.ctex"
+========
+uid="uid://dv6jawy3s74d2"
+path="res://.godot/imported/House_1_Wood_Base_Blue.png-c396e4aed878a02805871e71fb561c57.ctex"
+>>>>>>>> bf786dfe (Subindo repo gustavo):jogo/assets/imagens/Cute_Fantasy_Free/Outdoor decoration/House_1_Wood_Base_Blue.png.import
+>>>>>>> bf786dfe (Subindo repo gustavo)
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
 source_file="res://assets/imagens/Cute_Fantasy_Free/Outdoor decoration/House_1_Wood_Base_Blue.png"
 dest_files=["res://.godot/imported/House_1_Wood_Base_Blue.png-c396e4aed878a02805871e71fb561c57.ctex"]
+=======
+<<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/axe.png.import
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/axe.png"
+dest_files=["res://.godot/imported/axe.png-d3db4f961d074a9cd91a5889aed1a98a.ctex"]
+========
+source_file="res://assets/imagens/Cute_Fantasy_Free/Outdoor decoration/House_1_Wood_Base_Blue.png"
+dest_files=["res://.godot/imported/House_1_Wood_Base_Blue.png-c396e4aed878a02805871e71fb561c57.ctex"]
+>>>>>>>> bf786dfe (Subindo repo gustavo):jogo/assets/imagens/Cute_Fantasy_Free/Outdoor decoration/House_1_Wood_Base_Blue.png.import
+>>>>>>> bf786dfe (Subindo repo gustavo)
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+<<<<<<< HEAD
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
+=======
+>>>>>>> bf786dfe (Subindo repo gustavo)
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -27,10 +50,13 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+<<<<<<< HEAD
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
+=======
+>>>>>>> bf786dfe (Subindo repo gustavo)
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
