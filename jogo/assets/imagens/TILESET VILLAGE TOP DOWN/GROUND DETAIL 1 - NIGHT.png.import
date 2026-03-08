@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/pumpkin_05/e5b34d16-0083-4af3-b94f-d4453f2cbe91.png.import
+uid="uid://bi4xqasmta14v"
+path="res://.godot/imported/e5b34d16-0083-4af3-b94f-d4453f2cbe91.png-805b93bf3c6031014cc65ae832bdb700.ctex"
+=======
+uid="uid://3lsx4rc6wp0x"
+path="res://.godot/imported/GROUND DETAIL 1 - NIGHT.png-493420044bfcf18541753c2784a6e247.ctex"
+>>>>>>> bf786dfe (Subindo repo gustavo):jogo/assets/imagens/TILESET VILLAGE TOP DOWN/GROUND DETAIL 1 - NIGHT.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/pumpkin_05/e5b34d16-0083-4af3-b94f-d4453f2cbe91.png.import
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/pumpkin_05/e5b34d16-0083-4af3-b94f-d4453f2cbe91.png"
+dest_files=["res://.godot/imported/e5b34d16-0083-4af3-b94f-d4453f2cbe91.png-805b93bf3c6031014cc65ae832bdb700.ctex"]
+=======
+source_file="res://assets/imagens/TILESET VILLAGE TOP DOWN/GROUND DETAIL 1 - NIGHT.png"
+dest_files=["res://.godot/imported/GROUND DETAIL 1 - NIGHT.png-493420044bfcf18541753c2784a6e247.ctex"]
+>>>>>>> bf786dfe (Subindo repo gustavo):jogo/assets/imagens/TILESET VILLAGE TOP DOWN/GROUND DETAIL 1 - NIGHT.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

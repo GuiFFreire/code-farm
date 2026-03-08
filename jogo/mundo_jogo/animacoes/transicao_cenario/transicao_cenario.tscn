@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://v1uk871srys8"]
 
-[ext_resource type="Script" path="res://mundo_jogo/animacoes/transicao_cenario/transicao_cenario.gd" id="1_0yktl"]
-[ext_resource type="Shader" path="res://mundo_jogo/animacoes/transicao_cenario/transicao_cenario.gdshader" id="2_abwfs"]
+[ext_resource type="Script" uid="uid://dawvtdvhbgc76" path="res://mundo_jogo/animacoes/transicao_cenario/transicao_cenario.gd" id="1_0yktl"]
+[ext_resource type="Shader" uid="uid://uogtc26mpwda" path="res://mundo_jogo/animacoes/transicao_cenario/transicao_cenario.gdshader" id="2_abwfs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7djdt"]
 shader = ExtResource("2_abwfs")

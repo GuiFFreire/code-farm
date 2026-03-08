@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/label_left.png.import
+uid="uid://b4ce5ismfxme6"
+path="res://.godot/imported/label_left.png-0fc71fc2dac5155dd5dd5d932614a1fd.ctex"
+=======
+uid="uid://mpil6hui638c"
+path="res://.godot/imported/Solaria Palette.png-f4ba3f7fd32a58937965fc48ab7857a0.ctex"
+>>>>>>> bf786dfe (Subindo repo gustavo):jogo/assets/imagens/World of Solaria Rural Village Update 08d DEMO/Solaria Palette.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/label_left.png.import
+source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Assets/UI/label_left.png"
+dest_files=["res://.godot/imported/label_left.png-0fc71fc2dac5155dd5dd5d932614a1fd.ctex"]
+=======
+source_file="res://assets/imagens/World of Solaria Rural Village Update 08d DEMO/Solaria Palette.png"
+dest_files=["res://.godot/imported/Solaria Palette.png-f4ba3f7fd32a58937965fc48ab7857a0.ctex"]
+>>>>>>> bf786dfe (Subindo repo gustavo):jogo/assets/imagens/World of Solaria Rural Village Update 08d DEMO/Solaria Palette.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
