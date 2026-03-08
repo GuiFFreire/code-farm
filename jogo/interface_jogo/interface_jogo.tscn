@@ -1,10 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj0447rfnfvpv"]
 
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://17pwa3sqejlg" path="res://interface_jogo/interface_jogo.gd" id="1_40nnx"]
-=======
-[ext_resource type="Script" uid="uid://baed1wsif5tiq" path="res://interface_jogo/interface_jogo.gd" id="1_40nnx"]
->>>>>>> bf786dfe (Subindo repo gustavo)
 [ext_resource type="PackedScene" uid="uid://cl8hd4fyrtkyh" path="res://interface_jogo/interface_padrao/interface_padrao.tscn" id="2_nud58"]
 [ext_resource type="PackedScene" uid="uid://dpag6d368xqvo" path="res://interface_jogo/interface_missao/interface_missao.tscn" id="2_s4wmp"]
 [ext_resource type="PackedScene" uid="uid://isj1s76o4ek4" path="res://interface_jogo/interface_Pause_Menu/interface_glossario.tscn" id="3_8rodc"]

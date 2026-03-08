@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://7pk4ytvxy4kb" path="res://mundo_jogo/objeto_coletavel/objeto_coletavel.tscn" id="1_w45gt"]
 [ext_resource type="Texture2D" uid="uid://3jyw57l7nkqm" path="res://assets/imagens/Set-Tools.png" id="2_o437p"]
-[ext_resource type="Script" uid="uid://dj02mr3baqdp8" path="res://gerenciador_jogo/inventario/item.gd" id="3_8xg5x"]
+[ext_resource type="Script" path="res://gerenciador_jogo/inventario/item.gd" id="3_8xg5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghv7g"]
 atlas = ExtResource("2_o437p")

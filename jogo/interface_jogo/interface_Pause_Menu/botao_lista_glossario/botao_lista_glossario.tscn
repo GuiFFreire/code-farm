@@ -2,11 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/Sprout Lands - UI/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_h2s17"]
 [ext_resource type="FontFile" uid="uid://8dyl8sjpwyl2" path="res://assets/fontes/ExpressionPro.ttf" id="1_n562h"]
-<<<<<<< HEAD:jogo/interface_jogo/interface_Pause_Menu/botao_lista_glossario/botao_lista_glossario.tscn
 [ext_resource type="Script" uid="uid://bvqp2myhd5c3x" path="res://interface_jogo/interface_Pause_Menu/botao_lista_glossario/botao_lista_glossario.gd" id="2_5ulfb"]
-=======
-[ext_resource type="Script" uid="uid://bivn16688diie" path="res://interface_jogo/interface_glossario/botao_lista_glossario/botao_lista_glossario.gd" id="2_5ulfb"]
->>>>>>> bf786dfe (Subindo repo gustavo):jogo/interface_jogo/interface_glossario/botao_lista_glossario/botao_lista_glossario.tscn
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dussb"]
 texture = ExtResource("1_h2s17")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c732sy3bq8jbn"]
 
-[ext_resource type="Script" uid="uid://dw5njqp2r5485" path="res://mundo_jogo/animacoes/texto_placa/texto_placa.gd" id="1_2w3fm"]
+[ext_resource type="Script" path="res://mundo_jogo/animacoes/texto_placa/texto_placa.gd" id="1_2w3fm"]
 [ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/Sprout Lands - UI/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_cp8fn"]
 [ext_resource type="FontFile" uid="uid://8dyl8sjpwyl2" path="res://assets/fontes/ExpressionPro.ttf" id="3_h20bh"]
 
