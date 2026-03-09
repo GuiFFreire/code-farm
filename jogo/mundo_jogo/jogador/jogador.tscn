@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bperut1ryhs0o"]
 
-[ext_resource type="Script" uid="uid://bfbvgn26tha6j" path="res://mundo_jogo/jogador/jogador.gd" id="1_dqjfs"]
+[ext_resource type="Script" uid="uid://cx61kdkh6eoo5" path="res://mundo_jogo/jogador/jogador.gd" id="1_dqjfs"]
 [ext_resource type="Texture2D" uid="uid://hsfdr2sh3twq" path="res://assets/imagens/cute_fantasy/Player/Player.png" id="2_e1dja"]
 [ext_resource type="Texture2D" uid="uid://dtllcjn1io0e" path="res://assets/imagens/cute_fantasy/Player/Player_Actions.png" id="2_so6ri"]
 

@@ -1,10 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://fdyhl54amort"]
 
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://d2rwb6aji230v" path="res://mundo_jogo/animacoes/copo/copo.gd" id="1_lelfd"]
-=======
-[ext_resource type="Script" uid="uid://b78mnd26w7qec" path="res://mundo_jogo/animacoes/copo/copo.gd" id="1_lelfd"]
->>>>>>> bf786dfe (Subindo repo gustavo)
 [ext_resource type="Texture2D" uid="uid://vyv14pkawu2n" path="res://assets/imagens/garrafa.png" id="1_v1ak1"]
 [ext_resource type="Texture2D" uid="uid://csj5myoufc3q6" path="res://assets/imagens/liquido_caindo.png" id="2_ghnph"]
 

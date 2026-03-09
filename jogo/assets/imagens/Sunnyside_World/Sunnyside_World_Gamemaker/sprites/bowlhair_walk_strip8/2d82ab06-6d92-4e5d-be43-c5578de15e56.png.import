@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/bowlhair_walk_strip8/2d82ab06-6d92-4e5d-be43-c5578de15e56.png.import
 uid="uid://chrg5dtaucby1"
 path="res://.godot/imported/2d82ab06-6d92-4e5d-be43-c5578de15e56.png-ddd3ed91d2064bcdbf9d8779232826d8.ctex"
-=======
-uid="uid://d3f3uxtrc80y5"
-path="res://.godot/imported/FarmLand_Tile.png-03b1b05b2234de4547c1766a947e4249.ctex"
->>>>>>> 923a0d70 (Obrigado a fazer commit):jogo/assets/imagens/Cute_Fantasy_Free/Tiles/FarmLand_Tile.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:jogo/assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/bowlhair_walk_strip8/2d82ab06-6d92-4e5d-be43-c5578de15e56.png.import
 source_file="res://assets/imagens/Sunnyside_World/Sunnyside_World_Gamemaker/sprites/bowlhair_walk_strip8/2d82ab06-6d92-4e5d-be43-c5578de15e56.png"
 dest_files=["res://.godot/imported/2d82ab06-6d92-4e5d-be43-c5578de15e56.png-ddd3ed91d2064bcdbf9d8779232826d8.ctex"]
-=======
-source_file="res://assets/imagens/Cute_Fantasy_Free/Tiles/FarmLand_Tile.png"
-dest_files=["res://.godot/imported/FarmLand_Tile.png-03b1b05b2234de4547c1766a947e4249.ctex"]
->>>>>>> 923a0d70 (Obrigado a fazer commit):jogo/assets/imagens/Cute_Fantasy_Free/Tiles/FarmLand_Tile.png.import
 
 [params]
 
