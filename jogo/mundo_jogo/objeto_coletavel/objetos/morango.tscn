@@ -1,6 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbkpdacppilwy"]
+[gd_scene load_steps=12 format=3 uid="uid://dlk0esnxgwqmg"]
 
-[ext_resource type="Script" uid="uid://dbi3g2mqdvkwt" path="res://mundo_jogo/objeto_interativo/objeto_interativo.gd" id="1_wtqka"]
+[ext_resource type="Script" uid="uid://b1bsfgtb27bkr" path="res://mundo_jogo/objeto_coletavel/objeto_coletavel.gd" id="1_7j4mk"]
+[ext_resource type="Texture2D" uid="uid://1446d4da6pw8" path="res://assets/imagens/objetos_coletáveis/Spring Crops.png" id="2_oyvgu"]
+[ext_resource type="Script" uid="uid://de8teor80qd8x" path="res://gerenciador_jogo/inventario/item.gd" id="3_icihg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2ecu"]
+atlas = ExtResource("2_oyvgu")
+region = Rect2(127.17518, 14.325882, 17.786095, 19.955143)
+
+[sub_resource type="Resource" id="Resource_tyckp"]
+script = ExtResource("3_icihg")
+nome = "morango"
+icone = SubResource("AtlasTexture_g2ecu")
+descricao = "Fruta morango."
+tipo = "alimento"
+metadata/_custom_type_script = "uid://de8teor80qd8x"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a10pk"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhkg6"]
 
 [sub_resource type="Animation" id="Animation_yq61l"]
 length = 0.001
@@ -130,18 +149,26 @@ _data = {
 &"destacar_objeto": SubResource("Animation_x284y")
 }
 
-[node name="ObjetoInterativo" type="StaticBody2D" groups=["ObjetosInterativos"]]
-y_sort_enabled = true
+[node name="Morango" type="StaticBody2D" groups=["ObjetosColetaveis"]]
+position = Vector2(0, -6)
 collision_layer = 4
-script = ExtResource("1_wtqka")
+script = ExtResource("1_7j4mk")
+item = SubResource("Resource_tyckp")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_oyvgu")
+region_enabled = true
+region_rect = Rect2(128.00002, 15.481483, 17.482819, 17.186134)
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_a10pk")
 
 [node name="AreaDetecao" type="Area2D" parent="."]
 
 [node name="Colisao" type="CollisionShape2D" parent="AreaDetecao"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_lhkg6")
 
 [node name="Animador" type="AnimationPlayer" parent="."]
 libraries = {
@@ -164,8 +191,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 4
-theme_override_font_sizes/font_size = 6
-text = "[E] para abrir"
+theme_override_font_sizes/font_size = 8
+text = "[E] para coletar"
 horizontal_alignment = 1
 vertical_alignment = 1
 

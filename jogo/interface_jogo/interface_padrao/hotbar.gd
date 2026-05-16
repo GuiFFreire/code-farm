@@ -10,7 +10,7 @@ var _indice_selecionado: int = 0
 
 func _ready():
 	call_deferred("_atualizar_hotbar")
-	Global.conectar_sinal(Global, "item_adicionado", Callable(self, "_ao_adicionar_item"))
+	Global.conectar_sinal(Global, "item_modificado", Callable(self, "_ao_adicionar_item"))
 	
 func _atualizar_hotbar():	
 	while not is_visible_in_tree():
@@ -28,6 +28,7 @@ func _process(_delta) -> void:
 func _selecionar_slot(indice: int) -> void:
 	if indice >= 0 and indice < _slots.size():
 		_indice_selecionado = indice
+		Global.emit_signal(&"indice_atualizado", _indice_selecionado)
 		_atualizar_seletor()
 
 func _atualizar_seletor() -> void:
@@ -40,7 +41,7 @@ func atualizar_slots_com_dados_do_inventario() -> void:
 	for i in range(_slots.size()):
 		var slot = _slots[i]
 		
-		if i < Global.inventario.slots.size():
+		if Global.inventario.slots[i].item != null:
 			slot.atualizar_slot(Global.inventario.slots[i])
 		else:
 			slot.limpar_slot()
@@ -49,5 +50,4 @@ func _ao_mudar_visibilidade_interface_padrao() -> void:
 	call_deferred("_atualizar_hotbar")
 
 func _ao_adicionar_item(_pilha: PilhaItens):
-	print("[HOTBAR] Sinal recebido: item adicionado -> ", _pilha.item.nome)
 	atualizar_slots_com_dados_do_inventario()

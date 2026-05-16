@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://chsijyi1x1s3"]
+[gd_scene load_steps=40 format=3 uid="uid://chsijyi1x1s3"]
 
 [ext_resource type="PackedScene" uid="uid://455f8bih0bus" path="res://mundo_jogo/terrenos/terreno_casa.tscn" id="1_4mwex"]
 [ext_resource type="PackedScene" uid="uid://dscfkde3tti8f" path="res://mundo_jogo/terrenos/terreno_fazenda.tscn" id="1_848jc"]
@@ -7,16 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://c48mo1nwpwjc7" path="res://mundo_jogo/passagem/passagem.tscn" id="2_gcw66"]
 [ext_resource type="PackedScene" uid="uid://bperut1ryhs0o" path="res://mundo_jogo/jogador/jogador.tscn" id="2_ytvii"]
 [ext_resource type="PackedScene" uid="uid://dbkpdacppilwy" path="res://mundo_jogo/objeto_interativo/objeto_interativo.tscn" id="3_3at3k"]
-[ext_resource type="Texture2D" uid="uid://otnwpwe6jvss" path="res://assets/imagens/Tiny Wonder Forest/items&objects/summer and spring items.png" id="4_0nsch"]
-[ext_resource type="Texture2D" uid="uid://df3nifq2ujqwy" path="res://assets/imagens/retro_interior/TopDownHouse_SmallItems.png" id="7_ru7ms"]
-[ext_resource type="Texture2D" uid="uid://c7de14nbuvevr" path="res://assets/imagens/cute_fantasy/Outdoor decoration/Chest.png" id="7_yfmyd"]
-[ext_resource type="Texture2D" uid="uid://b0rkdwyiucb1j" path="res://assets/imagens/Tiny Wonder Farm/objects&items/plants free.png" id="8_jt3mr"]
+[ext_resource type="Texture2D" uid="uid://otnwpwe6jvss" path="res://assets/imagens/terrenos/summer and spring items.png" id="4_0nsch"]
+[ext_resource type="Texture2D" uid="uid://df3nifq2ujqwy" path="res://assets/imagens/terrenos/TopDownHouse_SmallItems.png" id="7_ru7ms"]
+[ext_resource type="Texture2D" uid="uid://c7de14nbuvevr" path="res://assets/imagens/mundo/Chest.png" id="7_yfmyd"]
+[ext_resource type="Texture2D" uid="uid://b0rkdwyiucb1j" path="res://assets/imagens/terrenos/plants free.png" id="8_jt3mr"]
 [ext_resource type="PackedScene" uid="uid://fdyhl54amort" path="res://mundo_jogo/animacoes/copo/copo.tscn" id="9_y1w4k"]
 [ext_resource type="Script" uid="uid://bx58o7yh3ibda" path="res://mundo_jogo/tapeteInterativo.gd" id="11_dy05v"]
 [ext_resource type="PackedScene" uid="uid://bbv8amqqrpjy8" path="res://mundo_jogo/terrenos/terreno_celeiro.tscn" id="11_h23k8"]
+[ext_resource type="PackedScene" uid="uid://klp3houq0dkn" path="res://mundo_jogo/objeto_coletavel/objetos/semente_morango.tscn" id="11_jtt2m"]
 [ext_resource type="PackedScene" uid="uid://b7w8yxijr424" path="res://mundo_jogo/terrenos/terreno_bunker.tscn" id="11_xkeb6"]
 [ext_resource type="PackedScene" uid="uid://b205kh20u728g" path="res://mundo_jogo/terrenos/terreno_moinho.tscn" id="12_h23k8"]
-[ext_resource type="Texture2D" uid="uid://cvmhhkg2ewojj" path="res://assets/imagens/retro_interior/TopDownHouse_FurnitureState1.png" id="13_muyhw"]
+[ext_resource type="Texture2D" uid="uid://cvmhhkg2ewojj" path="res://assets/imagens/terrenos/TopDownHouse_FurnitureState1.png" id="13_muyhw"]
 [ext_resource type="PackedScene" uid="uid://dskrr8ixlne8r" path="res://mundo_jogo/terrenos/terreno_marceneiro.tscn" id="15_a1tre"]
 [ext_resource type="PackedScene" uid="uid://c3l2v3b10hvkv" path="res://mundo_jogo/npcs/ferreiro.tscn" id="15_muyhw"]
 [ext_resource type="PackedScene" uid="uid://b2bp5aw8nemn1" path="res://mundo_jogo/animais/vaca.tscn" id="15_s2wpm"]
@@ -167,6 +168,8 @@ position = Vector2(591, -102)
 
 [node name="porco" parent="TerrenoFazenda" instance=ExtResource("17_muyhw")]
 position = Vector2(631, -313)
+
+[node name="ObjetoColetavel" parent="TerrenoFazenda" instance=ExtResource("11_jtt2m")]
 
 [node name="TerrenoCasa" parent="." instance=ExtResource("1_4mwex")]
 y_sort_enabled = true

@@ -1,6 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbkpdacppilwy"]
+[gd_scene load_steps=11 format=3 uid="uid://klp3houq0dkn"]
 
-[ext_resource type="Script" uid="uid://dbi3g2mqdvkwt" path="res://mundo_jogo/objeto_interativo/objeto_interativo.gd" id="1_wtqka"]
+[ext_resource type="Script" uid="uid://b1bsfgtb27bkr" path="res://mundo_jogo/objeto_coletavel/objeto_coletavel.gd" id="1_qpf1k"]
+[ext_resource type="Texture2D" uid="uid://1446d4da6pw8" path="res://assets/imagens/objetos_coletáveis/Spring Crops.png" id="2_syhko"]
+[ext_resource type="Script" uid="uid://de8teor80qd8x" path="res://gerenciador_jogo/inventario/item.gd" id="3_h2126"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g45c"]
+atlas = ExtResource("2_syhko")
+region = Rect2(0, 19.240158, 13.02626, 15.183258)
+
+[sub_resource type="Resource" id="Resource_vf8tq"]
+script = ExtResource("3_h2126")
+nome = "semente_morango"
+icone = SubResource("AtlasTexture_3g45c")
+descricao = "Semente para plantio de morango."
+tipo = "semente"
+metadata/_custom_type_script = "uid://de8teor80qd8x"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5mqkx"]
 
 [sub_resource type="Animation" id="Animation_yq61l"]
 length = 0.001
@@ -130,18 +146,22 @@ _data = {
 &"destacar_objeto": SubResource("Animation_x284y")
 }
 
-[node name="ObjetoInterativo" type="StaticBody2D" groups=["ObjetosInterativos"]]
-y_sort_enabled = true
+[node name="ObjetoColetavel" type="StaticBody2D" groups=["ObjetosColetaveis"]]
 collision_layer = 4
-script = ExtResource("1_wtqka")
+script = ExtResource("1_qpf1k")
+item = SubResource("Resource_vf8tq")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_syhko")
+region_enabled = true
+region_rect = Rect2(0, 19.534569, 12.22377, 15.617069)
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
 
 [node name="AreaDetecao" type="Area2D" parent="."]
 
 [node name="Colisao" type="CollisionShape2D" parent="AreaDetecao"]
+shape = SubResource("CircleShape2D_5mqkx")
 
 [node name="Animador" type="AnimationPlayer" parent="."]
 libraries = {
@@ -164,8 +184,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 4
-theme_override_font_sizes/font_size = 6
-text = "[E] para abrir"
+theme_override_font_sizes/font_size = 8
+text = "[E] para coletar"
 horizontal_alignment = 1
 vertical_alignment = 1
 

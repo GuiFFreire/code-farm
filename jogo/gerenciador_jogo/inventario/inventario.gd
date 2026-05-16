@@ -4,23 +4,34 @@ extends Resource
 
 @export var quantidade_max: int = 6
 @export var slots: Array[PilhaItens] = []
+var indice: int = 0
 
-func adicionar_item(item: Item) -> bool:
-	for pilha in slots:
-		var pilha_temp = PilhaItens.new()
-		pilha_temp.item = item
-		if pilha.pode_empilhar_com(pilha_temp):
-			pilha.quantidade += 1
-			Global.emit_signal("item_adicionado", pilha)
+func _init() -> void:
+	for i in range(quantidade_max):
+		var pilha = PilhaItens.new()
+		pilha.item = null
+		pilha.quantidade = 0
+		slots.append(pilha)
+	Global.conectar_sinal(Global, "indice_atualizado", Callable(self, "atualizar_indice"))
+
+func atualizar_indice(_indice: int) -> void:
+	indice = _indice
+
+func adicionar_item(item: Item, _indice: int = indice) -> bool:
+	var pilha_temp = PilhaItens.new()
+	pilha_temp.item = item
+	for slot in slots:
+		if slot.item != null and slot.pode_empilhar_com(pilha_temp):
+			slot.quantidade += 1
+			Global.emit_signal("item_modificado", slot)
 			return true
 	
-	if slots.size() < quantidade_max:
-		var nova_pilha := PilhaItens.new()
-		nova_pilha.item = item
-		nova_pilha.quantidade = 1
-		slots.append(nova_pilha)
-		Global.emit_signal("item_adicionado", nova_pilha) # <==== Aqui!
-		return true
+	for slot in slots:
+		if slot.item == null:
+			slot.item = item
+			slot.quantidade = 1
+			Global.emit_signal("item_modificado", slot)
+			return true
 	
 	return false
 
@@ -31,16 +42,18 @@ func tem_itens(nomes: Array[String]) -> bool:
 			nomes_faltando.erase(pilha.item.nome)
 	
 	return nomes_faltando.is_empty()
-
-func remover_itens(nomes: Array[String]) -> void:
-	var nomes_para_remover = nomes.duplicate()
-
-	for i in range(slots.size() - 1, -1, -1):
-		var pilha = slots[i]
-		if pilha.item.nome in nomes_para_remover:
-			pilha.quantidade -= 1
-			if pilha.quantidade <= 0:
-				slots.remove_at(i)
-			nomes_para_remover.erase(pilha.item.nome)
-
-	Global.emit_signal("inventario_atualizado")
+	
+func remover() -> Item:
+	slots[indice].quantidade -= 1
+	var item: Item = slots[indice].item
+	if slots[indice].quantidade == 0:
+		slots[indice].item = null
+		
+	Global.emit_signal("item_modificado", slots[indice])
+	return item
+	
+func verificar_tipo(tipo_permitido: String) -> bool:
+	if slots[indice].item == null:
+		return false
+	
+	return tipo_permitido == slots[indice].item.tipo

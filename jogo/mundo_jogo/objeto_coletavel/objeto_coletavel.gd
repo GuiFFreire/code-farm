@@ -38,6 +38,7 @@ func _se_houver_interacao() -> void:
 			_animador.play("coletar")
 			await _animador.animation_finished
 			queue_free()
+			emit_signal("tree_exited")
 		else:
 			print("Inventário cheio!")
 			_interacao_em_execucao = false

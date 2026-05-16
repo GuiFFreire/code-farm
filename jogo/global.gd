@@ -8,8 +8,8 @@ const MISSAO_INICIAL = 1
 
 var _save_jogo: SaveJogo
 var missao_atual: int
-var glossario: Glossario = Glossario.new()
-var inventario: Inventario = Inventario.new()
+var glossario: Glossario
+var inventario: Inventario
 var nome_fazenda_atual: String = "Fazenda Code Farm"
 var posicao_player_atual: Vector2 = Vector2.ZERO
 var slot_jogo_atual: int = 1
@@ -23,10 +23,15 @@ signal abrir_glossario
 signal glossario_fechado
 signal missao_fechada
 signal missao_concluida
-signal item_adicionado(pilha: PilhaItens)
+signal item_modificado(pilha: PilhaItens)
 signal solicitar_dados_requisicao
 signal dados_requisicao_prontos(dados: Dictionary)
+signal indice_atualizado(indice: int)
 
+func _ready() -> void:
+	glossario = Glossario.new()
+	inventario = Inventario.new()
+	
 func conectar_sinal(no: Node, sinal: String, funcao: Callable) -> void:
 	if no != null and not no.is_connected(sinal, funcao):
 		no.connect(sinal, funcao)
