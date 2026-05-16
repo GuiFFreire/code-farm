@@ -80,6 +80,6 @@ func _ao_voltar_menu_principal() -> void:
 	interface_jogo.exibir_interface(interface_jogo.Interface.MENU_INICIAL)
 
 func _process(delta):
-	# Se o mundo e o jogador existem, atualize a posição no Global
-	if mundo_jogo and is_instance_valid(mundo_jogo.jogador):
-		Global.posicao_player_atual = mundo_jogo.jogador.global_position
+	if interface_jogo.obter_interface_atual() == interface_jogo.Interface.PADRAO:
+		if mundo_jogo and is_instance_valid(mundo_jogo.jogador):
+			Global.posicao_player_atual = mundo_jogo.jogador.global_position
