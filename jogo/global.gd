@@ -4,15 +4,23 @@ var retomando_missao: bool = false
 
 const CAMINHO_SAVE = "user://save_jogo.gd"
 const QUANTIDADE_MISSOES = 5
-const MISSAO_INICIAL = 1
+const MISSAO_INICIAL = 0
 
 var _save_jogo: SaveJogo
 var missao_atual: int
 var glossario: Glossario
 var inventario: Inventario
 var nome_fazenda_atual: String = "Fazenda Code Farm"
+var nome_jogador: String = "Jogador"
 var posicao_player_atual: Vector2 = Vector2.ZERO
 var slot_jogo_atual: int = 1
+
+# _________________________ NOMES DE PERSONAGENS _________________________ #
+var foto_jogador = "C:/Users/Mateus/Documents/code-farm/jogo/assets/imagens/interface/portrait female.png"
+var nome_robo = "AGR.O"
+var foto_robo = "C:/Users/Mateus/Documents/code-farm/jogo/assets/imagens/interface/portrait female.png"
+var nome_avo = "Julio"
+var foto_avo = "C:/Users/Mateus/Documents/code-farm/jogo/assets/imagens/interface/portrait female.png"
 
 # _________________________ GERENCIAMENTO DE SINAIS PROPAGADOS _________________________ #
 
@@ -67,6 +75,7 @@ func salvar_jogo(slot_id: int, posicao_player: Vector2) -> void:
 	
 	# Preenche os dados
 	novo_save.nome_fazenda = nome_fazenda_atual
+	novo_save.nome_jogador = nome_jogador
 	novo_save.missao_atual = missao_atual
 	novo_save.player_posicao = posicao_player
 	novo_save.data_hora = Time.get_datetime_dict_from_system()
@@ -83,6 +92,20 @@ func salvar_jogo(slot_id: int, posicao_player: Vector2) -> void:
 	else:
 		print("Erro ao salvar no Slot ", slot_id)
 
+func deletar_save(slot_id: int) -> void:
+	var caminho = obter_caminho_save(slot_id)
+	
+	# Verifica se o arquivo realmente existe antes de tentar apagar
+	if FileAccess.file_exists(caminho):
+		# No Godot 4, usamos DirAccess para apagar arquivos do computador
+		var erro = DirAccess.remove_absolute(caminho)
+		
+		if erro == OK:
+			print("Save do Slot ", slot_id, " deletado com sucesso!")
+		else:
+			print("Erro ao tentar deletar o save do Slot ", slot_id)
+	else:
+		print("Nenhum save encontrado no Slot ", slot_id, " para deletar.")
 # No Global.gd
 
 func carregar_jogo(slot_id: int) -> bool:
@@ -91,9 +114,9 @@ func carregar_jogo(slot_id: int) -> bool:
 	if ResourceLoader.exists(caminho):
 		_save_jogo = ResourceLoader.load(caminho) as SaveJogo
 		
-		# Restaura os dados globais
 		missao_atual = _save_jogo.missao_atual
 		nome_fazenda_atual = _save_jogo.nome_fazenda
+		nome_jogador = _save_jogo.nome_jogador
 		
 		posicao_player_atual = _save_jogo.player_posicao
 		
@@ -114,8 +137,9 @@ func verificar_dados_slot(slot_id: int) -> Dictionary:
 		return {
 			"existe": true,
 			"nome_fazenda": save_temp.nome_fazenda,
+			"nome_jogador": save_temp.nome_jogador,
 			"missao": save_temp.missao_atual,
-			"data_hora": save_temp.data_hora # 👈 ADICIONAR ISSO
+			"data_hora": save_temp.data_hora 
 		}
 	else:
 		return {"existe": false}
@@ -128,6 +152,7 @@ func resetar_dados_novo_jogo() -> void:
 	
 	glossario = Glossario.new()
 	inventario = Inventario.new()
+	nome_jogador = "Jogador"
 	
 	_save_jogo = null
 	

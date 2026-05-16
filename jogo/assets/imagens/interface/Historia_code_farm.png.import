@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b028l3g8nrfkw"
-path="res://.godot/imported/Turkey_animation_without_shadow.png-7d28539cb87046ac2e274ef1e06a139b.ctex"
+uid="uid://w017je0w0exp"
+path="res://.godot/imported/Historia_code_farm.png-d976da3893d1e875043d71f1931b62eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/animais/Turkey_animation_without_shadow.png"
-dest_files=["res://.godot/imported/Turkey_animation_without_shadow.png-7d28539cb87046ac2e274ef1e06a139b.ctex"]
+source_file="res://assets/imagens/interface/Historia_code_farm.png"
+dest_files=["res://.godot/imported/Historia_code_farm.png-d976da3893d1e875043d71f1931b62eb.ctex"]
 
 [params]
 

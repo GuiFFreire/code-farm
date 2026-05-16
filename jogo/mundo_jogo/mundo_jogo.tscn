@@ -45,7 +45,7 @@ radius = 4.0
 height = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wlrp0"]
-radius = 35.0
+radius = 34.0147
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51u5e"]
 size = Vector2(4, 15)
@@ -102,20 +102,35 @@ shape = SubResource("RectangleShape2D_s2wpm")
 
 [node name="Marker2D" type="Marker2D" parent="TerrenoFazenda/Passagem5"]
 
-[node name="Missao1" parent="TerrenoFazenda" instance=ExtResource("3_3at3k")]
+[node name="Missao1-Placa" parent="TerrenoFazenda" instance=ExtResource("3_3at3k")]
 position = Vector2(110, 35)
 
-[node name="Sprite" parent="TerrenoFazenda/Missao1" index="0"]
+[node name="Sprite" parent="TerrenoFazenda/Missao1-Placa" index="0"]
 texture = ExtResource("4_0nsch")
 region_enabled = true
 region_rect = Rect2(32, 192, 16, 16)
 
-[node name="Colisao" parent="TerrenoFazenda/Missao1" index="1"]
+[node name="Colisao" parent="TerrenoFazenda/Missao1-Placa" index="1"]
 position = Vector2(0, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nhjpn")
 
-[node name="Colisao" parent="TerrenoFazenda/Missao1/AreaDetecao" index="0"]
+[node name="Colisao" parent="TerrenoFazenda/Missao1-Placa/AreaDetecao" index="0"]
+shape = SubResource("CircleShape2D_wlrp0")
+
+[node name="Missao0" parent="TerrenoFazenda" instance=ExtResource("3_3at3k")]
+position = Vector2(260, 77)
+
+[node name="Sprite" parent="TerrenoFazenda/Missao0" index="0"]
+texture = ExtResource("7_ru7ms")
+region_enabled = true
+region_rect = Rect2(20, 55, 7, 8)
+
+[node name="Colisao" parent="TerrenoFazenda/Missao0" index="1"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nhjpn")
+
+[node name="Colisao" parent="TerrenoFazenda/Missao0/AreaDetecao" index="0"]
 shape = SubResource("CircleShape2D_wlrp0")
 
 [node name="Missao4" parent="TerrenoFazenda" instance=ExtResource("3_3at3k")]
@@ -300,6 +315,23 @@ shape = SubResource("RectangleShape2D_51u5e")
 [node name="PosicaoSpawn" parent="TerrenoBunker/Passagem3" index="1"]
 position = Vector2(16, 8)
 
+[node name="Missao1" parent="TerrenoBunker" instance=ExtResource("3_3at3k")]
+position = Vector2(57, 55)
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="TerrenoBunker/Missao1" index="0"]
+texture = ExtResource("7_ru7ms")
+region_enabled = true
+region_rect = Rect2(112, 30.9284, 16.0124, 17.0716)
+
+[node name="Colisao" parent="TerrenoBunker/Missao1" index="1"]
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nhjpn")
+
+[node name="Colisao" parent="TerrenoBunker/Missao1/AreaDetecao" index="0"]
+shape = SubResource("CircleShape2D_wlrp0")
+
 [node name="Jogador" parent="." instance=ExtResource("2_ytvii")]
 position = Vector2(174, 174)
 
@@ -427,7 +459,8 @@ position = Vector2(332, 969)
 position = Vector2(462, 951)
 
 [editable path="TerrenoFazenda/Passagem1"]
-[editable path="TerrenoFazenda/Missao1"]
+[editable path="TerrenoFazenda/Missao1-Placa"]
+[editable path="TerrenoFazenda/Missao0"]
 [editable path="TerrenoFazenda/Missao4"]
 [editable path="TerrenoFazenda/Missao5"]
 [editable path="TerrenoFazenda/SaidaFazenda1"]
@@ -435,6 +468,7 @@ position = Vector2(462, 951)
 [editable path="TerrenoCasa/Missao2"]
 [editable path="TerrenoCasa/Missao3"]
 [editable path="TerrenoBunker/Passagem3"]
+[editable path="TerrenoBunker/Missao1"]
 [editable path="TerrenoVila/SaidaFazenda"]
 [editable path="TerrenoVila/EntrarCasaFerreiro"]
 [editable path="TerrenoVila/EntrarCasaMarceneiro"]
