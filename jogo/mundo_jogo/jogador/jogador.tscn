@@ -838,5 +838,12 @@ libraries = {
 autoplay = "parado_baixo"
 
 [node name="TextoPlaca" parent="." instance=ExtResource("4_emtbw")]
+offset_top = -27.0
+offset_bottom = -27.0
+scale = Vector2(0.3, 0.3)
+
+[node name="PontoFala" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
 
 [connection signal="body_entered" from="AreaDetecao" to="." method="_ao_entrar_area_detecao"]

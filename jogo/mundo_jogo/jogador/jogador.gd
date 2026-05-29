@@ -8,6 +8,7 @@ class_name Jogador
 @onready var _animador: AnimationPlayer = $Animador
 @onready var _camera: Camera2D = $Camera
 @onready var fala_visual: TextoPlaca = $TextoPlaca
+@onready var ponto_fala: Marker2D = %PontoFala
 
 var terreno_atual: String = "TerrenoFazenda"
 
@@ -90,9 +91,8 @@ func _tentar_chamar_robo() -> void:
 		print("Falha: O robô não pode entrar no terreno: ", terreno_atual)
 		
 func _mostrar_fala(texto_da_fala: String) -> void:
-	# Como a placa é filha do jogador, a posição Vector2.ZERO (0, 0) será a base do jogador.
-	# A sua própria função 'exibir' já cuida de jogar a placa para cima (size.y + 15)!
-	fala_visual.exibir(texto_da_fala, Vector2.ZERO)
+	
+	fala_visual.exibir(texto_da_fala, ponto_fala.position)
 	
 	# Aguarda os 3 segundos
 	await get_tree().create_timer(3.0).timeout
