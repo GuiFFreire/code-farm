@@ -7,6 +7,7 @@ class_name Jogador
 
 @onready var _animador: AnimationPlayer = $Animador
 @onready var _camera: Camera2D = $Camera
+@onready var fala_visual: TextoPlaca = $TextoPlaca
 
 var terreno_atual: String = "TerrenoFazenda"
 
@@ -78,9 +79,23 @@ func tocar_animacao(nome: String, direcao: String = "") -> void:
 func _tentar_chamar_robo() -> void:
 	# Olha como a sua ideia deixou o código limpo:
 	if terreno_atual in cenas_permitidas:
+		_mostrar_fala("Chamando o robô AGR.O...")
+		await get_tree().create_timer(2.0).timeout
 		var robos = get_tree().get_nodes_in_group("Robo")
 		if robos.size() > 0:
 			robos[0].atender_chamado(global_position)
 			print("Sucesso! Robô chamado em: ", terreno_atual)
 	else:
+		_mostrar_fala("Não posso chamar o AGR.O aqui.")
 		print("Falha: O robô não pode entrar no terreno: ", terreno_atual)
+		
+func _mostrar_fala(texto_da_fala: String) -> void:
+	# Como a placa é filha do jogador, a posição Vector2.ZERO (0, 0) será a base do jogador.
+	# A sua própria função 'exibir' já cuida de jogar a placa para cima (size.y + 15)!
+	fala_visual.exibir(texto_da_fala, Vector2.ZERO)
+	
+	# Aguarda os 3 segundos
+	await get_tree().create_timer(3.0).timeout
+	
+	# Usa a função nativa da sua placa para parar a animação e esconder
+	fala_visual.esconder()
