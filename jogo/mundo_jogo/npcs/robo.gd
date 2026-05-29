@@ -35,10 +35,7 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	if _estado_atual == Estados.SEGUINDO and _alvo:
 		var distancia = global_position.distance_to(_alvo.global_position)
-		
-		# LÓGICA DE SEGURANÇA:
-		# 1. Se a distância for menor que o limite, ele tenta seguir.
-		# 2. Se a distância for maior que o limite (jogador entrou na casa), ele para.
+
 		if distancia < distancia_limite:
 			if distancia > distancia_minima:
 				var direcao = global_position.direction_to(_alvo.global_position)
@@ -78,3 +75,11 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Jogador"):
 		_jogador_na_area = false
 		_label_interacao.hide()
+		
+func atender_chamado(posicao_jogador: Vector2) -> void:
+	# O robô aparece a uma pequena distância (offset) para não bugar a colisão
+	var direcao_aparecer = Vector2(-40, -10) 
+	global_position = posicao_jogador + direcao_aparecer
+	
+	_estado_atual = Estados.SEGUINDO
+	_atualizar_texto_instrucao()

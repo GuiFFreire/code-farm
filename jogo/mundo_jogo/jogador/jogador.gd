@@ -3,9 +3,12 @@ extends CharacterBody2D
 class_name Jogador
 
 @export var velocidade_movimento: float = 96.0
+@export var cenas_permitidas: Array[String] = ["TerrenoFazenda", "TerrenoVila"]
 
 @onready var _animador: AnimationPlayer = $Animador
 @onready var _camera: Camera2D = $Camera
+
+var terreno_atual: String = "TerrenoFazenda"
 
 var _vetor_direcao: Vector2 = Vector2.ZERO
 var _direcao_animacao: String = "baixo"
@@ -21,6 +24,9 @@ func _process(delta: float) -> void:
 		_movimentar_jogador()
 		_obter_direcao_animacao()
 		_animar_personagem()
+		
+		if Input.is_action_just_pressed("chamar_robo"):
+			_tentar_chamar_robo()
 	
 func _obter_vetor_direcao() -> void:
 	_vetor_direcao = Input.get_vector("mover_esquerda", "mover_direita", "mover_cima", "mover_baixo")
@@ -68,3 +74,13 @@ func tocar_animacao(nome: String, direcao: String = "") -> void:
 	if direcao != "":
 		_direcao_animacao = direcao
 	_animador.play(nome)
+	
+func _tentar_chamar_robo() -> void:
+	# Olha como a sua ideia deixou o código limpo:
+	if terreno_atual in cenas_permitidas:
+		var robos = get_tree().get_nodes_in_group("Robo")
+		if robos.size() > 0:
+			robos[0].atender_chamado(global_position)
+			print("Sucesso! Robô chamado em: ", terreno_atual)
+	else:
+		print("Falha: O robô não pode entrar no terreno: ", terreno_atual)
