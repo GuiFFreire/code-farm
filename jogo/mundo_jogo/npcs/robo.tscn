@@ -11,7 +11,7 @@ region = Rect2(1, 39, 15.4927, 25)
 size = Vector2(14, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_imlkk"]
-radius = 23.0
+radius = 30.0167
 
 [sub_resource type="Animation" id="Animation_yq61l"]
 length = 0.001
