@@ -88,7 +88,7 @@ func _tentar_chamar_robo() -> void:
 			var distancia = global_position.distance_to(robo.global_position)
 			
 			if distancia > 250.0:
-				robo.global_position = global_position + Vector2(10, 10)
+				robo.atender_chamado(global_position)
 				print("Robô estava longe e foi teleportado!")
 			if robo._estado_atual == robo.Estados.PARADO:
 				robo._alternar_estado()

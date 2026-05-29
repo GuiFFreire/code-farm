@@ -77,7 +77,7 @@ func _on_body_exited(body: Node2D) -> void:
 		_label_interacao.hide()
 		
 func atender_chamado(posicao_jogador: Vector2) -> void:
-	# O robô aparece a uma pequena distância (offset) para não bugar a colisão
+
 	var direcao_aparecer = Vector2(-40, -10) 
 	global_position = posicao_jogador + direcao_aparecer
 	
