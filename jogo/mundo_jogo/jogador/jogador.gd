@@ -34,10 +34,8 @@ func _obter_vetor_direcao() -> void:
 	_vetor_direcao = Input.get_vector("mover_esquerda", "mover_direita", "mover_cima", "mover_baixo")
 
 func _obter_direcao_animacao() -> void:
-	# Se houver movimento na horizontal, prioriza essa direção
 	if _vetor_direcao.x != 0:
 		_direcao_animacao = "esquerda" if _vetor_direcao.x < 0 else "direita"
-	# Se não houver movimento horizontal, mas houver na vertical, define a direção vertical
 	elif _vetor_direcao.y != 0:
 		_direcao_animacao = "cima" if _vetor_direcao.y < 0 else "baixo"
 
@@ -78,24 +76,30 @@ func tocar_animacao(nome: String, direcao: String = "") -> void:
 	_animador.play(nome)
 	
 func _tentar_chamar_robo() -> void:
-	# Olha como a sua ideia deixou o código limpo:
 	if terreno_atual in cenas_permitidas:
 		_mostrar_fala("Chamando o robô AGR.O...")
-		await get_tree().create_timer(2.0).timeout
+		
+		await get_tree().create_timer(1.0).timeout
+		
 		var robos = get_tree().get_nodes_in_group("Robo")
 		if robos.size() > 0:
-			robos[0].atender_chamado(global_position)
-			print("Sucesso! Robô chamado em: ", terreno_atual)
+			var robo = robos[0]
+			
+			var distancia = global_position.distance_to(robo.global_position)
+			
+			if distancia > 250.0:
+				robo.global_position = global_position + Vector2(10, 10)
+				print("Robô estava longe e foi teleportado!")
+			if robo._estado_atual == robo.Estados.PARADO:
+				robo._alternar_estado()
 	else:
 		_mostrar_fala("Não posso chamar o AGR.O aqui.")
-		print("Falha: O robô não pode entrar no terreno: ", terreno_atual)
+		print("Falha: O robô não pode 	entrar no terreno: ", terreno_atual)
 		
 func _mostrar_fala(texto_da_fala: String) -> void:
 	
 	fala_visual.exibir(texto_da_fala, ponto_fala.position)
-	
-	# Aguarda os 3 segundos
+
 	await get_tree().create_timer(3.0).timeout
-	
-	# Usa a função nativa da sua placa para parar a animação e esconder
+
 	fala_visual.esconder()

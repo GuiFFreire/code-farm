@@ -142,12 +142,14 @@ _data = {
 }
 
 [node name="robo" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_0eot3")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_ud4ot")
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
+visibility_layer = 2
 shape = SubResource("RectangleShape2D_lps4e")
 
 [node name="AreaDetecao" type="Area2D" parent="."]
