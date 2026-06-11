@@ -9,9 +9,9 @@ var _objeto_missao_atual: ObjetoInterativo = null
 
 var _roteiro_missao_atual: RoteiroMissao = null
 
-func configurar(mundo_jogo: MundoJogo, interface_jogo: InterfaceJogo):
-	self.mundo_jogo = mundo_jogo
-	self.interface_jogo = interface_jogo
+func configurar(mundo_jogo_ref: MundoJogo, interface_jogo_ref: InterfaceJogo):
+	self.mundo_jogo = mundo_jogo_ref
+	self.interface_jogo = interface_jogo_ref
 	
 	Global.conectar_sinal(Global, "missao_fechada", Callable(self, "_ao_fechar_missao"))
 

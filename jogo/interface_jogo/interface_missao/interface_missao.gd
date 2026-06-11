@@ -5,7 +5,6 @@ extends Control
 @onready var _caixa_dialogo: Control = %CaixaDialogo
 @onready var _editor_codigo: Control = %EditorCodigo
 @onready var _tooltip: Control = %Tooltip
-@onready var _botao_fechar: Button = %BotaoFechar
 
 var foto = "res://assets/imagens/Tiny Wonder Forest/characters/main character old/portrait female.png"
 var personagem = "Thais"
@@ -49,5 +48,5 @@ func _ao_clicar_fechar_missao():
 	hide()
 	
 	_caixa_dialogo.parar_som()
-		
+	
 	Global.emit_signal("missao_fechada")

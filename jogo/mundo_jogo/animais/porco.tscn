@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://83xun8fp8ysk"]
 
-[ext_resource type="Script" uid="uid://c3qf0xs5n45fj" path="res://mundo_jogo/animais/porco.gd" id="1_jh7bu"]
+[ext_resource type="Script" uid="uid://t76wjwda07c3" path="res://mundo_jogo/animais/baseAnimal.gd" id="1_o7642"]
 [ext_resource type="Texture2D" uid="uid://ddg5wan3f2knu" path="res://assets/imagens/animais/Piglet_animation_without_shadow.png" id="2_cpb7e"]
 [ext_resource type="AudioStream" uid="uid://d30o57k8nq05r" path="res://assets/sons/PorcoNormal.mp3" id="3_o7642"]
 [ext_resource type="AudioStream" uid="uid://b8rtfj8ev4yyq" path="res://assets/sons/PorcoFugindo.mp3" id="4_nls8e"]
@@ -175,7 +175,7 @@ radius = 16.03122
 [node name="porco" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 6
-script = ExtResource("1_jh7bu")
+script = ExtResource("1_o7642")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cpb7e")

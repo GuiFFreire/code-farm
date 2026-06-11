@@ -16,11 +16,11 @@ var posicao_player_atual: Vector2 = Vector2.ZERO
 var slot_jogo_atual: int = 1
 
 # _________________________ NOMES DE PERSONAGENS _________________________ #
-var foto_jogador = "C:/Users/Mateus/Documents/code-farm/jogo/assets/imagens/interface/portrait female.png"
+var foto_jogador = "res//jogo/assets/imagens/interface/portrait female.png"
 var nome_robo = "AGR.O"
-var foto_robo = "C:/Users/Mateus/Documents/code-farm/jogo/assets/imagens/interface/portrait female.png"
+var foto_robo = "res//jogo/assets/imagens/interface/portrait female.png"
 var nome_avo = "Julio"
-var foto_avo = "C:/Users/Mateus/Documents/code-farm/jogo/assets/imagens/interface/portrait female.png"
+var foto_avo = "res//jogo/assets/imagens/interface/portrait female.png"
 
 # _________________________ GERENCIAMENTO DE SINAIS PROPAGADOS _________________________ #
 
@@ -35,6 +35,8 @@ signal item_modificado(pilha: PilhaItens)
 signal solicitar_dados_requisicao
 signal dados_requisicao_prontos(dados: Dictionary)
 signal indice_atualizado(indice: int)
+signal iniciar_dialogo_npc(npc)
+signal fim_dialogo_npc
 
 func _ready() -> void:
 	glossario = Glossario.new()

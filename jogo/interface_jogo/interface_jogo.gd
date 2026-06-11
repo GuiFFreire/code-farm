@@ -5,7 +5,8 @@ enum Interface {
 	PADRAO,
 	MISSAO,
 	GLOSSARIO,
-	HISTORIA
+	HISTORIA,
+	DIALOGO_NPC
 }
 
 @onready var interface_salvar_carregar: InterfaceSalvarCarregar = $InterfaceSalvarCarregar
@@ -16,6 +17,7 @@ enum Interface {
 	Interface.MISSAO: %InterfaceMissao,
 	Interface.GLOSSARIO: %InterfaceGlossario,
 	Interface.HISTORIA: %InterfaceHistoria,
+	Interface.DIALOGO_NPC: %InterfaceNpc
 }
 
 func _ready():
@@ -45,6 +47,9 @@ func exibir_interface(qual_interface: Interface):
 			
 			Interface.GLOSSARIO:
 				interface.abrir_glossario()
+				
+			Interface.DIALOGO_NPC:
+				obter_interface(Interface.PADRAO).show()
 
 func obter_interface(qual_interface: Interface):
 	return _interfaces.get(qual_interface)

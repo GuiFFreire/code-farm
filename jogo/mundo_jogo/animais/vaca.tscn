@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://b2bp5aw8nemn1"]
 
-[ext_resource type="Script" uid="uid://1kf8mflfufjw" path="res://mundo_jogo/animais/vaca.gd" id="1_r6lfj"]
+[ext_resource type="Script" uid="uid://t76wjwda07c3" path="res://mundo_jogo/animais/baseAnimal.gd" id="1_spgai"]
 [ext_resource type="Texture2D" uid="uid://c7xl8m7paefl8" path="res://assets/imagens/animais/Calf_animation_without_shadow.png" id="2_h7k6e"]
 [ext_resource type="AudioStream" uid="uid://cib7dvygl71be" path="res://assets/sons/VacaNormal.mp3" id="3_h7k6e"]
 [ext_resource type="AudioStream" uid="uid://713keyxoxdv0" path="res://assets/sons/VacaFugindo.mp3" id="4_spgai"]
@@ -177,7 +177,7 @@ radius = 20.0
 [node name="Vaca" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 6
-script = ExtResource("1_r6lfj")
+script = ExtResource("1_spgai")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_h7k6e")

@@ -7,13 +7,15 @@ var mundo_jogo: MundoJogo
 
 @onready var interface_jogo: InterfaceJogo = $CanvasLayer/InterfaceJogo
 @onready var _gerenciador_missoes: GerenciadorMissoes
+@onready var _gerenciador_npcs: GerenciadorNPCs
 
 func _ready() -> void:
 	
 	mundo_jogo = $MundoJogo
 	
 	_gerenciador_missoes = GerenciadorMissoes.new()
-	_gerenciador_missoes.configurar(mundo_jogo, interface_jogo)
+	
+	_gerenciador_npcs = GerenciadorNPCs.new()
 	
 	interface_jogo.exibir_interface(interface_jogo.Interface.MENU_INICIAL)
 	
@@ -22,6 +24,7 @@ func _ready() -> void:
 	Global.conectar_sinal(Global, "abrir_glossario", Callable(self, "_ao_clicar_botao_glossario"))
 	Global.conectar_sinal(Global, "missao_fechada", Callable(self, "_ao_clicar_fechar_missao"))
 	Global.conectar_sinal(Global, "voltar_menu_principal", Callable(self, "_ao_voltar_menu_principal"))
+	Global.conectar_sinal(Global, "fim_dialogo_npc", Callable(self, "_ao_clicar_fechar_missao"))
 	
 func _ao_clicar_novo_jogo() -> void:
 	Global.resetar_dados_novo_jogo()
@@ -46,6 +49,7 @@ func _trocar_mundo_para_novo() -> void:
 	
 	# Agora sim configura e executa
 	_gerenciador_missoes.configurar(mundo_jogo, interface_jogo)
+	_gerenciador_npcs.configurar(mundo_jogo, interface_jogo)
 
 func _ao_clicar_continuar_jogo() -> void:
 	await _trocar_mundo_para_novo()
@@ -79,6 +83,7 @@ func _ao_voltar_menu_principal() -> void:
 		
 	interface_jogo.exibir_interface(interface_jogo.Interface.MENU_INICIAL)
 
+@warning_ignore("unused_parameter")
 func _process(delta):
 	if interface_jogo.obter_interface_atual() == interface_jogo.Interface.PADRAO:
 		if mundo_jogo and is_instance_valid(mundo_jogo.jogador):

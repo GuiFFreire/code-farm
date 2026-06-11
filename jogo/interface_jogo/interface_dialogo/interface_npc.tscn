@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=3 uid="uid://rmy6sc6txb2h"]
+
+[ext_resource type="PackedScene" uid="uid://bpcy0vespkpg7" path="res://interface_jogo/interface_missao/caixa_dialogo.tscn" id="1_lqhph"]
+[ext_resource type="Script" uid="uid://dqr7qj8gv5vqh" path="res://interface_jogo/interface_dialogo/interface_npc.gd" id="1_ybv3f"]
+[ext_resource type="PackedScene" uid="uid://jo5gekf703qc" path="res://interface_jogo/interface_missao/fechar.tscn" id="3_77vmd"]
+[ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/interface/Sprite sheet for Basic Pack.png" id="4_77vmd"]
+[ext_resource type="Script" uid="uid://bcl078bt62xep" path="res://interface_jogo/interface_dialogo/painel_troca.gd" id="4_fwtrn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77vmd"]
+texture = ExtResource("4_77vmd")
+region_rect = Rect2(154, 9, 27, 30)
+
+[node name="InterfaceNpc" type="Control"]
+layout_mode = 3
+anchor_right = 0.9375
+anchor_bottom = 0.8888889
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ybv3f")
+metadata/_edit_use_anchors_ = true
+
+[node name="CaixaDialogo" parent="." instance=ExtResource("1_lqhph")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Fechar" parent="." instance=ExtResource("3_77vmd")]
+layout_mode = 1
+
+[node name="PainelLoja" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("4_fwtrn")
+
+[node name="MarginContainer" type="MarginContainer" parent="PainelLoja"]
+layout_mode = 0
+offset_left = -210.0
+offset_top = -171.0
+offset_bottom = 177.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="FundoLoja" type="NinePatchRect" parent="PainelLoja/MarginContainer"]
+custom_minimum_size = Vector2(120, 180)
+layout_mode = 2
+texture = ExtResource("4_77vmd")
+region_rect = Rect2(153, 9, 30, 30)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="PainelLoja/MarginContainer/FundoLoja"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer"]
+layout_mode = 2
+
+[node name="FundoNPC" type="NinePatchRect" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_77vmd")
+region_rect = Rect2(11, 11, 26, 28)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer/FundoNPC"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer/FundoNPC/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainerNPC" type="GridContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer/FundoNPC/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FundoJogador" type="NinePatchRect" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_77vmd")
+region_rect = Rect2(11, 11, 26, 28)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer/FundoJogador"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer/FundoJogador/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer/FundoJogador/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer2" type="GridContainer" parent="PainelLoja/MarginContainer/FundoLoja/MarginContainer/HBoxContainer/FundoJogador"]
+layout_mode = 0
+offset_right = 97.0
+offset_bottom = 328.0
+size_flags_horizontal = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="PainelLoja"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PainelLoja/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_77vmd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PainelLoja/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Fechar/MarginContainer/BotaoFechar" to="." method="_ao_clicar_fechar_dialogo"]
+
+[editable path="Fechar"]
