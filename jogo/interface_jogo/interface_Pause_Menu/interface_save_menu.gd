@@ -59,7 +59,11 @@ func _atualizar_nomes_botoes():
 			var data_formatada = "%02d/%02d/%04d às %02d:%02d" % [
 				dt.day, dt.month, dt.year, dt.hour, dt.minute
 			]
-			botao.text = "%s - %s\n%s" % [dados["nome_fazenda"], dados["nome_jogador"], data_formatada]
+			botao.text = "%s\n%s\n%s" % [
+				dados.get("nome_fazenda", "Fazenda"), 
+				dados.get("nome_jogador", "Jogador"), 
+				data_formatada
+			]
 			
 		else:
 			# Não tem save? Deixa a lixeira transparente e intocável

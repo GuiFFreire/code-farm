@@ -16,11 +16,11 @@ var posicao_player_atual: Vector2 = Vector2.ZERO
 var slot_jogo_atual: int = 1
 
 # _________________________ NOMES DE PERSONAGENS _________________________ #
-var foto_jogador = "res//jogo/assets/imagens/interface/portrait female.png"
+var foto_jogador = "res://assets/imagens/interface/foto_jogador.png"
 var nome_robo = "AGR.O"
-var foto_robo = "res//jogo/assets/imagens/interface/portrait female.png"
+var foto_robo = "res://assets/imagens/interface/foto_robo.png"
 var nome_avo = "Julio"
-var foto_avo = "res//jogo/assets/imagens/interface/portrait female.png"
+var foto_avo = "res://assets/imagens/interface/foto_avo.png"
 
 # _________________________ GERENCIAMENTO DE SINAIS PROPAGADOS _________________________ #
 
