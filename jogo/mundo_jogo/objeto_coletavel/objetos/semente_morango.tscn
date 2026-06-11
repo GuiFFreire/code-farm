@@ -142,7 +142,7 @@ item = ExtResource("2_qpf1k")
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_syhko")
 region_enabled = true
-region_rect = Rect2(0, 19.534569, 12.22377, 15.617069)
+region_rect = Rect2(0, 19.5346, 12.2238, 15.6171)
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
 
@@ -173,7 +173,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 4
 theme_override_font_sizes/font_size = 8
-text = "[E] para coletar"
+text = "[C] para coletar"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -5,12 +5,13 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2ecu"]
 atlas = ExtResource("1_08ikw")
-region = Rect2(127.17518, 14.325882, 17.786095, 19.955143)
+region = Rect2(127.175, 14.3259, 17.7861, 19.9551)
 
 [resource]
 script = ExtResource("1_tntwk")
 nome = "morango"
 icone = SubResource("AtlasTexture_g2ecu")
+pode_empilhar = true
 descricao = "Fruta morango."
 tipo = "alimento"
 metadata/_custom_type_script = "uid://de8teor80qd8x"

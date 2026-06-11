@@ -5,12 +5,13 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3g45c"]
 atlas = ExtResource("1_bpgh6")
-region = Rect2(0, 19.240158, 13.02626, 15.183258)
+region = Rect2(0, 19.2402, 13.0263, 15.1833)
 
 [resource]
 script = ExtResource("1_g7wnd")
 nome = "semente_morango"
 icone = SubResource("AtlasTexture_3g45c")
+pode_empilhar = true
 descricao = "Semente para plantio de morango."
 tipo = "semente"
 metadata/_custom_type_script = "uid://de8teor80qd8x"

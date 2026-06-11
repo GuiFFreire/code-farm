@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	_se_houver_interacao()
 
 func _se_houver_interacao() -> void:
-	if _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
+	if _jogador_dentro and Input.is_action_just_pressed("coletar_item") and not _interacao_em_execucao:
 		_interacao_em_execucao = true
 		print("[OBJETO] Tentando coletar item:", item)
 		
