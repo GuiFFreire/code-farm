@@ -62,3 +62,22 @@ func largar_item() -> Item:
 	if slots[indice].item == null:
 		return null
 	return remover()
+
+func mover_item(indice_origem: int, indice_destino: int) -> void:
+	var pilha_origem: PilhaItens = slots[indice_origem]
+	var pilha_destino: PilhaItens = slots[indice_destino]
+
+	if pilha_destino.item != null and pilha_destino.pode_empilhar_com(pilha_origem):
+		pilha_destino.quantidade += pilha_origem.quantidade
+		pilha_origem.item = null
+		pilha_origem.quantidade = 0
+	else:
+		var item_temp: Item = pilha_destino.item
+		var qtd_temp: int = pilha_destino.quantidade
+		pilha_destino.item = pilha_origem.item
+		pilha_destino.quantidade = pilha_origem.quantidade
+		pilha_origem.item = item_temp
+		pilha_origem.quantidade = qtd_temp
+
+	Global.emit_signal("item_modificado", pilha_origem)
+	Global.emit_signal("item_modificado", pilha_destino)

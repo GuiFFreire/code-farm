@@ -19,6 +19,14 @@ var _movimento_habilitado: bool = true
 
 const DISTANCIA_LARGAR: float = 24.0
 
+# Mapeia a direção da animação para um vetor
+const DIRECOES: Dictionary = {
+	"baixo":    Vector2(0, 1),
+	"cima":     Vector2(0, -1),
+	"esquerda": Vector2(-1, 0),
+	"direita":  Vector2(1, 0),
+}
+
 func _ready():
 	add_to_group("Jogador")
 
@@ -88,7 +96,6 @@ func _tentar_chamar_robo() -> void:
 		var robos = get_tree().get_nodes_in_group("Robo")
 		if robos.size() > 0:
 			var robo = robos[0]
-			
 			var distancia = global_position.distance_to(robo.global_position)
 			
 			if distancia > 250.0:
@@ -98,32 +105,30 @@ func _tentar_chamar_robo() -> void:
 				robo._alternar_estado()
 	else:
 		_mostrar_fala("Não posso chamar o AGR.O aqui.")
-		print("Falha: O robô não pode 	entrar no terreno: ", terreno_atual)
+		print("Falha: O robô não pode entrar no terreno: ", terreno_atual)
 		
 func _mostrar_fala(texto_da_fala: String) -> void:
-	
 	fala_visual.exibir(texto_da_fala, ponto_fala.position)
-
 	await get_tree().create_timer(3.0).timeout
-
 	fala_visual.esconder()
-	
+
 func _largar_item() -> void:
+	largar_item_no_mundo()
+
+func largar_item_no_mundo() -> void:
 	var item: Item = Global.inventario.largar_item()
 	if item == null:
 		return
 		
 	var cena_para_criar
-	
-	# Verifica se o item tem um caminho de cena configurado
 	if item.caminho_cena != "":
-		cena_para_criar = load(item.caminho_cena) # Transforma o texto na Cena real!
+		cena_para_criar = load(item.caminho_cena)
 	else:
-		# Se você esquecer de colocar o caminho em algum item, ele usa o molde padrão para não dar erro
-		cena_para_criar = cena_objeto_coletavel 
-		
+		cena_para_criar = cena_objeto_coletavel
+
+	var offset: Vector2 = DIRECOES[_direcao_animacao] * DISTANCIA_LARGAR
+
 	var objeto = cena_para_criar.instantiate()
 	objeto.item = item
-	
-	objeto.global_position = self.global_position + Vector2(DISTANCIA_LARGAR, 0) 
+	objeto.global_position = global_position + offset
 	get_parent().add_child(objeto)

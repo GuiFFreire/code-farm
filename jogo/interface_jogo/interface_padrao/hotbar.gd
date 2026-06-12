@@ -17,6 +17,13 @@ func _atualizar_hotbar():
 		await get_tree().process_frame
 	
 	_slots = _grid.get_children()
+	
+	# Conecta os sinais de cada slot e registra o índice deles
+	for i in range(_slots.size()):
+		_slots[i].indice = i
+		_slots[i].connect("clicado", Callable(self, "_ao_clicar_slot"))
+		_slots[i].connect("drag_iniciado", Callable(self, "_ao_iniciar_drag"))
+	
 	atualizar_slots_com_dados_do_inventario()
 	_atualizar_seletor()
 
@@ -51,3 +58,21 @@ func _ao_mudar_visibilidade_interface_padrao() -> void:
 
 func _ao_adicionar_item(_pilha: PilhaItens):
 	atualizar_slots_com_dados_do_inventario()
+
+func _ao_clicar_slot(slot: SlotHotbar) -> void:
+	_selecionar_slot(slot.indice)
+
+func _ao_iniciar_drag(_slot: SlotHotbar) -> void:
+	_selecionar_slot(_slot.indice)
+
+func _can_drop_data(_posicao: Vector2, dados: Variant) -> bool:
+	return dados is Dictionary and dados.has("slot_origem")
+
+func _drop_data(_posicao: Vector2, dados: Variant) -> void:
+
+	var slot_origem: SlotHotbar = dados["slot_origem"]
+	_selecionar_slot(slot_origem.indice)
+
+	var jogadores = get_tree().get_nodes_in_group("Jogador")
+	if jogadores.size() > 0:
+		jogadores[0].largar_item_no_mundo()
