@@ -14,4 +14,5 @@ icone = SubResource("AtlasTexture_g2ecu")
 pode_empilhar = true
 descricao = "Fruta morango."
 tipo = "alimento"
+caminho_cena = "uid://dlk0esnxgwqmg"
 metadata/_custom_type_script = "uid://de8teor80qd8x"

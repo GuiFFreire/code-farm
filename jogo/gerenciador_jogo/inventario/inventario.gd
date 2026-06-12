@@ -57,3 +57,8 @@ func verificar_tipo(tipo_permitido: String) -> bool:
 		return false
 	
 	return tipo_permitido == slots[indice].item.tipo
+	
+func largar_item() -> Item:
+	if slots[indice].item == null:
+		return null
+	return remover()

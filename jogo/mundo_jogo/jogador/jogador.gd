@@ -4,6 +4,7 @@ class_name Jogador
 
 @export var velocidade_movimento: float = 96.0
 @export var cenas_permitidas: Array[String] = ["TerrenoFazenda", "TerrenoVila"]
+@export var cena_objeto_coletavel: PackedScene
 
 @onready var _animador: AnimationPlayer = $Animador
 @onready var _camera: Camera2D = $Camera
@@ -14,8 +15,9 @@ var terreno_atual: String = "TerrenoFazenda"
 
 var _vetor_direcao: Vector2 = Vector2.ZERO
 var _direcao_animacao: String = "baixo"
-
 var _movimento_habilitado: bool = true
+
+const DISTANCIA_LARGAR: float = 24.0
 
 func _ready():
 	add_to_group("Jogador")
@@ -29,6 +31,8 @@ func _process(delta: float) -> void:
 		
 		if Input.is_action_just_pressed("chamar_robo"):
 			_tentar_chamar_robo()
+		if Input.is_action_just_pressed("largar_item"):
+			_largar_item()
 	
 func _obter_vetor_direcao() -> void:
 	_vetor_direcao = Input.get_vector("mover_esquerda", "mover_direita", "mover_cima", "mover_baixo")
@@ -103,3 +107,23 @@ func _mostrar_fala(texto_da_fala: String) -> void:
 	await get_tree().create_timer(3.0).timeout
 
 	fala_visual.esconder()
+	
+func _largar_item() -> void:
+	var item: Item = Global.inventario.largar_item()
+	if item == null:
+		return
+		
+	var cena_para_criar
+	
+	# Verifica se o item tem um caminho de cena configurado
+	if item.caminho_cena != "":
+		cena_para_criar = load(item.caminho_cena) # Transforma o texto na Cena real!
+	else:
+		# Se você esquecer de colocar o caminho em algum item, ele usa o molde padrão para não dar erro
+		cena_para_criar = cena_objeto_coletavel 
+		
+	var objeto = cena_para_criar.instantiate()
+	objeto.item = item
+	
+	objeto.global_position = self.global_position + Vector2(DISTANCIA_LARGAR, 0) 
+	get_parent().add_child(objeto)
