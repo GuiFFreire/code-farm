@@ -1,7 +1,7 @@
 class_name ComportamentoObjeto
 extends Resource
 
-## Interface base (Strategy) para comportamentos plugáveis em ObjetoBase.
+## Interface base para comportamentos em ObjetoBase.
 ## Cada comportamento concreto sobrescreve apenas os métodos que usa.
 
 ## Nome do grupo que o objeto deve entrar ao ter este comportamento

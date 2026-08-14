@@ -25,12 +25,11 @@ func processar(objeto: ObjetoBase, _delta: float) -> void:
 		if item != null and Global.inventario.adicionar_item(item):
 			_label.hide()
 			
-			# Toca a animação APENAS se o nó e a animação "coletar" existirem
 			if objeto.animador != null and objeto.animador.has_animation("coletar"):
 				objeto.animador.play("coletar")
 				await objeto.animador.animation_finished
 			
-			# Remove o objeto do mundo com segurança
+			# Remove o objeto do mundo 
 			objeto.queue_free()
 		else:
 			print("Inventário cheio ou item nulo!")
@@ -51,7 +50,7 @@ func ao_detectar_saida(objeto: ObjetoBase, corpo: Node2D) -> void:
 func ativar_coleta(objeto: ObjetoBase = null) -> void:
 	_detecao_ativa = true
 	
-	# Se o objeto for passado, verifica se o jogador já está dentro da área
+	# verifica se o jogador já está dentro da área
 	if objeto != null and _label != null:
 		var area = objeto.get_node_or_null("AreaDetecao") as Area2D
 		if area:

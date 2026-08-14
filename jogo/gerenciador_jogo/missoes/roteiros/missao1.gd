@@ -21,12 +21,10 @@ func executar() -> void:
 	var objeto_caixa = mundo_jogo.obter_elemento("Missao1")
 	
 	if objeto_caixa and is_instance_valid(objeto_caixa):
-		# Desativa a conversa inicial [E]
 		var comp_interativo = objeto_caixa.obter_comportamento(ComportamentoInterativo)
 		if comp_interativo:
 			comp_interativo.desativar_interacao()
-			
-		# Ativa a coleta [C] agora que o jogador leu a instrução
+
 		var comp_coletavel = objeto_caixa.obter_comportamento(ComportamentoColetavel)
 		if comp_coletavel:
 			comp_coletavel.ativar_coleta(objeto_caixa)
@@ -61,7 +59,6 @@ func executar() -> void:
 		await mundo_jogo.get_tree().create_timer(0.5).timeout
 		var jogador = mundo_jogo.obter_jogador()
 		
-		# Procura se existe alguma caixa no chão do mapa
 		var objetos_no_chao = mundo_jogo.get_tree().get_nodes_in_group("ObjetosColetaveis")
 		var caixa_encontrada: Node2D = null
 		
@@ -72,20 +69,19 @@ func executar() -> void:
 				break
 		
 		if caixa_encontrada != null:
-			# Garante que a caixa dropada sempre seja coletável caso o jogador queira reordenar o inventário
+
 			var comp_coletavel = caixa_encontrada.obter_comportamento(ComportamentoColetavel)
 			if comp_coletavel and not comp_coletavel._detecao_ativa:
 				comp_coletavel.ativar_coleta(caixa_encontrada)
-			
-			# Configura a interação [E] de acordo com o terreno atual
+
 			var comp_interativo = caixa_encontrada.obter_comportamento(ComportamentoInterativo)
 			if comp_interativo:
 				if jogador.terreno_atual == "TerrenoFazenda":
-					# Estamos no local correto!
+
 					caixa_dropada = caixa_encontrada
 					break
 				else:
-					# Se estiver dentro do bunker ou outro lugar incorreto, avisa ao interagir
+
 					if comp_interativo.interagiu.is_connected(_ao_tentar_abrir_no_lugar_errado):
 						pass
 					else:

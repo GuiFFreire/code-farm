@@ -31,8 +31,7 @@ func _ativar_objeto_missao_atual() -> void:
 		var nome_objeto = "Missao%d" % Global.missao_atual
 
 		_objeto_missao_atual = mundo_jogo.obter_elemento(nome_objeto)
-		
-		# Se for o NOVO sistema (ObjetoBase com componentes)
+
 		if _objeto_missao_atual.has_method("obter_comportamento"):
 			var comp_interativo = _objeto_missao_atual.obter_comportamento(ComportamentoInterativo)
 			if comp_interativo:
@@ -57,7 +56,7 @@ func _ao_interagir_objeto() -> void:
 	_executar_missao_atual()
 
 func _executar_missao_atual() -> void:
-	# Busca o componente no objeto base antes de desativar
+
 	if _objeto_missao_atual:
 		var comp_interativo = _objeto_missao_atual.obter_comportamento(ComportamentoInterativo)
 		if comp_interativo:

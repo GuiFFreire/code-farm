@@ -35,11 +35,7 @@ func _ao_detectar_saida(corpo: Node2D) -> void:
 	for comportamento in comportamentos:
 		comportamento.ao_detectar_saida(self, corpo)
 
-## Cria um label de interação próprio pro comportamento que chamar, já
-## dentro do container e com o estilo visual padrão do jogo. Cada
-## comportamento guarda sua referência e controla show/hide sozinho —
-## assim, vários comportamentos no mesmo objeto exibem textos ao mesmo
-## tempo em vez de brigar por um único label compartilhado.
+
 func criar_label_interacao() -> Label:
 	var label := Label.new()
 	label.visible = false
