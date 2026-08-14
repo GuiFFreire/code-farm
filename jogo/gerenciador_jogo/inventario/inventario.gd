@@ -38,7 +38,7 @@ func adicionar_item(item: Item, _indice: int = indice) -> bool:
 func tem_itens(nomes: Array[String]) -> bool:
 	var nomes_faltando = nomes.duplicate()
 	for pilha in slots:
-		if pilha.item.nome in nomes_faltando:
+		if pilha.item != null and pilha.item.nome in nomes_faltando:
 			nomes_faltando.erase(pilha.item.nome)
 	
 	return nomes_faltando.is_empty()

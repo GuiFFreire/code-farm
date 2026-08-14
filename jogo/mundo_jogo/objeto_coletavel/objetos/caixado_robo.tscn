@@ -1,17 +1,29 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3674xy65wvk6"]
+[gd_scene load_steps=12 format=3 uid="uid://c5u13eymo2tos"]
 
-[ext_resource type="Script" uid="uid://dp3nbnuwufxiv" path="res://mundo_jogo/npcs/robo.gd" id="1_0eot3"]
-[ext_resource type="Texture2D" uid="uid://clxlhkjw1tr0g" path="res://assets/imagens/npcs/Robo.png" id="2_ud4ot"]
+[ext_resource type="Script" uid="uid://b1bsfgtb27bkr" path="res://mundo_jogo/objeto_coletavel/objeto_coletavel.gd" id="1_yjxrh"]
+[ext_resource type="Script" uid="uid://de8teor80qd8x" path="res://gerenciador_jogo/inventario/item.gd" id="3_jhx84"]
+[ext_resource type="Texture2D" uid="uid://df3nifq2ujqwy" path="res://assets/imagens/terrenos/TopDownHouse_SmallItems.png" id="3_l07if"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ud4ot"]
-atlas = ExtResource("2_ud4ot")
-region = Rect2(349, 143, 347, 758)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l07if"]
+atlas = ExtResource("3_l07if")
+region = Rect2(98, 35, 12, 12)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lps4e"]
-size = Vector2(15, 30)
+[sub_resource type="Resource" id="Resource_fk80x"]
+script = ExtResource("3_jhx84")
+nome = "Caixa robo"
+icone = SubResource("AtlasTexture_l07if")
+pode_empilhar = true
+descricao = ""
+tipo = ""
+caminho_cena = "uid://c5u13eymo2tos"
+metadata/_custom_type_script = "uid://de8teor80qd8x"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_imlkk"]
-radius = 30.0167
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fk80x"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5h55"]
+radius = 34.0147
 
 [sub_resource type="Animation" id="Animation_yq61l"]
 length = 0.001
@@ -53,7 +65,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -141,23 +153,26 @@ _data = {
 &"destacar_objeto": SubResource("Animation_x284y")
 }
 
-[node name="robo" type="CharacterBody2D"]
-collision_mask = 3
-script = ExtResource("1_0eot3")
+[node name="CaixadoRobo" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_yjxrh")
+item = SubResource("Resource_fk80x")
+metadata/_custom_type_script = "uid://b1bsfgtb27bkr"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.04, 0.04)
-texture = SubResource("AtlasTexture_ud4ot")
+texture = ExtResource("3_l07if")
+region_enabled = true
+region_rect = Rect2(98, 35, 12, 12)
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
-visibility_layer = 2
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_lps4e")
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fk80x")
 
 [node name="AreaDetecao" type="Area2D" parent="."]
 
 [node name="Colisao" type="CollisionShape2D" parent="AreaDetecao"]
-shape = SubResource("CircleShape2D_imlkk")
+shape = SubResource("CircleShape2D_j5h55")
 
 [node name="Animador" type="AnimationPlayer" parent="."]
 libraries = {
@@ -181,6 +196,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 4
 theme_override_font_sizes/font_size = 6
-text = "[E] para abrir"
+text = "[C] para coletar"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="body_entered" from="AreaDetecao" to="." method="_ao_detectar_entrada"]
+[connection signal="body_exited" from="AreaDetecao" to="." method="_ao_detectar_saida"]

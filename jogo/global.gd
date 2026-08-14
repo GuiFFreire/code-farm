@@ -4,7 +4,7 @@ var retomando_missao: bool = false
 
 const CAMINHO_SAVE = "user://save_jogo.gd"
 const QUANTIDADE_MISSOES = 5
-const MISSAO_INICIAL = 0
+const MISSAO_INICIAL = 1
 
 var _save_jogo: SaveJogo
 var missao_atual: int
@@ -42,9 +42,9 @@ func _ready() -> void:
 	glossario = Glossario.new()
 	inventario = Inventario.new()
 	
-func conectar_sinal(no: Node, sinal: String, funcao: Callable) -> void:
-	if no != null and not no.is_connected(sinal, funcao):
-		no.connect(sinal, funcao)
+func conectar_sinal(objeto: Object, sinal: String, funcao: Callable) -> void:
+	if objeto != null and not objeto.is_connected(sinal, funcao):
+		objeto.connect(sinal, funcao)
 
 func propagar_sinal(sinal: String, emissor: Node) -> void:
 	if emissor == null:

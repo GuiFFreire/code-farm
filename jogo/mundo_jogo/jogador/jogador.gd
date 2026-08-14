@@ -18,6 +18,7 @@ var _direcao_animacao: String = "baixo"
 var _movimento_habilitado: bool = true
 
 const DISTANCIA_LARGAR: float = 24.0
+const ComportamentoColetavelScript = preload("res://mundo_jogo/objeto_base/comportamentos/comportamento_coletavel.gd")
 
 # Mapeia a direção da animação para um vetor
 const DIRECOES: Dictionary = {
@@ -129,6 +130,14 @@ func largar_item_no_mundo() -> void:
 	var offset: Vector2 = DIRECOES[_direcao_animacao] * DISTANCIA_LARGAR
 
 	var objeto = cena_para_criar.instantiate()
-	objeto.item = item
+	
+	if objeto.has_method("obter_comportamento"):
+		# Usamos a constante precarregada aqui:
+		var comp_coletavel = objeto.obter_comportamento(ComportamentoColetavelScript)
+		if comp_coletavel:
+			comp_coletavel.item = item
+	elif "item" in objeto:
+		objeto.item = item
+
 	objeto.global_position = global_position + offset
 	get_parent().add_child(objeto)
