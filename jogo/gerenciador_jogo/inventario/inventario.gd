@@ -17,7 +17,7 @@ func _init() -> void:
 func atualizar_indice(_indice: int) -> void:
 	indice = _indice
 
-func adicionar_item(item: Item, _indice: int = indice) -> bool:
+func adicionar_item(item: Item) -> bool:
 	var pilha_temp = PilhaItens.new()
 	pilha_temp.item = item
 	for slot in slots:
@@ -51,6 +51,19 @@ func remover() -> Item:
 		
 	Global.emit_signal("item_modificado", slots[indice])
 	return item
+	
+
+func remover_item(item: Item) -> bool:
+	var pilha_temp = PilhaItens.new()
+	pilha_temp.item = item
+	for slot in slots:
+		if slot.item != null and slot.pode_empilhar_com(pilha_temp):
+			slot.quantidade -= 1
+			if slot.quantidade == 0:
+				slot.item = null
+			Global.emit_signal("item_modificado", slot)
+			return true
+	return false
 	
 func verificar_tipo(tipo_permitido: String) -> bool:
 	if slots[indice].item == null:

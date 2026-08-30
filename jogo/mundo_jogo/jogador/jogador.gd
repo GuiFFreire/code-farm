@@ -17,8 +17,35 @@ var _direcao_animacao: String = "baixo"
 
 var _movimento_habilitado: bool = true
 
+# Quantidade de moedas que o jogador possui. Inicialmente 50.
+var quantidade_moedas: int = 50
+
 func _ready():
 	add_to_group("Jogador")
+	Global.emit_signal("atualizar_moedas", quantidade_moedas)
+
+# ---------------------- FUNÇÕES DE ACESSO A MOEDAS ----------------------
+func obter_moedas() -> int:
+	return quantidade_moedas
+
+func definir_moedas(valor: int) -> void:
+	quantidade_moedas = max(0, valor)
+	Global.emit_signal("atualizar_moedas", quantidade_moedas)
+
+func adicionar_moedas(valor: int) -> void:
+	if valor <= 0:
+		return
+	quantidade_moedas += valor
+	Global.emit_signal("atualizar_moedas", quantidade_moedas)
+
+func remover_moedas(valor: int) -> bool:
+	if valor <= 0:
+		return true
+	if quantidade_moedas >= valor:
+		quantidade_moedas -= valor
+		Global.emit_signal("atualizar_moedas", quantidade_moedas)
+		return true
+	return false
 
 func _process(delta: float) -> void:
 	if _movimento_habilitado:	

@@ -14,6 +14,9 @@ var nome_fazenda_atual: String = "Fazenda Code Farm"
 var nome_jogador: String = "Jogador"
 var posicao_player_atual: Vector2 = Vector2.ZERO
 var slot_jogo_atual: int = 1
+# Quando um save é carregado, aqui fica a quantidade de moedas presente naquele save.
+# Valor -1 indica que não há quantidade de moedas pendente para aplicar ao jogador.
+var ultima_quantidade_moedas: int = -1
 
 # _________________________ NOMES DE PERSONAGENS _________________________ #
 var foto_jogador = "res://assets/imagens/interface/foto_jogador.png"
@@ -37,6 +40,7 @@ signal dados_requisicao_prontos(dados: Dictionary)
 signal indice_atualizado(indice: int)
 signal iniciar_dialogo_npc(npc)
 signal fim_dialogo_npc
+signal atualizar_moedas(quantidade_moedas: int)
 
 func _ready() -> void:
 	glossario = Glossario.new()
@@ -72,7 +76,7 @@ func concluiu_todas_missoes() -> bool:
 func obter_caminho_save(slot_id: int) -> String:
 	return "user://save_slot_%d.tres" % slot_id
 
-func salvar_jogo(slot_id: int, posicao_player: Vector2) -> void:
+func salvar_jogo(slot_id: int, posicao_player: Vector2, quantidade_moedas: int = -1) -> void:
 	var novo_save = SaveJogo.new()
 	
 	# Preenche os dados
@@ -80,6 +84,19 @@ func salvar_jogo(slot_id: int, posicao_player: Vector2) -> void:
 	novo_save.nome_jogador = nome_jogador
 	novo_save.missao_atual = missao_atual
 	novo_save.player_posicao = posicao_player
+	# Se foi passado um valor específico de moedas, usa; senão tenta obter o valor do jogador na cena
+	if quantidade_moedas >= 0:
+		novo_save.quantidade_moedas = quantidade_moedas
+	else:
+		# Tenta localizar o jogador na cena e obter suas moedas
+		var jogadores = get_tree().get_nodes_in_group("Jogador")
+		if jogadores.size() > 0:
+			var jogador_no_jogo = jogadores[0]
+			novo_save.quantidade_moedas = jogador_no_jogo.obter_moedas()
+		else:
+			# Não encontrou jogador na árvore — usa 50 como fallback
+			novo_save.quantidade_moedas = 50
+	
 	novo_save.data_hora = Time.get_datetime_dict_from_system()
 	
 	slot_jogo_atual = slot_id 
@@ -121,6 +138,8 @@ func carregar_jogo(slot_id: int) -> bool:
 		nome_jogador = _save_jogo.nome_jogador
 		
 		posicao_player_atual = _save_jogo.player_posicao
+		ultima_quantidade_moedas = _save_jogo.quantidade_moedas
+		Global.emit_signal("atualizar_moedas", ultima_quantidade_moedas)
 		
 		slot_jogo_atual = slot_id 
 		
@@ -129,19 +148,18 @@ func carregar_jogo(slot_id: int) -> bool:
 	else:
 		print("Save não encontrado no Slot ", slot_id)
 		return false
-		
+
 func verificar_dados_slot(slot_id: int) -> Dictionary:
 	var caminho = obter_caminho_save(slot_id)
 	if ResourceLoader.exists(caminho):
-		
 		var save_temp = ResourceLoader.load(caminho, "", ResourceLoader.CACHE_MODE_IGNORE) as SaveJogo
-		
 		return {
 			"existe": true,
 			"nome_fazenda": save_temp.nome_fazenda,
 			"nome_jogador": save_temp.nome_jogador,
 			"missao": save_temp.missao_atual,
-			"data_hora": save_temp.data_hora 
+			"data_hora": save_temp.data_hora,
+			"quantidade_moedas": save_temp.quantidade_moedas
 		}
 	else:
 		return {"existe": false}

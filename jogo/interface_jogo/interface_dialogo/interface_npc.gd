@@ -3,7 +3,7 @@ class_name InterfaceNPC
 extends Control
 
 @onready var _caixa_dialogo: Control = %CaixaDialogo
-@onready var _painel_loja: PainelTroca = $PainelLoja
+@onready var _painel_troca: PainelTroca = $PainelTroca
 
 var foto
 var personagem
@@ -13,13 +13,15 @@ func atualizar_personagem(novo_nome: String, caminho_foto: String) -> void:
 	foto = caminho_foto
 
 func exibir_dialogo(texto: String) -> void: 
+	_caixa_dialogo.show()
 	await _caixa_dialogo.exibir_dialogo(texto, foto, personagem, _caixa_dialogo.TipoDeDialogo.DIALOGO)
 
 func exibir_dialogo_com_escolhas(texto: String, escolhas: Array) -> int:
 	return await _caixa_dialogo.exibir_dialogo_com_escolhas(texto, foto, personagem, escolhas)
 
-func abrir_painel_loja(estoque_do_npc: EstoqueTroca) -> void:
-	_painel_loja.abrir(estoque_do_npc)
+func abrir_painel_troca(estoque_do_npc: EstoqueTroca) -> void:
+	_caixa_dialogo.hide()
+	_painel_troca.abrir(estoque_do_npc)
 
 func _ao_clicar_fechar_dialogo() -> void:
 	hide()
@@ -28,7 +30,7 @@ func _ao_clicar_fechar_dialogo() -> void:
 	
 	_caixa_dialogo._limpar_botoes()
 	
-	if _painel_loja:
-		_painel_loja.hide()
+	if _painel_troca:
+		_painel_troca.hide()
 	
 	Global.emit_signal("fim_dialogo_npc")

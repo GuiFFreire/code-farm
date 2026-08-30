@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://klp3houq0dkn"]
+[gd_scene format=3 uid="uid://klp3houq0dkn"]
 
 [ext_resource type="Script" uid="uid://b1bsfgtb27bkr" path="res://mundo_jogo/objeto_coletavel/objeto_coletavel.gd" id="1_qpf1k"]
 [ext_resource type="Resource" uid="uid://b6xfljq0cac3e" path="res://mundo_jogo/itens/semente_morango.tres" id="2_qpf1k"]
@@ -134,29 +134,27 @@ _data = {
 &"destacar_objeto": SubResource("Animation_x284y")
 }
 
-[node name="ObjetoColetavel" type="StaticBody2D" groups=["ObjetosColetaveis"]]
+[node name="ObjetoColetavel" type="StaticBody2D" unique_id=1436212389 groups=["ObjetosColetaveis"]]
 collision_layer = 4
 script = ExtResource("1_qpf1k")
 item = ExtResource("2_qpf1k")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1921971832]
 texture = ExtResource("2_syhko")
 region_enabled = true
 region_rect = Rect2(0, 19.5346, 12.2238, 15.6171)
 
-[node name="Colisao" type="CollisionShape2D" parent="."]
+[node name="Colisao" type="CollisionShape2D" parent="." unique_id=1492912945]
 
-[node name="AreaDetecao" type="Area2D" parent="."]
+[node name="AreaDetecao" type="Area2D" parent="." unique_id=1462150453]
 
-[node name="Colisao" type="CollisionShape2D" parent="AreaDetecao"]
+[node name="Colisao" type="CollisionShape2D" parent="AreaDetecao" unique_id=2118868407]
 shape = SubResource("CircleShape2D_5mqkx")
 
-[node name="Animador" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_46f6w")
-}
+[node name="Animador" type="AnimationPlayer" parent="." unique_id=974905986]
+libraries/ = SubResource("AnimationLibrary_46f6w")
 
-[node name="LabelInteracao" type="Label" parent="."]
+[node name="LabelInteracao" type="Label" parent="." unique_id=1631263108]
 visible = false
 z_index = 100
 anchors_preset = -1

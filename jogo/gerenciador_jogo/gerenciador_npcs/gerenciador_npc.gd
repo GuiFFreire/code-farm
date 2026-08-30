@@ -50,7 +50,9 @@ func _tocar_roteiro(dados: DadosDialogo) -> void:
 			acao = dados.acoes[indice_escolhido]
 			
 		if acao == "abrir_loja":
-			interface_npc.abrir_painel_loja(npc.estoque)
+			interface_npc.abrir_painel_troca(npc.estoque)
+			
+			await Global.missao_fechada
 		
 		# Se tiver um arquivo .tres linkado nessa opção, toca ele em seguida
 		if dados.proximas_rotas.size() > indice_escolhido and dados.proximas_rotas[indice_escolhido] != null:

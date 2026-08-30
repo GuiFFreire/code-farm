@@ -56,6 +56,11 @@ func _ao_clicar_continuar_jogo() -> void:
 	
 	if mundo_jogo and mundo_jogo.jogador:
 		mundo_jogo.jogador.global_position = Global.posicao_player_atual
+		# Se houve uma quantidade de moedas carregada do save, aplica ao jogador
+		if Global.ultima_quantidade_moedas >= 0:
+			mundo_jogo.jogador.definir_moedas(Global.ultima_quantidade_moedas)
+			# Reseta o valor para evitar reaplicação
+			Global.ultima_quantidade_moedas = -1
 		
 	interface_jogo.exibir_interface(interface_jogo.Interface.PADRAO)
 	_gerenciador_missoes.executar()

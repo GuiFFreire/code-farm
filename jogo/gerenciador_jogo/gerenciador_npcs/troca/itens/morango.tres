@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="ItemTroca" load_steps=3 format=3 uid="uid://cruokex64djex"]
+[gd_resource type="Resource" script_class="ItemTroca" format=3 uid="uid://cruokex64djex"]
 
 [ext_resource type="Resource" uid="uid://6h1psdesppbd" path="res://mundo_jogo/itens/morango.tres" id="1_ev5oq"]
-[ext_resource type="Script" uid="uid://c3fgxlok5jpmw" path="res://gerenciador_jogo/gerenciador_npcs/troca/itens/item_troca.gd" id="2_ev5oq"]
+[ext_resource type="Script" uid="uid://dh3t2ljuqdncg" path="res://gerenciador_jogo/gerenciador_npcs/troca/itens/item_troca.gd" id="2_ev5oq"]
 
 [resource]
 script = ExtResource("2_ev5oq")
 item = ExtResource("1_ev5oq")
-preco_compra = 50
-quantidade_atual = 10
+preco = 20
+quantidade = 10
 quantidade_maxima = 10
-metadata/_custom_type_script = "uid://c3fgxlok5jpmw"

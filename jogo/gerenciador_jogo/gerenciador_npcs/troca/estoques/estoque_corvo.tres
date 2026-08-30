@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="EstoqueTroca" load_steps=5 format=3 uid="uid://cndg77nhoh1it"]
+[gd_resource type="Resource" script_class="EstoqueTroca" format=3 uid="uid://cndg77nhoh1it"]
 
-[ext_resource type="Script" uid="uid://c3fgxlok5jpmw" path="res://gerenciador_jogo/gerenciador_npcs/troca/itens/item_troca.gd" id="1_ia6tv"]
+[ext_resource type="Script" uid="uid://dh3t2ljuqdncg" path="res://gerenciador_jogo/gerenciador_npcs/troca/itens/item_troca.gd" id="1_ia6tv"]
 [ext_resource type="Resource" uid="uid://cruokex64djex" path="res://gerenciador_jogo/gerenciador_npcs/troca/itens/morango.tres" id="2_2lnbu"]
-[ext_resource type="Resource" uid="uid://2vdftfxu0leu" path="res://gerenciador_jogo/gerenciador_npcs/troca/itens/semente_morango_troca.tres" id="3_7hjho"]
-[ext_resource type="Script" uid="uid://bdpljg3yytg57" path="res://gerenciador_jogo/gerenciador_npcs/troca/estoques/estoque_troca.gd" id="4_hg1y7"]
+[ext_resource type="Resource" uid="uid://2vdftfxu0leu" path="res://gerenciador_jogo/gerenciador_npcs/troca/itens/semente_morango.tres" id="3_7hjho"]
+[ext_resource type="Script" uid="uid://bbx58l5wdibk1" path="res://gerenciador_jogo/gerenciador_npcs/troca/estoques/estoque_troca.gd" id="4_hg1y7"]
 
 [resource]
 script = ExtResource("4_hg1y7")
 itens_a_venda = Array[ExtResource("1_ia6tv")]([ExtResource("2_2lnbu"), ExtResource("3_7hjho")])
-metadata/_custom_type_script = "uid://bdpljg3yytg57"
