@@ -13,4 +13,5 @@ nome = "semente_morango"
 icone = SubResource("AtlasTexture_3g45c")
 descricao = "Semente para plantio de morango."
 tipo = "semente"
+caminho_cena = "uid://klp3houq0dkn"
 metadata/_custom_type_script = "uid://de8teor80qd8x"
