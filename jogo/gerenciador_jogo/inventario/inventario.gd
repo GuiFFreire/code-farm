@@ -54,10 +54,8 @@ func remover() -> Item:
 	
 
 func remover_item(item: Item) -> bool:
-	var pilha_temp = PilhaItens.new()
-	pilha_temp.item = item
 	for slot in slots:
-		if slot.item != null and slot.pode_empilhar_com(pilha_temp):
+		if item != null and slot.item == item and slot.quantidade > 0:
 			slot.quantidade -= 1
 			if slot.quantidade == 0:
 				slot.item = null

@@ -4,6 +4,7 @@ extends Control
 
 @onready var _caixa_dialogo: Control = %CaixaDialogo
 @onready var _painel_troca: PainelTroca = $PainelTroca
+@onready var _botao_fechar: Control = $Fechar
 
 var foto
 var personagem
@@ -21,6 +22,7 @@ func exibir_dialogo_com_escolhas(texto: String, escolhas: Array) -> int:
 
 func abrir_painel_troca(estoque_do_npc: EstoqueTroca) -> void:
 	_caixa_dialogo.hide()
+	_botao_fechar.global_position.x = 145
 	_painel_troca.abrir(estoque_do_npc)
 
 func _ao_clicar_fechar_dialogo() -> void:
@@ -32,5 +34,6 @@ func _ao_clicar_fechar_dialogo() -> void:
 	
 	if _painel_troca:
 		_painel_troca.hide()
+		_botao_fechar.global_position.x = 0
 	
 	Global.emit_signal("fim_dialogo_npc")

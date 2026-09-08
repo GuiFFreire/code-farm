@@ -21,6 +21,7 @@ anchor_right = 0.9375
 anchor_bottom = 0.8888889
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("1_ybv3f")
 metadata/_edit_use_anchors_ = true
 
@@ -33,6 +34,7 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="PainelTroca" type="Control" parent="." unique_id=1057995765]
+visible = false
 layout_mode = 1
 anchor_left = 0.29500002
 anchor_top = 0.5
