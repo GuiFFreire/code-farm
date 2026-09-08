@@ -5,9 +5,9 @@ extends CenterContainer
 @onready var botao_confirmar: Button = $PanelContainer/VBoxContainer/Confirmar
 @onready var botao_cancelar: Button = $PanelContainer/VBoxContainer/Cancelar
 
-signal transacao_confirmada(acao: String, dados_item: ItemTroca)
+signal transacao_confirmada(acao: String, dados_item: Item)
 
-var _dados_pendentes: ItemTroca
+var _dados_pendentes: Item
 var _acao_pendente: String
 
 func _ready() -> void:
@@ -15,11 +15,11 @@ func _ready() -> void:
 	
 	botao_cancelar.pressed.connect(func(): hide())
 
-func abrir_tooltip_confirmacao(acao: String, dados: ItemTroca) -> void:
+func abrir_tooltip_confirmacao(acao: String, dados: Item) -> void:
 	_dados_pendentes = dados
 	_acao_pendente = acao
 	
-	label_acao.text = acao + " " + dados.item.nome + "?"
+	label_acao.text = acao + " " + dados.nome + "?"
 	label_preco.text = "Por: " + str(dados.preco) + " moedas"
 	botao_confirmar.text = acao 
 	

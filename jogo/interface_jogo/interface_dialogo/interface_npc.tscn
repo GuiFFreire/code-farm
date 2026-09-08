@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/interface/Sprite sheet for Basic Pack.png" id="4_77vmd"]
 [ext_resource type="Script" uid="uid://bluxf4leruigg" path="res://interface_jogo/interface_dialogo/painel_troca.gd" id="4_fwtrn"]
 [ext_resource type="Script" uid="uid://dmp05vql4nqy5" path="res://interface_jogo/interface_dialogo/tooltip_confirmacao.gd" id="6_mtrto"]
+[ext_resource type="Script" uid="uid://bgrbembr1ub2n" path="res://interface_jogo/interface_dialogo/mensagem_troca.gd" id="7_mensagem"]
+[ext_resource type="FontFile" uid="uid://8dyl8sjpwyl2" path="res://assets/fontes/ExpressionPro.ttf" id="8_pj1bn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77vmd"]
 content_margin_left = 37.0
@@ -14,6 +16,10 @@ content_margin_right = 37.0
 content_margin_bottom = 30.0
 texture = ExtResource("4_77vmd")
 region_rect = Rect2(155.776, 12.648993, 24.390503, 23.3184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtrto"]
+texture = ExtResource("4_77vmd")
+region_rect = Rect2(158.23418, 14.783285, 19.358932, 18.739653)
 
 [node name="InterfaceNpc" type="Control" unique_id=1156405537]
 layout_mode = 3
@@ -171,6 +177,40 @@ text = "Comprar"
 [node name="Cancelar" type="Button" parent="TooltipConfirmacao/PanelContainer/VBoxContainer" unique_id=1966437555]
 layout_mode = 2
 text = "Cancelar"
+
+[node name="Mensagem" type="PanelContainer" parent="." unique_id=960322074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -20.0
+offset_right = 60.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mtrto")
+script = ExtResource("7_mensagem")
+
+[node name="MarginContainer" type="MarginContainer" parent="Mensagem" unique_id=1850635136]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="Mensagem/MarginContainer" unique_id=498202147]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_pj1bn")
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="Mensagem" unique_id=382580440]
+wait_time = 4.0
+one_shot = true
 
 [connection signal="pressed" from="Fechar/MarginContainer/BotaoFechar" to="." method="_ao_clicar_fechar_dialogo"]
 

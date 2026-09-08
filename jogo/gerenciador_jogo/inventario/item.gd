@@ -8,3 +8,4 @@ extends Resource
 @export var descricao: String = ""
 @export var tipo: String = ""
 @export_file("*.tscn") var caminho_cena: String
+@export var preco: int = 0
