@@ -5,7 +5,7 @@ extends Node
 var mundo_jogo: MundoJogo
 var interface_jogo: InterfaceJogo
 
-var _objeto_missao_atual: Node = null
+var _objeto_missao_atual: ObjetoBase = null
 
 var _roteiro_missao_atual: RoteiroMissao = null
 

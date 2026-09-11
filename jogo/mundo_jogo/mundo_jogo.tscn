@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://chsijyi1x1s3"]
+[gd_scene load_steps=49 format=3 uid="uid://chsijyi1x1s3"]
 
 [ext_resource type="PackedScene" uid="uid://455f8bih0bus" path="res://mundo_jogo/terrenos/terreno_casa.tscn" id="1_4mwex"]
 [ext_resource type="PackedScene" uid="uid://dscfkde3tti8f" path="res://mundo_jogo/terrenos/terreno_fazenda.tscn" id="1_848jc"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c48mo1nwpwjc7" path="res://mundo_jogo/passagem/passagem.tscn" id="2_gcw66"]
 [ext_resource type="PackedScene" uid="uid://bperut1ryhs0o" path="res://mundo_jogo/jogador/jogador.tscn" id="2_ytvii"]
 [ext_resource type="PackedScene" uid="uid://dbkpdacppilwy" path="res://mundo_jogo/objeto_interativo/objeto_interativo.tscn" id="3_3at3k"]
+[ext_resource type="PackedScene" uid="uid://c6ypjuhp2cn4q" path="res://mundo_jogo/objeto_base/objeto_base.tscn" id="3_diario_base"]
+[ext_resource type="Script" uid="uid://bf6dnq6am45hy" path="res://mundo_jogo/objeto_base/comportamentos/comportamento_objeto.gd" id="3_diario_comportamento"]
+[ext_resource type="Script" uid="uid://bp226nj2o2drd" path="res://mundo_jogo/objeto_base/comportamentos/comportamento_interativo.gd" id="3_diario_interativo"]
 [ext_resource type="Texture2D" uid="uid://otnwpwe6jvss" path="res://assets/imagens/terrenos/summer and spring items.png" id="4_0nsch"]
 [ext_resource type="Texture2D" uid="uid://df3nifq2ujqwy" path="res://assets/imagens/terrenos/TopDownHouse_SmallItems.png" id="7_ru7ms"]
 [ext_resource type="Texture2D" uid="uid://c7de14nbuvevr" path="res://assets/imagens/mundo/Chest.png" id="7_yfmyd"]
@@ -33,6 +36,10 @@
 [ext_resource type="Script" uid="uid://de8teor80qd8x" path="res://gerenciador_jogo/inventario/item.gd" id="22_63weq"]
 [ext_resource type="PackedScene" uid="uid://cg826sijtyxxm" path="res://mundo_jogo/objeto_base/objetos_coletaveis/caixa_robo.tscn" id="22_maqq7"]
 [ext_resource type="PackedScene" uid="uid://c3hrv2w0c5yoy" path="res://mundo_jogo/terrenos/terreno_vila.tscn" id="36_rs3yu"]
+
+[sub_resource type="Resource" id="Resource_diario_interativo"]
+script = ExtResource("3_diario_interativo")
+ativo_ao_iniciar = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp83p"]
 size = Vector2(12, 11)
@@ -135,8 +142,9 @@ shape = SubResource("CapsuleShape2D_nhjpn")
 [node name="Colisao" parent="TerrenoFazenda/Missao1-Placa/AreaDetecao" index="0"]
 shape = SubResource("CircleShape2D_wlrp0")
 
-[node name="Missao0" parent="TerrenoFazenda" instance=ExtResource("3_3at3k")]
+[node name="Missao0" parent="TerrenoFazenda" instance=ExtResource("3_diario_base")]
 position = Vector2(260, 77)
+comportamentos = Array[ExtResource("3_diario_comportamento")]([SubResource("Resource_diario_interativo")])
 
 [node name="Sprite" parent="TerrenoFazenda/Missao0" index="0"]
 texture = ExtResource("7_ru7ms")

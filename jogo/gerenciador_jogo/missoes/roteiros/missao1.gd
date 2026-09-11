@@ -14,6 +14,12 @@ func executar() -> void:
 	await dialogo("'Querido neto, se você está vendo isso, o mundo mudou. Deixei meu maior projeto nesta caixa.'")
 	await dialogo("'Não a abra aqui dentro. Leve a caixa para o terreno da fazenda lá fora e coloque-a no chão.'")
 	await dialogo("Ela contém um robô para te auxiliar. Você poderá chamá-lo com a tecla R quando precisar.")
+
+	configurar_personagem(Global.nome_jogador, Global.foto_jogador)
+	await dialogo("Tem uma bolsa junto da caixa! São as moedas que meu avô deixou para mim.")
+	await dialogo("50 moedas! Vou guardá-las para comprar sementes e começar a cuidar da fazenda.")
+	Global.moedas_descobertas = true
+
 	
 	# -------------------------------------------------------------------------
 	# FASE 2: LIBERAR A COLETA DA CAIXA NO BUNKER

@@ -9,4 +9,5 @@ extends Resource
 @export var missao_atual: int = 1
 @export var player_posicao: Vector2 = Vector2.ZERO
 @export var quantidade_moedas: int = 0
-@export var inventario_dados: Array = [] 
+@export var moedas_descobertas: bool = false
+@export var inventario_dados: Array = []

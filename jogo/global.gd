@@ -4,7 +4,7 @@ var retomando_missao: bool = false
 
 const CAMINHO_SAVE = "user://save_jogo.gd"
 const QUANTIDADE_MISSOES = 5
-const MISSAO_INICIAL = 1
+const MISSAO_INICIAL = 0
 
 var _save_jogo: SaveJogo
 var missao_atual: int
@@ -17,6 +17,12 @@ var slot_jogo_atual: int = 1
 # Quando um save é carregado, aqui fica a quantidade de moedas presente naquele save.
 # Valor -1 indica que não há quantidade de moedas pendente para aplicar ao jogador.
 var ultima_quantidade_moedas: int = -1
+var moedas_descobertas: bool = false:
+	set(valor):
+		if moedas_descobertas == valor:
+			return
+		moedas_descobertas = valor
+		descoberta_moedas_atualizada.emit(valor)
 
 # _________________________ NOMES DE PERSONAGENS _________________________ #
 var foto_jogador = "res://assets/imagens/interface/foto_jogador.png"
@@ -41,6 +47,7 @@ signal indice_atualizado(indice: int)
 signal iniciar_dialogo_npc(npc)
 signal fim_dialogo_npc
 signal atualizar_moedas(quantidade_moedas: int)
+signal descoberta_moedas_atualizada(descobertas: bool)
 
 func _ready() -> void:
 	glossario = Glossario.new()
@@ -83,6 +90,7 @@ func salvar_jogo(slot_id: int, posicao_player: Vector2, quantidade_moedas: int =
 	novo_save.nome_fazenda = nome_fazenda_atual
 	novo_save.nome_jogador = nome_jogador
 	novo_save.missao_atual = missao_atual
+	novo_save.moedas_descobertas = moedas_descobertas
 	novo_save.player_posicao = posicao_player
 	# Se foi passado um valor específico de moedas, usa; senão tenta obter o valor do jogador na cena
 	if quantidade_moedas >= 0:
@@ -131,7 +139,7 @@ func carregar_jogo(slot_id: int) -> bool:
 	var caminho = obter_caminho_save(slot_id)
 	
 	if ResourceLoader.exists(caminho):
-		_save_jogo = ResourceLoader.load(caminho) as SaveJogo
+		_save_jogo = ResourceLoader.load(caminho, "", ResourceLoader.CACHE_MODE_IGNORE) as SaveJogo
 		
 		missao_atual = _save_jogo.missao_atual
 		nome_fazenda_atual = _save_jogo.nome_fazenda
@@ -140,6 +148,8 @@ func carregar_jogo(slot_id: int) -> bool:
 		posicao_player_atual = _save_jogo.player_posicao
 		ultima_quantidade_moedas = _save_jogo.quantidade_moedas
 		Global.emit_signal("atualizar_moedas", ultima_quantidade_moedas)
+		# Saves antigos após a missão 1 já passaram pela descoberta.
+		moedas_descobertas = _save_jogo.moedas_descobertas or missao_atual > 1
 		
 		slot_jogo_atual = slot_id 
 		
@@ -168,6 +178,8 @@ func resetar_dados_novo_jogo() -> void:
 	print("Iniciando reset dos dados globais...")
 	
 	missao_atual = MISSAO_INICIAL
+	moedas_descobertas = false
+	ultima_quantidade_moedas = -1
 	retomando_missao = false
 	
 	glossario = Glossario.new()
