@@ -5,7 +5,7 @@ extends Node
 var mundo_jogo: MundoJogo
 var interface_jogo: InterfaceJogo
 
-var _objeto_missao_atual: ObjetoBase = null
+var _objeto_missao_atual: Node2D = null
 
 var _roteiro_missao_atual: RoteiroMissao = null
 
@@ -58,9 +58,15 @@ func _ao_interagir_objeto() -> void:
 func _executar_missao_atual() -> void:
 
 	if _objeto_missao_atual:
-		var comp_interativo = _objeto_missao_atual.obter_comportamento(ComportamentoInterativo)
-		if comp_interativo:
-			comp_interativo.desativar_interacao()
+		if is_instance_valid(_objeto_missao_atual):
+			if _objeto_missao_atual.has_method("obter_comportamento"):
+				var comp = _objeto_missao_atual.obter_comportamento(
+					ComportamentoInterativo
+				)
+				if comp:
+					comp.desativar_interacao()
+			elif _objeto_missao_atual.has_method("desativar_interacao"):
+				_objeto_missao_atual.desativar_interacao()
 	
 	var caminho_missao = "res://gerenciador_jogo/missoes/roteiros/missao%d.gd" % Global.missao_atual
 	_roteiro_missao_atual = load(caminho_missao).new()
@@ -84,10 +90,15 @@ func _concluir_missao_atual() -> void:
 	jogador.ativar_movimento()
 
 func _ao_fechar_missao() -> void:
-	if _objeto_missao_atual:
-		var comp_interativo = _objeto_missao_atual.obter_comportamento(ComportamentoInterativo)
-		if comp_interativo:
-			comp_interativo.ativar_interacao()
-			
-	if _roteiro_missao_atual:
+	if is_instance_valid(_objeto_missao_atual):
+		if _objeto_missao_atual.has_method("obter_comportamento"):
+			var comp = _objeto_missao_atual.obter_comportamento(
+				ComportamentoInterativo
+			)
+			if comp:
+				comp.ativar_interacao()
+		elif _objeto_missao_atual.has_method("ativar_interacao"):
+			_objeto_missao_atual.ativar_interacao()
+
+	if is_instance_valid(_roteiro_missao_atual):
 		_roteiro_missao_atual.queue_free()
