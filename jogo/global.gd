@@ -1,6 +1,8 @@
 extends Node
 
 var retomando_missao: bool = false
+# Pontos de retomada de missões que transformam objetos do mundo.
+var progresso_missoes: Dictionary = {}
 
 const CAMINHO_SAVE = "user://save_jogo.gd"
 const QUANTIDADE_MISSOES = 5
@@ -85,6 +87,16 @@ func obter_caminho_save(slot_id: int) -> String:
 
 func salvar_jogo(slot_id: int, posicao_player: Vector2, quantidade_moedas: int = -1) -> void:
 	var novo_save = SaveJogo.new()
+	novo_save.versao_save = 2
+	novo_save.inventario_dados = inventario.obter_dados_save()
+	novo_save.indice_hotbar = inventario.indice
+	novo_save.progresso_missoes = progresso_missoes.duplicate(true)
+	var mundo = get_tree().get_first_node_in_group("MundoPersistente")
+	if mundo:
+		novo_save.mundo_dados = mundo.obter_dados_save()
+		novo_save.terreno_player = mundo.jogador.terreno_atual
+		novo_save.direcao_player = mundo.jogador._direcao_animacao
+		posicao_player = mundo.jogador.global_position
 	
 	# Preenche os dados
 	novo_save.nome_fazenda = nome_fazenda_atual
@@ -140,6 +152,11 @@ func carregar_jogo(slot_id: int) -> bool:
 	
 	if ResourceLoader.exists(caminho):
 		_save_jogo = ResourceLoader.load(caminho, "", ResourceLoader.CACHE_MODE_IGNORE) as SaveJogo
+		if _save_jogo == null:
+			return false
+		progresso_missoes = _save_jogo.progresso_missoes.duplicate(true)
+		retomando_missao = false
+		inventario.restaurar_dados_save(_save_jogo.inventario_dados, _save_jogo.indice_hotbar)
 		
 		missao_atual = _save_jogo.missao_atual
 		nome_fazenda_atual = _save_jogo.nome_fazenda
@@ -163,6 +180,8 @@ func verificar_dados_slot(slot_id: int) -> Dictionary:
 	var caminho = obter_caminho_save(slot_id)
 	if ResourceLoader.exists(caminho):
 		var save_temp = ResourceLoader.load(caminho, "", ResourceLoader.CACHE_MODE_IGNORE) as SaveJogo
+		if save_temp == null:
+			return {"existe": false}
 		return {
 			"existe": true,
 			"nome_fazenda": save_temp.nome_fazenda,
@@ -181,9 +200,12 @@ func resetar_dados_novo_jogo() -> void:
 	moedas_descobertas = false
 	ultima_quantidade_moedas = -1
 	retomando_missao = false
+	progresso_missoes.clear()
+	nome_fazenda_atual = "Fazenda Code Farm"
+	posicao_player_atual = Vector2.ZERO
 	
 	glossario = Glossario.new()
-	inventario = Inventario.new()
+	inventario.restaurar_dados_save([])
 	nome_jogador = "Jogador"
 	
 	_save_jogo = null
@@ -208,6 +230,25 @@ func obter_slot_mais_recente() -> int:
 				slot_mais_recente = i
 				
 	return slot_mais_recente
+
+
+func restaurar_mundo_carregado(mundo: MundoJogo) -> void:
+	if _save_jogo == null:
+		return
+	mundo.jogador.terreno_atual = _save_jogo.terreno_player
+	mundo.jogador._direcao_animacao = _save_jogo.direcao_player
+	if _save_jogo.versao_save >= 2 and not _save_jogo.mundo_dados.is_empty():
+		mundo.restaurar_dados_save(_save_jogo.mundo_dados)
+	else:
+		mundo.restaurar_progresso_antigo()
+		
+	if missao_atual == 0:
+		var diario = mundo.obter_elemento("Missao0")
+		if diario:
+			diario.show()
+			diario.process_mode = Node.PROCESS_MODE_INHERIT
+
+
 #Estrutura do projeto:
 
 #jogo
@@ -287,4 +328,4 @@ func obter_slot_mais_recente() -> int:
 	#|__ mundo_jogo.gd
 	#|__ mundo_jogo.tscn
 #
-#|__ global.gb
+#|__ global.gd

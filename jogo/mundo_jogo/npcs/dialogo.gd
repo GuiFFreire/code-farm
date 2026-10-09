@@ -8,6 +8,10 @@ extends CharacterBody2D
 @onready var area_interacao = $ObjetoInterativo
 
 func _ready() -> void:
+	# Cada partida/NPC possui quantidades próprias; os Items continuam compartilhados.
+	if estoque:
+		estoque = estoque.duplicate()
+		estoque.quantidades = estoque.quantidades.duplicate()
 	area_interacao.ativar_interacao()
 	area_interacao._label_interacao.text = "[E] para Falar" 
 	area_interacao.interagiu.connect(_ao_interagir)

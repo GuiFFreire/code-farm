@@ -92,3 +92,22 @@ func mover_item(indice_origem: int, indice_destino: int) -> void:
 
 	Global.emit_signal("item_modificado", pilha_origem)
 	Global.emit_signal("item_modificado", pilha_destino)
+
+func obter_dados_save() -> Array:
+	var dados: Array = []
+	for pilha in slots:
+		dados.append({"item": pilha.item, "quantidade": pilha.quantidade})
+	return dados
+
+func restaurar_dados_save(dados: Array, indice_salvo: int = 0) -> void:
+	for i in slots.size():
+		slots[i].item = null
+		slots[i].quantidade = 0
+		if i < dados.size() and dados[i] is Dictionary:
+			var item_salvo = dados[i].get("item") as Item
+			var quantidade: int = maxi(0, dados[i].get("quantidade", 0))
+			if item_salvo != null and quantidade > 0:
+				slots[i].item = item_salvo
+				slots[i].quantidade = quantidade
+	indice = clampi(indice_salvo, 0, slots.size() - 1)
+	Global.item_modificado.emit(null)

@@ -29,12 +29,18 @@ func _ready() -> void:
 func _ao_clicar_novo_jogo() -> void:
 	Global.resetar_dados_novo_jogo()
 	await _trocar_mundo_para_novo()
+	get_tree().paused = false
 	interface_jogo.exibir_interface(interface_jogo.Interface.PADRAO)
 	_gerenciador_missoes.executar()
 
 # No gerenciador_jogo.gd
 
 func _trocar_mundo_para_novo() -> void:
+	_gerenciador_missoes.reiniciar()
+	# Cancela diálogos que ainda aguardavam sinais do mundo anterior.
+	if is_instance_valid(_gerenciador_npcs):
+		_gerenciador_npcs.free()
+	_gerenciador_npcs = GerenciadorNPCs.new()
 	if mundo_jogo:
 		mundo_jogo.queue_free()
 		await get_tree().process_frame 
@@ -61,6 +67,7 @@ func _ao_clicar_continuar_jogo() -> void:
 			mundo_jogo.jogador.definir_moedas(Global.ultima_quantidade_moedas)
 			# Reseta o valor para evitar reaplicação
 			Global.ultima_quantidade_moedas = -1
+		Global.restaurar_mundo_carregado(mundo_jogo)
 		
 	interface_jogo.exibir_interface(interface_jogo.Interface.PADRAO)
 	_gerenciador_missoes.executar()

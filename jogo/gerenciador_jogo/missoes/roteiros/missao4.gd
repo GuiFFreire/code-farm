@@ -30,11 +30,15 @@ func executar() -> void:
 
 func _tocar_animacao_copo(nome: String) -> void:
 	var copo = mundo_jogo.obter_elemento("Copo")
+	if not is_instance_valid(copo):
+		return
 	await copo.tocar_animacao(nome)
 	await mundo_jogo.get_tree().create_timer(2).timeout
 
 func _limpar_cozinha():
 	var copo = mundo_jogo.obter_elemento("Copo")
+	if not is_instance_valid(copo):
+		return
 	var bolhas = preload("res://mundo_jogo/animacoes/bolhas/bolhas.tscn").instantiate()
 	
 	bolhas.visible = true

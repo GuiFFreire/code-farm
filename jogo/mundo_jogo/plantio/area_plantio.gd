@@ -53,6 +53,9 @@ func _tentar_plantar() -> void:
 func _plantar(item: Item):
 	var nome_plantio = item.nome.split("_")
 	var caminho = "res://mundo_jogo/plantio/objetos_plantio/%s.tscn" % nome_plantio[1]
+	_criar_plantio(caminho)
+
+func _criar_plantio(caminho: String) -> void:
 	_cena_plantio = load(caminho)
 	_objeto_plantio = _cena_plantio.instantiate()
 	_objeto_plantio.regar.connect(_ao_pedir_para_regar)
@@ -62,7 +65,7 @@ func _plantar(item: Item):
 	add_child(_objeto_plantio)
 	
 func _tentar_regar():
-	if _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
+	if _jogador_dentro and _para_regar and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
 		_interacao_em_execucao = true
 		molhar_terra(3.0)
 		_objeto_plantio._processo_plantio(_frame_plantio)
@@ -106,3 +109,43 @@ func _ao_terminar_de_crescer():
 	
 func _ao_coletar():
 	_estado_atual = ESTADO.VAZIO
+
+func obter_estado_plantio() -> Dictionary:
+	if not is_instance_valid(_objeto_plantio) or _objeto_plantio.foi_colhido():
+		return {}
+	return {
+		"estado": _estado_atual, "frame_rega": _frame_plantio,
+		"para_regar": _para_regar, "planta": _objeto_plantio.obter_estado(),
+		"umidade": _terra_molhada.modulate.a if _terra_molhada.visible else 0.0
+	}
+
+func restaurar_estado_plantio(dados: Dictionary) -> void:
+	if is_instance_valid(_objeto_plantio):
+		remove_child(_objeto_plantio)
+		_objeto_plantio.queue_free()
+	_objeto_plantio = null
+	_estado_atual = ESTADO.VAZIO
+	_para_regar = false
+	_interacao_em_execucao = false
+	_label_plantio.hide()
+	_label_regar.hide()
+	if tween_secagem:
+		tween_secagem.kill()
+	_terra_molhada.hide()
+	if dados.is_empty():
+		return
+	var planta: Dictionary = dados.get("planta", {})
+	if planta.is_empty() or not ResourceLoader.exists(planta.get("cena", "")):
+		return
+	_criar_plantio(planta["cena"])
+	_objeto_plantio.restaurar_estado(planta)
+	_estado_atual = dados.get("estado", ESTADO.PLANTIO)
+	_frame_plantio = dados.get("frame_rega", 0)
+	_para_regar = dados.get("para_regar", false)
+	var umidade: float = clampf(dados.get("umidade", 0.0), 0.0, 0.75)
+	if umidade > 0.0:
+		_terra_molhada.show()
+		_terra_molhada.modulate.a = umidade
+		tween_secagem = create_tween()
+		tween_secagem.tween_property(_terra_molhada, "modulate:a", 0.0, 3.0 * umidade / 0.75)
+		tween_secagem.tween_callback(_terra_molhada.hide)

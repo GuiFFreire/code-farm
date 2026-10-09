@@ -45,5 +45,7 @@ func instanciar_grupo(deslocamento: Vector2) -> void:
 		var area_plantio = CENA_AREA_PLANTIO.instantiate()
 		
 		area_plantio.position = posicao_area + deslocamento
+		# Identificador estável entre instâncias do mundo e entre sessões.
+		area_plantio.name = "Canteiro_%d_%d" % [int(area_plantio.position.x), int(area_plantio.position.y)]
 		add_child(area_plantio)
 	

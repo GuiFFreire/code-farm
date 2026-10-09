@@ -4,6 +4,18 @@ const CENA_ROBO = preload("res://mundo_jogo/npcs/robo.tscn")
 
 
 func executar() -> void:
+	var etapa: int = Global.progresso_missoes.get("missao1", 0)
+	if etapa < 1:
+		await _introducao()
+		Global.progresso_missoes["missao1"] = 1
+	if etapa < 2:
+		await _coletar_caixa()
+		Global.progresso_missoes["missao1"] = 2
+	if etapa < 3:
+		await _abrir_caixa()
+	await _configurar_robo()
+
+func _introducao() -> void:
 	# -------------------------------------------------------------------------
 	# FASE 1: DIÁLOGO INICIAL AO INTERAGIR DIRETO COM A CAIXA
 	# -------------------------------------------------------------------------
@@ -19,6 +31,8 @@ func executar() -> void:
 	await dialogo("Tem uma bolsa junto da caixa! São as moedas que meu avô deixou para mim.")
 	await dialogo("50 moedas! Vou guardá-las para comprar sementes e começar a cuidar da fazenda.")
 	Global.moedas_descobertas = true
+
+func _coletar_caixa() -> void:
 
 	
 	# -------------------------------------------------------------------------
@@ -59,6 +73,9 @@ func executar() -> void:
 	# -------------------------------------------------------------------------
 	# FASE 3: MONITORAR A CAIXA NO MUNDO E VERIFICAR O LOCAL
 	# -------------------------------------------------------------------------
+func _abrir_caixa() -> void:
+	interface_jogo.exibir_interface(interface_jogo.Interface.PADRAO)
+	mundo_jogo.obter_jogador().ativar_movimento()
 	var caixa_dropada: Node2D = null
 	
 	while true:
@@ -82,7 +99,7 @@ func executar() -> void:
 
 			var comp_interativo = caixa_encontrada.obter_comportamento(ComportamentoInterativo)
 			if comp_interativo:
-				if jogador.terreno_atual == "TerrenoFazenda":
+				if caixa_encontrada.get_meta("terreno", jogador.terreno_atual) == "TerrenoFazenda":
 
 					caixa_dropada = caixa_encontrada
 					break
@@ -92,7 +109,7 @@ func executar() -> void:
 						pass
 					else:
 						comp_interativo.texto_interacao = "[E] para tentar abrir"
-						comp_interativo.ativar_interacao()
+						comp_interativo.ativar_interacao(caixa_encontrada)
 						comp_interativo.interagiu.connect(_ao_tentar_abrir_no_lugar_errado, CONNECT_ONE_SHOT)
 
 	# -------------------------------------------------------------------------
@@ -108,7 +125,7 @@ func executar() -> void:
 			comp_interativo_caixa.interagiu.disconnect(_ao_tentar_abrir_no_lugar_errado)
 			
 		comp_interativo_caixa.texto_interacao = "[E] para abrir a caixa"
-		comp_interativo_caixa.ativar_interacao()
+		comp_interativo_caixa.ativar_interacao(caixa_dropada)
 		await comp_interativo_caixa.interagiu
 
 	# -------------------------------------------------------------------------
@@ -129,12 +146,16 @@ func executar() -> void:
 	var robo_instanciado = CENA_ROBO.instantiate()
 	robo_instanciado.global_position = posicao_spawn
 	pai_da_caixa.add_child(robo_instanciado)
+	Global.progresso_missoes["missao1"] = 3
 	
 	await mundo_jogo.get_tree().create_timer(1.0).timeout
 	
 	# -------------------------------------------------------------------------
 	# FASE 6: DIÁLOGO COM O ROBÔ E CONFIGURAÇÃO DO NOME (PYTHON)
 	# -------------------------------------------------------------------------
+func _configurar_robo() -> void:
+	mundo_jogo.obter_jogador().desativar_movimento()
+	interface_jogo.exibir_interface(interface_jogo.Interface.MISSAO)
 	configurar_personagem(Global.nome_robo, Global.foto_robo)
 	await dialogo("Iniciando Sistema Operacional AGR.O v1.0...")
 	await dialogo("Olá, mundo! Inicialização concluída fora do Bunker.")

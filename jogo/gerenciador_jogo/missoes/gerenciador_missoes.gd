@@ -16,10 +16,14 @@ func configurar(mundo_jogo_ref: MundoJogo, interface_jogo_ref: InterfaceJogo):
 	Global.conectar_sinal(Global, "missao_fechada", Callable(self, "_ao_fechar_missao"))
 
 func executar():
+	# A caixa original pode já ter sido coletada ou transformada em robô.
+	if Global.missao_atual == 1 and Global.progresso_missoes.get("missao1", 0) > 0:
+		_ao_interagir_objeto()
+		return
 	_ativar_objeto_missao_atual()
 
 func _ativar_objeto_missao_atual() -> void:
-	if _objeto_missao_atual:
+	if is_instance_valid(_objeto_missao_atual):
 		if _objeto_missao_atual.has_method("obter_comportamento"):
 			var comp_antigo = _objeto_missao_atual.obter_comportamento(ComportamentoInterativo)
 			if comp_antigo:
@@ -31,11 +35,14 @@ func _ativar_objeto_missao_atual() -> void:
 		var nome_objeto = "Missao%d" % Global.missao_atual
 
 		_objeto_missao_atual = mundo_jogo.obter_elemento(nome_objeto)
+		if not is_instance_valid(_objeto_missao_atual):
+			push_warning("Objeto de missão não encontrado: " + nome_objeto)
+			return
 
 		if _objeto_missao_atual.has_method("obter_comportamento"):
 			var comp_interativo = _objeto_missao_atual.obter_comportamento(ComportamentoInterativo)
 			if comp_interativo:
-				comp_interativo.ativar_interacao()
+				comp_interativo.ativar_interacao(_objeto_missao_atual)
 				Global.conectar_sinal(comp_interativo, "interagiu", Callable(self, "_ao_interagir_objeto"))
 				
 		# Se for o SISTEMA ANTIGO (ObjetoInterativo)
@@ -56,18 +63,14 @@ func _ao_interagir_objeto() -> void:
 	_executar_missao_atual()
 
 func _executar_missao_atual() -> void:
+	if is_instance_valid(_objeto_missao_atual):
+		if _objeto_missao_atual.has_method("obter_comportamento"):
+			var comp = _objeto_missao_atual.obter_comportamento(ComportamentoInterativo)
+			if comp:
+				comp.desativar_interacao()
+		elif _objeto_missao_atual.has_method("desativar_interacao"):
+			_objeto_missao_atual.desativar_interacao()
 
-	if _objeto_missao_atual:
-		if is_instance_valid(_objeto_missao_atual):
-			if _objeto_missao_atual.has_method("obter_comportamento"):
-				var comp = _objeto_missao_atual.obter_comportamento(
-					ComportamentoInterativo
-				)
-				if comp:
-					comp.desativar_interacao()
-			elif _objeto_missao_atual.has_method("desativar_interacao"):
-				_objeto_missao_atual.desativar_interacao()
-	
 	var caminho_missao = "res://gerenciador_jogo/missoes/roteiros/missao%d.gd" % Global.missao_atual
 	_roteiro_missao_atual = load(caminho_missao).new()
 	_roteiro_missao_atual.configurar(mundo_jogo, interface_jogo)
@@ -102,3 +105,9 @@ func _ao_fechar_missao() -> void:
 
 	if is_instance_valid(_roteiro_missao_atual):
 		_roteiro_missao_atual.queue_free()
+
+func reiniciar() -> void:
+	if is_instance_valid(_roteiro_missao_atual):
+		_roteiro_missao_atual.free()
+	_roteiro_missao_atual = null
+	_objeto_missao_atual = null

@@ -165,5 +165,6 @@ func largar_item_no_mundo() -> void:
 	elif "item" in objeto:
 		objeto.item = item
 
+	objeto.set_meta("terreno", terreno_atual)
 	objeto.global_position = global_position + offset
 	get_parent().add_child(objeto)
