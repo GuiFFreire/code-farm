@@ -73,14 +73,15 @@ func _criar_plantio(caminho: String) -> void:
 	_objeto_plantio.global_position = Vector2(0.0, -10.0)
 	add_child(_objeto_plantio)
 	
-func _tentar_regar():
-<<<<<<< HEAD
-	if _jogador_dentro and _para_regar and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
-=======
+func _tentar_regar() -> void:
 	if not _para_regar:
 		return
-	if _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
->>>>>>> feature/reuniao_09_10
+
+	if (
+		_jogador_dentro
+		and Input.is_action_just_pressed("interagir")
+		and not _interacao_em_execucao
+	):
 		_interacao_em_execucao = true
 		molhar_terra(3.0)
 		_objeto_plantio._processo_plantio(_frame_plantio)
@@ -125,7 +126,6 @@ func _ao_terminar_de_crescer():
 func _ao_coletar():
 	_estado_atual = ESTADO.VAZIO
 
-<<<<<<< HEAD
 func obter_estado_plantio() -> Dictionary:
 	if not is_instance_valid(_objeto_plantio) or _objeto_plantio.foi_colhido():
 		return {}
@@ -165,7 +165,6 @@ func restaurar_estado_plantio(dados: Dictionary) -> void:
 		tween_secagem = create_tween()
 		tween_secagem.tween_property(_terra_molhada, "modulate:a", 0.0, 3.0 * umidade / 0.75)
 		tween_secagem.tween_callback(_terra_molhada.hide)
-=======
 # Retorna uma mensagem de erro ou "" quando consegue plantar.
 func plantar_semente(item: Item, origem: Inventario) -> String:
 	if _estado_atual != ESTADO.VAZIO:
@@ -192,4 +191,3 @@ func plantar_semente(item: Item, origem: Inventario) -> String:
 
 	_plantar(item)
 	return ""
->>>>>>> feature/reuniao_09_10

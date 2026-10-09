@@ -30,15 +30,7 @@ func inicializar(objeto: ObjetoBase) -> void:
 
 	_detecao_ativa = ativo_ao_iniciar
 
-<<<<<<< HEAD
-func processar(objeto: ObjetoBase, _delta: float) -> void:
-	if _detecao_ativa and _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao and not interagiu.get_connections().is_empty():
-		_label.hide()
-		objeto.animador.play("RESET")
-		_interacao_em_execucao = true
-		emit_signal("interagiu")
-=======
->>>>>>> feature/reuniao_09_10
+
 
 func pode_interagir() -> bool:
 	return (
@@ -46,6 +38,7 @@ func pode_interagir() -> bool:
 		and _detecao_ativa
 		and _jogador_dentro
 		and not _interacao_em_execucao
+		and not interagiu.get_connections().is_empty()
 	)
 
 
@@ -77,20 +70,11 @@ func ao_detectar_entrada(
 	if corpo.is_in_group("Jogador"):
 		_jogador_dentro = true
 
-<<<<<<< HEAD
-func ao_detectar_saida(objeto: ObjetoBase, corpo: Node2D) -> void:
-	if corpo.is_in_group("Jogador"):
-		_label.hide()
-		objeto.animador.play("RESET")
-		_interacao_em_execucao = false
-=======
-
 func ao_detectar_saida(
 	_objeto_ref: ObjetoBase,
 	corpo: Node2D
 ) -> void:
 	if corpo.is_in_group("Jogador"):
->>>>>>> feature/reuniao_09_10
 		_jogador_dentro = false
 		_interacao_em_execucao = false
 		definir_selecionado(false)
@@ -99,20 +83,19 @@ func ao_detectar_saida(
 func ativar_interacao(objeto: ObjetoBase = null) -> void:
 	_detecao_ativa = true
 	_interacao_em_execucao = false
-<<<<<<< HEAD
-	if objeto != null:
-		_jogador_dentro = false
-		for corpo in objeto.get_node("AreaDetecao").get_overlapping_bodies():
-			if corpo.is_in_group("Jogador"):
-				ao_detectar_entrada(objeto, corpo)
-	if is_instance_valid(_label):
-		_label.visible = _jogador_dentro
 
-func desativar_interacao() -> void:
-	_detecao_ativa = false
-	if is_instance_valid(_label):
-		_label.hide()
-=======
+	var alvo: ObjetoBase = objeto if objeto != null else _objeto
+
+	if is_instance_valid(alvo):
+		var area := alvo.get_node_or_null("AreaDetecao") as Area2D
+
+		if area != null:
+			_jogador_dentro = false
+
+			for corpo in area.get_overlapping_bodies():
+				if corpo.is_in_group("Jogador"):
+					_jogador_dentro = true
+					break
 
 
 func desativar_interacao() -> void:
@@ -128,6 +111,6 @@ func _tocar_animacao(nome: String) -> void:
 	if not is_instance_valid(_objeto):
 		return
 
-	if _objeto.animador.has_animation(nome):
-		_objeto.animador.play(nome)
->>>>>>> feature/reuniao_09_10
+	if is_instance_valid(_objeto.animador):
+		if _objeto.animador.has_animation(nome):
+			_objeto.animador.play(nome)

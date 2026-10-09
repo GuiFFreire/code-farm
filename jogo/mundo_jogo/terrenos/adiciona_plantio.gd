@@ -46,15 +46,6 @@ func gerar_canteiros() -> void:
 
 
 func instanciar_grupo(deslocamento: Vector2) -> void:
-<<<<<<< HEAD
-	for posicao_area in posicao_canteiro:
-		var area_plantio = CENA_AREA_PLANTIO.instantiate()
-		
-		area_plantio.position = posicao_area + deslocamento
-		# Identificador estável entre instâncias do mundo e entre sessões.
-		area_plantio.name = "Canteiro_%d_%d" % [int(area_plantio.position.x), int(area_plantio.position.y)]
-		add_child(area_plantio)
-=======
 	var matriz: Array = []
 
 	for linha in range(LINHAS):
@@ -65,14 +56,17 @@ func instanciar_grupo(deslocamento: Vector2) -> void:
 			var area := CENA_AREA_PLANTIO.instantiate() as Area2D
 
 			area.position = posicao_canteiro[indice_posicao] + deslocamento
-			add_child(area)
+			area.name = "Canteiro_%d_%d" % [
+				int(area.position.x),
+				int(area.position.y)
+			]
 
+			add_child(area)
 			espacos_da_linha.append(area)
 
 		matriz.append(espacos_da_linha)
 
 	_canteiros.append(matriz)
-	
 func obter_espaco(
 	id_canteiro: int,
 	linha: int,
@@ -88,5 +82,5 @@ func obter_espaco(
 		return null
 
 	return _canteiros[id_canteiro][linha][coluna] as Area2D
->>>>>>> feature/reuniao_09_10
+
 	
