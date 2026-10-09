@@ -21,8 +21,9 @@ func _atualizar_hotbar():
 	# Conecta os sinais de cada slot e registra o índice deles
 	for i in range(_slots.size()):
 		_slots[i].indice = i
-		_slots[i].connect("clicado", Callable(self, "_ao_clicar_slot"))
-		_slots[i].connect("drag_iniciado", Callable(self, "_ao_iniciar_drag"))
+
+		Global.conectar_sinal(_slots[i],"clicado",Callable(self, "_ao_clicar_slot"))
+		Global.conectar_sinal(_slots[i],"drag_iniciado",Callable(self, "_ao_iniciar_drag"))
 	
 	atualizar_slots_com_dados_do_inventario()
 	_atualizar_seletor()

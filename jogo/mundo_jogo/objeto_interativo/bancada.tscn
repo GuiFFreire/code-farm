@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cux52ekdo6kop"]
 
-[ext_resource type="Script" uid="uid://g5xbs1eun8rv" path="res://mundo_jogo/objeto_base/objeto_base.gd" id="1_slc0w"]
+[ext_resource type="Script" uid="uid://k7ghqo0pn6fg" path="res://mundo_jogo/objeto_interativo/bancada.gd" id="1_uogkm"]
 [ext_resource type="Script" uid="uid://dsl3dfocxiadp" path="res://mundo_jogo/objeto_base/comportamentos/comportamento_objeto.gd" id="2_uogkm"]
 [ext_resource type="Script" uid="uid://bkr7uosnbbeiu" path="res://mundo_jogo/objeto_base/comportamentos/comportamento_interativo.gd" id="3_cq4ca"]
 [ext_resource type="Texture2D" uid="uid://dwnipwsd5seqh" path="res://assets/imagens/terrenos/TopDownHouse_FurnitureState2.png" id="4_uogkm"]
@@ -23,7 +23,7 @@ size = Vector2(16, 16)
 [node name="bancada" type="StaticBody2D" unique_id=353762870]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_slc0w")
+script = ExtResource("1_uogkm")
 comportamentos = Array[ExtResource("2_uogkm")]([SubResource("Resource_euo4h")])
 metadata/_custom_type_script = "uid://g5xbs1eun8rv"
 

@@ -231,8 +231,9 @@ position = Vector2(631, -313)
 [node name="ObjetoBase" parent="TerrenoFazenda" unique_id=1392569640 instance=ExtResource("16_n50el")]
 position = Vector2(-24, 89)
 
-[node name="bancada" parent="TerrenoFazenda" unique_id=353762870 instance=ExtResource("17_wgyws")]
+[node name="bancada" parent="TerrenoFazenda" unique_id=353762870 node_paths=PackedStringArray("bau") instance=ExtResource("17_wgyws")]
 position = Vector2(-44, 89)
+bau = NodePath("../ObjetoBase")
 
 [node name="TerrenoCasa" parent="." unique_id=175163249 instance=ExtResource("1_4mwex")]
 y_sort_enabled = true
