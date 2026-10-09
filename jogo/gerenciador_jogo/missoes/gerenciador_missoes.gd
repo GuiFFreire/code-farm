@@ -16,7 +16,6 @@ func configurar(mundo_jogo_ref: MundoJogo, interface_jogo_ref: InterfaceJogo):
 	Global.conectar_sinal(Global, "missao_fechada", Callable(self, "_ao_fechar_missao"))
 
 func executar():
-	# A caixa original pode já ter sido coletada ou transformada em robô.
 	if Global.missao_atual == 1 and Global.progresso_missoes.get("missao1", 0) > 0:
 		_ao_interagir_objeto()
 		return

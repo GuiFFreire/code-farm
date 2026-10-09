@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://dxo5dyjge5q60" path="res://mundo_jogo/animais/boi.tscn" id="15_v2ue8"]
 [ext_resource type="PackedScene" uid="uid://bbaagvyi6w631" path="res://mundo_jogo/terrenos/terreno_ferreiro.tscn" id="16_a5oup"]
 [ext_resource type="PackedScene" uid="uid://yc0e2qahfkik" path="res://mundo_jogo/animais/galinha.tscn" id="16_dy05v"]
+[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/cocho/cocho.tscn" id="cocho_galinhas"]
+[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/objetos_coletaveis/milho.tscn" id="milho_galinhas"]
 [ext_resource type="PackedScene" uid="uid://gueeykda8uvu" path="res://mundo_jogo/terrenos/terreno_salao.tscn" id="16_muyhw"]
 [ext_resource type="PackedScene" uid="uid://83xun8fp8ysk" path="res://mundo_jogo/animais/porco.tscn" id="17_muyhw"]
 [ext_resource type="PackedScene" uid="uid://x8q7i06nnq7h" path="res://mundo_jogo/npcs/marceneiro.tscn" id="17_r2s0a"]
@@ -220,6 +222,18 @@ position = Vector2(299, -287)
 
 [node name="galinha" parent="TerrenoFazenda" unique_id=1730074643 instance=ExtResource("16_dy05v")]
 position = Vector2(591, -102)
+
+[node name="CochoGalinhas" parent="TerrenoFazenda" instance=ExtResource("cocho_galinhas")]
+position = Vector2(550, -65)
+
+[node name="MilhoGalinhas1" parent="TerrenoFazenda" instance=ExtResource("milho_galinhas")]
+position = Vector2(512, -72)
+
+[node name="MilhoGalinhas2" parent="TerrenoFazenda" instance=ExtResource("milho_galinhas")]
+position = Vector2(512, -48)
+
+[node name="MilhoGalinhas3" parent="TerrenoFazenda" instance=ExtResource("milho_galinhas")]
+position = Vector2(512, -24)
 
 [node name="porco" parent="TerrenoFazenda" unique_id=588687097 instance=ExtResource("17_muyhw")]
 position = Vector2(631, -313)

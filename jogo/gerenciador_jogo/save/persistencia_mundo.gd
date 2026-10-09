@@ -47,6 +47,8 @@ func obter_dados() -> Dictionary:
 		}
 		if no.has_method("obter_estado_plantio"):
 			dados["plantio"] = no.obter_estado_plantio()
+		if no.has_method("obter_estado_alimentacao"):
+			dados["alimentacao"] = no.obter_estado_alimentacao()
 		if no is ObjetoColetavel:
 			dados["item"] = no.item
 		if no is ObjetoBase:
@@ -126,6 +128,8 @@ func restaurar(dados: Dictionary) -> void:
 			no._direcao_animacao = animal["animacao"]
 			no.velocidade_movimento = animal["velocidade"]
 			no.timer.start(maxf(0.01, animal["tempo"]))
+		if no.has_method("restaurar_estado_alimentacao"):
+			no.restaurar_estado_alimentacao(estado.get("alimentacao", {}))
 		if "estoque" in no and no.estoque is EstoqueTroca:
 			for entrada in estado.get("estoque", []):
 				var item = entrada.get("item") as Item

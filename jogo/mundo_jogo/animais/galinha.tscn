@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://yc0e2qahfkik"]
 
-[ext_resource type="Script" uid="uid://t76wjwda07c3" path="res://mundo_jogo/animais/baseAnimal.gd" id="1_as4be"]
+[ext_resource type="Script" path="res://mundo_jogo/animais/galinha.gd" id="1_as4be"]
 [ext_resource type="Texture2D" uid="uid://b028l3g8nrfkw" path="res://assets/imagens/animais/Turkey_animation_without_shadow.png" id="2_kfkxi"]
 [ext_resource type="AudioStream" uid="uid://cio1m6l6cncxq" path="res://assets/sons/GalinhaNormal.mp3" id="3_as4be"]
 [ext_resource type="AudioStream" uid="uid://dgalda6jhgims" path="res://assets/sons/GalinhaFugindo.mp3" id="4_6kjry"]

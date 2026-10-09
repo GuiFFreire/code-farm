@@ -11,8 +11,6 @@ extends Resource
 @export var quantidade_moedas: int = 0
 @export var moedas_descobertas: bool = false
 @export var inventario_dados: Array = []
-
-# Versão zero identifica arquivos anteriores à persistência do mundo.
 @export var versao_save: int = 0
 @export var indice_hotbar: int = 0
 @export var terreno_player: String = "TerrenoFazenda"

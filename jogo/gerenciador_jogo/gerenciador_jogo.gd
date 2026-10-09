@@ -37,7 +37,6 @@ func _ao_clicar_novo_jogo() -> void:
 
 func _trocar_mundo_para_novo() -> void:
 	_gerenciador_missoes.reiniciar()
-	# Cancela diálogos que ainda aguardavam sinais do mundo anterior.
 	if is_instance_valid(_gerenciador_npcs):
 		_gerenciador_npcs.free()
 	_gerenciador_npcs = GerenciadorNPCs.new()
