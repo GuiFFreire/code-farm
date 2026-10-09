@@ -1,3 +1,4 @@
+class_name AreaPlantio
 extends Area2D
 
 @onready var _label_plantio: Label = $LabelPlantio
@@ -27,28 +28,36 @@ func _preparar_estado_inicial():
 
 @warning_ignore('unused_parameter')
 func _process(delta: float) -> void:
+	var jogador := get_tree().get_first_node_in_group("Jogador") as Jogador
+	if jogador == null or not jogador.pode_interagir():
+		return
 	if _estado_atual == ESTADO.VAZIO:
 		_tentar_plantar()
 	elif _estado_atual == ESTADO.PLANTIO:
 		_tentar_regar()
 
 func _tentar_plantar() -> void:
-	if _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
-		_interacao_em_execucao = true
-		
-		if Global.inventario.verificar_tipo("semente"):
-			var item: Item = Global.inventario.remover()
-			_label_plantio.hide()
-			_estado_atual = ESTADO.PLANTIO
-			_plantar(item)
-			
-		else:
-			_label_plantio.hide()
-			_label_erro.show()
-			_timer.start(_tempo_exibicao)
-			await _timer.timeout
-			_label_erro.hide()
-		_interacao_em_execucao = false
+	if not _jogador_dentro or _interacao_em_execucao:
+		return
+
+	if not Input.is_action_just_pressed("interagir"):
+		return
+
+	_interacao_em_execucao = true
+
+	var inventario: Inventario = Global.inventario
+	var item: Item = inventario.slots[inventario.indice].item
+	var erro := plantar_semente(item, inventario)
+
+	if not erro.is_empty():
+		_label_plantio.hide()
+		_label_erro.text = erro
+		_label_erro.show()
+		_timer.start(_tempo_exibicao)
+		await _timer.timeout
+		_label_erro.hide()
+
+	_interacao_em_execucao = false
 
 func _plantar(item: Item):
 	var nome_plantio = item.nome.split("_")
@@ -64,8 +73,15 @@ func _criar_plantio(caminho: String) -> void:
 	_objeto_plantio.global_position = Vector2(0.0, -10.0)
 	add_child(_objeto_plantio)
 	
-func _tentar_regar():
-	if _jogador_dentro and _para_regar and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
+func _tentar_regar() -> void:
+	if not _para_regar:
+		return
+
+	if (
+		_jogador_dentro
+		and Input.is_action_just_pressed("interagir")
+		and not _interacao_em_execucao
+	):
 		_interacao_em_execucao = true
 		molhar_terra(3.0)
 		_objeto_plantio._processo_plantio(_frame_plantio)
@@ -107,8 +123,11 @@ func _ao_pedir_para_regar(frame: int):
 func _ao_terminar_de_crescer():
 	_estado_atual = ESTADO.PRONTO
 	
-func _ao_coletar():
+func _ao_coletar() -> void:
 	_estado_atual = ESTADO.VAZIO
+	_frame_plantio = 0
+	_para_regar = false
+	_label_regar.hide()
 
 func obter_estado_plantio() -> Dictionary:
 	if not is_instance_valid(_objeto_plantio) or _objeto_plantio.foi_colhido():
@@ -149,3 +168,73 @@ func restaurar_estado_plantio(dados: Dictionary) -> void:
 		tween_secagem = create_tween()
 		tween_secagem.tween_property(_terra_molhada, "modulate:a", 0.0, 3.0 * umidade / 0.75)
 		tween_secagem.tween_callback(_terra_molhada.hide)
+# Retorna uma mensagem de erro ou "" quando consegue plantar.
+func plantar_semente(item: Item, origem: Inventario) -> String:
+	if _estado_atual != ESTADO.VAZIO:
+		return "Este espaço já está ocupado."
+
+	if origem == null:
+		return "Inventário de sementes não encontrado."
+
+	if item == null or item.tipo != "semente":
+		return "Escolha uma semente."
+
+	# Por enquanto, esta é a cultura implementada no projeto.
+	if item.nome != "semente_morango":
+		return "Esta semente ainda não possui plantio disponível."
+
+	if not origem.remover_item(item):
+		return "A semente não está mais disponível."
+
+	_estado_atual = ESTADO.PLANTIO
+	_frame_plantio = 0
+	_para_regar = false
+	_label_plantio.hide()
+	_label_regar.hide()
+
+	_plantar(item)
+	return ""
+	
+func regar_por_codigo() -> String:
+	if _estado_atual == ESTADO.VAZIO:
+		return "Não há planta neste espaço."
+
+	if _estado_atual == ESTADO.PRONTO:
+		return "A planta já está pronta para colher."
+
+	if not is_instance_valid(_objeto_plantio):
+		return "A planta deste espaço não foi encontrada."
+
+	_para_regar = false
+	_label_regar.hide()
+	molhar_terra(3.0)
+
+	# Os sinais da planta atualizam o próximo frame e o estado.
+	return _objeto_plantio.avancar_por_codigo()
+
+
+func colher_por_codigo(destino: Inventario) -> String:
+	if _estado_atual == ESTADO.VAZIO:
+		return "Não há planta neste espaço."
+
+	if _estado_atual != ESTADO.PRONTO:
+		return "A planta ainda não está pronta para colher."
+
+	if not is_instance_valid(_objeto_plantio):
+		return "A planta deste espaço não foi encontrada."
+
+	var erro := _objeto_plantio.colher_para(destino)
+
+	if not erro.is_empty():
+		return erro
+
+	var planta := _objeto_plantio
+	_objeto_plantio = null
+
+	# Libera o espaço imediatamente para o próximo comando.
+	remove_child(planta)
+
+	if not planta.is_queued_for_deletion():
+		planta.queue_free()
+
+	return ""

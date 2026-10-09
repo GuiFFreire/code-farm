@@ -4,10 +4,13 @@ extends Node
 @export var cena_mundo_modelo: PackedScene
 
 var mundo_jogo: MundoJogo 
+var _glossario_aberto: bool = false
 
 @onready var interface_jogo: InterfaceJogo = $CanvasLayer/InterfaceJogo
 @onready var _gerenciador_missoes: GerenciadorMissoes
 @onready var _gerenciador_npcs: GerenciadorNPCs
+@onready var interface_bau: InterfaceBau = $CanvasLayer/InterfaceJogo/InterfaceBau
+@onready var interface_bancada: InterfaceBancada = $CanvasLayer/InterfaceJogo/InterfaceBancada
 
 func _ready() -> void:
 	
@@ -40,6 +43,7 @@ func _trocar_mundo_para_novo() -> void:
 	if is_instance_valid(_gerenciador_npcs):
 		_gerenciador_npcs.free()
 	_gerenciador_npcs = GerenciadorNPCs.new()
+	interface_bancada.fechar()
 	if mundo_jogo:
 		mundo_jogo.queue_free()
 		await get_tree().process_frame 
@@ -55,6 +59,8 @@ func _trocar_mundo_para_novo() -> void:
 	# Agora sim configura e executa
 	_gerenciador_missoes.configurar(mundo_jogo, interface_jogo)
 	_gerenciador_npcs.configurar(mundo_jogo, interface_jogo)
+	_conectar_baus()
+	_conectar_bancadas()
 
 func _ao_clicar_continuar_jogo() -> void:
 	await _trocar_mundo_para_novo()
@@ -74,21 +80,45 @@ func _ao_clicar_continuar_jogo() -> void:
 	get_tree().paused = false
 
 func _ao_clicar_botao_glossario() -> void:
-	mundo_jogo.desativar_movimento_jogador()
+	if _glossario_aberto:
+		return
 
-	var interface_anterior: InterfaceJogo.Interface = interface_jogo.obter_interface_atual()
+	_glossario_aberto = true
+
+	var jogador := mundo_jogo.obter_jogador()
+	var movimento_estava_liberado := jogador.pode_interagir()
+	var bancada_estava_aberta := interface_bancada.visible
+	var bau_estava_aberto := interface_bau.visible
+	var interface_anterior := interface_jogo.obter_interface_atual()
+
+	jogador.desativar_movimento()
+
+	interface_bancada.hide()
+	interface_bau.hide()
 	interface_jogo.exibir_interface(InterfaceJogo.Interface.GLOSSARIO)
 
 	await Global.glossario_fechado
 
 	interface_jogo.exibir_interface(interface_anterior)
-	mundo_jogo.ativar_movimento_jogador()
+
+	if bancada_estava_aberta:
+		interface_bancada.show()
+		interface_jogo.obter_interface(InterfaceJogo.Interface.PADRAO).hide()
+
+	if bau_estava_aberto:
+		interface_bau.show()
+
+	if is_instance_valid(jogador) and movimento_estava_liberado:
+		jogador.ativar_movimento()
+
+	_glossario_aberto = false
 
 func _ao_clicar_fechar_missao() -> void:
 	mundo_jogo.ativar_movimento_jogador()
 	interface_jogo.exibir_interface(InterfaceJogo.Interface.PADRAO)
 	
 func _ao_voltar_menu_principal() -> void:
+	interface_bancada.fechar()
 	if mundo_jogo and mundo_jogo.has_method("desativar_movimento_jogador"):
 		mundo_jogo.desativar_movimento_jogador()
 		
@@ -99,3 +129,25 @@ func _process(delta):
 	if interface_jogo.obter_interface_atual() == interface_jogo.Interface.PADRAO:
 		if mundo_jogo and is_instance_valid(mundo_jogo.jogador):
 			Global.posicao_player_atual = mundo_jogo.jogador.global_position
+			
+func _conectar_baus() -> void:
+	for objeto in get_tree().get_nodes_in_group("Baus"):
+		var bau = objeto as Bau
+
+		if bau == null:
+			continue
+
+		Global.conectar_sinal(bau,"abertura_solicitada",Callable(interface_bau, "abrir"))
+
+func _conectar_bancadas() -> void:
+	for objeto in get_tree().get_nodes_in_group("Bancadas"):
+		var bancada = objeto as Bancada
+
+		if bancada == null:
+			continue
+
+		Global.conectar_sinal(
+			bancada,
+			"abertura_solicitada",
+			Callable(interface_bancada, "abrir")
+		)

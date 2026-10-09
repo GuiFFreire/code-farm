@@ -23,6 +23,7 @@ func _atualizar_hotbar():
 		_slots[i].indice = i
 		Global.conectar_sinal(_slots[i], "clicado", Callable(self, "_ao_clicar_slot"))
 		Global.conectar_sinal(_slots[i], "drag_iniciado", Callable(self, "_ao_iniciar_drag"))
+
 	
 	atualizar_slots_com_dados_do_inventario()
 	_atualizar_seletor()

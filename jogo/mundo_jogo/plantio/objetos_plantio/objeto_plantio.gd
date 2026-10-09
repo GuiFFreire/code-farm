@@ -6,7 +6,7 @@ extends StaticBody2D
 @export var item: Item
 var _objeto_coletavel: PackedScene
 
-signal regar
+signal regar(frame: int)
 signal terminado
 
 var _frames: int
@@ -23,12 +23,19 @@ func _ready() -> void:
 	_timer.timeout.connect(_ao_crescer)
 	_processo_plantio(_frame_atual)
 
-func _processo_plantio(frame: int) -> void:
+func _processo_plantio(
+	frame: int,
+	imediato: bool = false
+) -> void:
+	_timer.stop()
 	_frame_atual = frame
+
 	if _frame_atual < _frames:
-		_timer.start(_tempo_crescimento)
+		if imediato:
+			_ao_crescer()
+		else:
+			_timer.start(_tempo_crescimento)
 	else:
-		_timer.stop()
 		terminado.emit()
 		_processo_coletar()
 
@@ -70,3 +77,22 @@ func restaurar_estado(dados: Dictionary) -> void:
 		_animador.show()
 		if dados.get("crescendo", false):
 			_timer.start(maxf(0.01, dados.get("tempo", _tempo_crescimento)))
+			
+func avancar_por_codigo() -> String:
+	if _frame_atual >= _frames:
+		return "A planta já está pronta para colher."
+
+	_processo_plantio(_frame_atual + 1, true)
+	return ""
+
+
+func colher_para(destino: Inventario) -> String:
+	if _frame_atual < _frames:
+		return "A planta ainda não está pronta para colher."
+
+	var produto := _produto as ObjetoColetavel
+
+	if not is_instance_valid(produto):
+		return "Não há produto disponível para colher."
+
+	return produto.guardar_em(destino)
