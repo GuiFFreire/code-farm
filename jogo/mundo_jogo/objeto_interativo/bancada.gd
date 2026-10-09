@@ -51,11 +51,7 @@ func executar_acoes(acoes: Array) -> String:
 			return "A API devolveu uma ação inválida."
 
 		var acao: Dictionary = valor
-
-		if acao.get("tipo", "") != "plantar":
-			return "A API devolveu uma ação desconhecida."
-
-		var cultura: String = str(acao.get("cultura", ""))
+		var tipo: String = str(acao.get("tipo", ""))
 		var linha: int = int(acao.get("linha", -1))
 		var coluna: int = int(acao.get("coluna", -1))
 		var linha_codigo: int = int(acao.get("linha_codigo", 0))
@@ -69,24 +65,38 @@ func executar_acoes(acoes: Array) -> String:
 		if espaco == null:
 			erro = "Esse espaço não existe no canteiro."
 		else:
-			var semente := _buscar_semente(cultura)
+			match tipo:
+				"plantar":
+					var cultura: String = str(acao.get("cultura", ""))
+					var semente := _buscar_semente(cultura)
 
-			if semente == null:
-				erro = "Não há sementes de %s no baú." % cultura
-			else:
-				erro = espaco.plantar_semente(
-					semente, bau.inventario_bau
-				)
+					if semente == null:
+						erro = "Não há sementes de %s no baú." % cultura
+					else:
+						erro = espaco.plantar_semente(
+							semente, bau.inventario_bau
+						)
+
+				"regar":
+					erro = espaco.regar_por_codigo()
+
+				"colher":
+					erro = espaco.colher_por_codigo(
+						bau.inventario_bau
+					)
+
+				_:
+					erro = "Ação desconhecida: %s." % tipo
 
 		if not erro.is_empty():
 			return (
-				"Linha %d: %s\nPlantios realizados antes do erro: %d."
+				"Linha %d: %s\nAções concluídas antes do erro: %d."
 				% [linha_codigo, erro, concluidas]
 			)
 
 		concluidas += 1
 
-	return "Plantio concluído! Espaços plantados: %d." % concluidas
+	return "Execução concluída! Ações realizadas: %d." % concluidas
 
 
 func _buscar_semente(cultura: String) -> Item:

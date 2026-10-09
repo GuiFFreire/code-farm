@@ -123,8 +123,11 @@ func _ao_pedir_para_regar(frame: int):
 func _ao_terminar_de_crescer():
 	_estado_atual = ESTADO.PRONTO
 	
-func _ao_coletar():
+func _ao_coletar() -> void:
 	_estado_atual = ESTADO.VAZIO
+	_frame_plantio = 0
+	_para_regar = false
+	_label_regar.hide()
 
 func obter_estado_plantio() -> Dictionary:
 	if not is_instance_valid(_objeto_plantio) or _objeto_plantio.foi_colhido():
@@ -190,4 +193,48 @@ func plantar_semente(item: Item, origem: Inventario) -> String:
 	_label_regar.hide()
 
 	_plantar(item)
+	return ""
+	
+func regar_por_codigo() -> String:
+	if _estado_atual == ESTADO.VAZIO:
+		return "Não há planta neste espaço."
+
+	if _estado_atual == ESTADO.PRONTO:
+		return "A planta já está pronta para colher."
+
+	if not is_instance_valid(_objeto_plantio):
+		return "A planta deste espaço não foi encontrada."
+
+	_para_regar = false
+	_label_regar.hide()
+	molhar_terra(3.0)
+
+	# Os sinais da planta atualizam o próximo frame e o estado.
+	return _objeto_plantio.avancar_por_codigo()
+
+
+func colher_por_codigo(destino: Inventario) -> String:
+	if _estado_atual == ESTADO.VAZIO:
+		return "Não há planta neste espaço."
+
+	if _estado_atual != ESTADO.PRONTO:
+		return "A planta ainda não está pronta para colher."
+
+	if not is_instance_valid(_objeto_plantio):
+		return "A planta deste espaço não foi encontrada."
+
+	var erro := _objeto_plantio.colher_para(destino)
+
+	if not erro.is_empty():
+		return erro
+
+	var planta := _objeto_plantio
+	_objeto_plantio = null
+
+	# Libera o espaço imediatamente para o próximo comando.
+	remove_child(planta)
+
+	if not planta.is_queued_for_deletion():
+		planta.queue_free()
+
 	return ""

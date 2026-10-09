@@ -65,3 +65,4 @@ func desativar_coleta() -> void:
 	_detecao_ativa = false
 	if _label:
 		_label.hide()
+		

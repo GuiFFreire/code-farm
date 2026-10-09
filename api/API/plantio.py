@@ -23,7 +23,7 @@ def analisar_plantio(codigo: str) -> dict:
         return erro("Não foi possível analisar esse código.")
 
     if not arvore.body:
-        return erro("Escreva pelo menos um comando plantar().")
+        return erro("Escreva um comando plantar(), regar() ou colher().")
 
     if len(arvore.body) > 100:
         return erro("Use no máximo 100 comandos por execução.")
@@ -31,60 +31,74 @@ def analisar_plantio(codigo: str) -> dict:
     acoes = []
 
     for instrucao in arvore.body:
-        linha_codigo = instrucao.lineno
+        numero = instrucao.lineno
 
         if not (
             isinstance(instrucao, ast.Expr)
             and isinstance(instrucao.value, ast.Call)
         ):
             return erro(
-                f"Linha {linha_codigo}: use plantar(\"morango\", linha, coluna)."
+                f"Linha {numero}: use plantar(), regar() ou colher()."
             )
 
         chamada = instrucao.value
 
-        if not (
-            isinstance(chamada.func, ast.Name)
-            and chamada.func.id == "plantar"
-        ):
-            return erro(
-                f"Linha {linha_codigo}: somente a função plantar() está disponível."
-            )
+        if not isinstance(chamada.func, ast.Name):
+            return erro(f"Linha {numero}: chamada de função inválida.")
 
-        if len(chamada.args) != 3 or chamada.keywords:
-            return erro(
-                f"Linha {linha_codigo}: plantar() recebe cultura, linha e coluna."
+        nome = chamada.func.id
+
+        if nome not in ("plantar", "regar", "colher"):
+            return erro(f"Linha {numero}: função '{nome}' desconhecida.")
+
+        quantidade = 3 if nome == "plantar" else 2
+
+        if len(chamada.args) != quantidade or chamada.keywords:
+            assinatura = (
+                'plantar("morango", linha, coluna)'
+                if nome == "plantar"
+                else f"{nome}(linha, coluna)"
             )
+            return erro(f"Linha {numero}: use {assinatura}.")
 
         if not all(isinstance(arg, ast.Constant) for arg in chamada.args):
             return erro(
-                f"Linha {linha_codigo}: use o nome entre aspas e coordenadas inteiras."
+                f"Linha {numero}: use valores diretos nos argumentos."
             )
 
-        cultura, linha, coluna = [arg.value for arg in chamada.args]
+        valores = [arg.value for arg in chamada.args]
 
-        if type(cultura) is not str or cultura != "morango":
-            return erro(
-                f"Linha {linha_codigo}: a cultura disponível é \"morango\"."
-            )
+        if nome == "plantar":
+            cultura, linha, coluna = valores
+
+            if type(cultura) is not str or cultura != "morango":
+                return erro(
+                    f'Linha {numero}: a cultura disponível é "morango".'
+                )
+        else:
+            linha, coluna = valores
 
         if type(linha) is not int or type(coluna) is not int:
             return erro(
-                f"Linha {linha_codigo}: linha e coluna precisam ser números inteiros."
+                f"Linha {numero}: linha e coluna devem ser inteiros."
             )
 
         if not (0 <= linha < 5 and 0 <= coluna < 2):
             return erro(
-                f"Linha {linha_codigo}: use linhas de 0 a 4 e colunas de 0 a 1."
+                f"Linha {numero}: use linhas de 0 a 4 e colunas de 0 a 1."
             )
 
-        acoes.append({
-            "tipo": "plantar",
-            "cultura": cultura,
+        acao = {
+            "tipo": nome,
             "linha": linha,
             "coluna": coluna,
-            "linha_codigo": linha_codigo,
-        })
+            "linha_codigo": numero,
+        }
+
+        if nome == "plantar":
+            acao["cultura"] = cultura
+
+        acoes.append(acao)
 
     return {
         "status": "sucesso",
