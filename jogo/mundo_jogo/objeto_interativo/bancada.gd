@@ -4,6 +4,8 @@ extends ObjetoBase
 signal abertura_solicitada(bancada: Bancada)
 
 @export var bau: Bau
+@export_range(0, 5, 1) var id_canteiro: int = 0
+@export var registro_plantio: RegistroPlantio
 
 var codigo_digitado: String = ""
 var _interacao: ComportamentoInterativo
@@ -31,3 +33,71 @@ func _ao_interagir() -> void:
 func liberar_interacao() -> void:
 	if _interacao != null:
 		_interacao.liberar_interacao()
+		
+func executar_acoes(acoes: Array) -> String:
+	if not is_instance_valid(registro_plantio):
+		return "Esta bancada não tem um registro de plantio associado."
+
+	if not is_instance_valid(bau):
+		return "Esta bancada não tem um baú associado."
+
+	if acoes.is_empty():
+		return "Nenhuma ação recebida."
+
+	var concluidas: int = 0
+
+	for valor in acoes:
+		if not valor is Dictionary:
+			return "A API devolveu uma ação inválida."
+
+		var acao: Dictionary = valor
+
+		if acao.get("tipo", "") != "plantar":
+			return "A API devolveu uma ação desconhecida."
+
+		var cultura: String = str(acao.get("cultura", ""))
+		var linha: int = int(acao.get("linha", -1))
+		var coluna: int = int(acao.get("coluna", -1))
+		var linha_codigo: int = int(acao.get("linha_codigo", 0))
+
+		var espaco := registro_plantio.obter_espaco(
+			id_canteiro, linha, coluna
+		) as AreaPlantio
+
+		var erro: String = ""
+
+		if espaco == null:
+			erro = "Esse espaço não existe no canteiro."
+		else:
+			var semente := _buscar_semente(cultura)
+
+			if semente == null:
+				erro = "Não há sementes de %s no baú." % cultura
+			else:
+				erro = espaco.plantar_semente(
+					semente, bau.inventario_bau
+				)
+
+		if not erro.is_empty():
+			return (
+				"Linha %d: %s\nPlantios realizados antes do erro: %d."
+				% [linha_codigo, erro, concluidas]
+			)
+
+		concluidas += 1
+
+	return "Plantio concluído! Espaços plantados: %d." % concluidas
+
+
+func _buscar_semente(cultura: String) -> Item:
+	for pilha in bau.inventario_bau.slots:
+		if pilha.item == null or pilha.quantidade <= 0:
+			continue
+
+		if (
+			pilha.item.tipo == "semente"
+			and pilha.item.nome == "semente_" + cultura
+		):
+			return pilha.item
+
+	return null

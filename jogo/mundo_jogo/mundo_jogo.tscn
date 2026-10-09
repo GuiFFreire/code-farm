@@ -231,9 +231,11 @@ position = Vector2(631, -313)
 [node name="ObjetoBase" parent="TerrenoFazenda" unique_id=1392569640 instance=ExtResource("16_n50el")]
 position = Vector2(-24, 89)
 
-[node name="bancada" parent="TerrenoFazenda" unique_id=353762870 node_paths=PackedStringArray("bau") instance=ExtResource("17_wgyws")]
+[node name="bancada" parent="TerrenoFazenda" unique_id=353762870 node_paths=PackedStringArray("bau", "registro_plantio") instance=ExtResource("17_wgyws")]
 position = Vector2(-44, 89)
 bau = NodePath("../ObjetoBase")
+id_canteiro = 5
+registro_plantio = NodePath("../Chao")
 
 [node name="TerrenoCasa" parent="." unique_id=175163249 instance=ExtResource("1_4mwex")]
 y_sort_enabled = true
@@ -517,6 +519,7 @@ estoque = SubResource("Resource_wgyws")
 [node name="atendenteSalao" parent="TerrenoSalao" unique_id=779059810 instance=ExtResource("20_jf6b1")]
 position = Vector2(462, 951)
 
+[editable path="TerrenoFazenda"]
 [editable path="TerrenoFazenda/Passagem1"]
 [editable path="TerrenoFazenda/Missao2"]
 [editable path="TerrenoFazenda/Missao0"]
