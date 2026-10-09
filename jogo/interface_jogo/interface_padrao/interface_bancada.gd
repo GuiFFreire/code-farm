@@ -10,6 +10,13 @@ signal execucao_solicitada(bancada: Bancada, codigo: String)
 @onready var _botao_fechar: Button = $Fechar/MarginContainer/BotaoFechar
 @onready var _botao_glossario: Button = $BotaoGlossario
 @onready var _interface_padrao: Control = $"../InterfacePadrao"
+@onready var _painel_bancada: Control = $EditorCodigo/MarginContainer/FundoMenuLateral
+@export_range(1.0, 3.0, 0.1) var aproximacao_canteiro: float = 1.8
+
+var _zoom_camera_anterior: Vector2
+var _camera_bancada: Camera2D
+var _offset_camera_anterior: Vector2
+var _tween_camera: Tween
 
 const API_PLANTIO: String = "https://code-farm-x5um.onrender.com/analisar_plantio"
 
@@ -31,6 +38,7 @@ func _ready() -> void:
 	_botao_fechar.pressed.connect(fechar)
 	_editor.text_changed.connect(_ao_alterar_codigo)
 	_botao_glossario.pressed.connect(_ao_abrir_glossario)
+	get_viewport().size_changed.connect(_atualizar_enquadramento)
 	
 	_http = HTTPRequest.new()
 	_http.timeout = 30.0
@@ -63,10 +71,15 @@ func abrir(bancada: Bancada) -> void:
 
 	show()
 	_editor.grab_focus()
+	show()
+	_editor.grab_focus()
+	_iniciar_enquadramento()
 
 
 func fechar() -> void:
+	_restaurar_enquadramento()
 	_cancelar_consulta()
+
 	var tinha_bancada_aberta := is_instance_valid(_bancada_atual)
 
 	_ao_alterar_codigo()
@@ -207,4 +220,104 @@ func _ao_receber_plantio(
 		return
 
 	_mensagens.text = bancada.executar_acoes(acoes)
+	
+func _iniciar_enquadramento() -> void:
+	_camera_bancada = get_viewport().get_camera_2d()
+
+	if not is_instance_valid(_camera_bancada):
+		return
+
+	_offset_camera_anterior = _camera_bancada.offset
+	_zoom_camera_anterior = _camera_bancada.zoom
+	_atualizar_enquadramento()
+
+
+func _atualizar_enquadramento() -> void:
+	# Espera os containers terminarem de posicionar o painel.
+	await get_tree().process_frame
+
+	if not is_instance_valid(_camera_bancada):
+		return
+
+	if not is_instance_valid(_bancada_atual):
+		return
+
+	var registro := _bancada_atual.registro_plantio
+
+	if not is_instance_valid(registro):
+		return
+
+	var primeiro := registro.obter_espaco(
+		_bancada_atual.id_canteiro, 0, 0
+	)
+
+	var ultimo := registro.obter_espaco(
+		_bancada_atual.id_canteiro,
+		RegistroPlantio.LINHAS - 1,
+		RegistroPlantio.COLUNAS - 1
+	)
+
+	if not is_instance_valid(primeiro) or not is_instance_valid(ultimo):
+		return
+
+	var centro_canteiro: Vector2 = (
+		primeiro.global_position + ultimo.global_position
+	) / 2.0
+
+	var tamanho_tela: Vector2 = get_viewport_rect().size
+
+	# Posição do início do painel nas coordenadas do viewport.
+	var esquerda_painel: float = (
+		_painel_bancada.get_global_transform_with_canvas().origin.x
+	)
+	esquerda_painel = clampf(esquerda_painel, 0.0, tamanho_tela.x)
+
+	# Centro da região que sobra à esquerda do painel.
+	var destino_na_tela := Vector2(
+		esquerda_painel / 2.0,
+		tamanho_tela.y / 2.0
+	)
+
+	var zoom_destino: Vector2 = (
+		_zoom_camera_anterior * aproximacao_canteiro
+	)
+
+	var compensacao: Vector2 = (
+		(tamanho_tela / 2.0 - destino_na_tela)
+		/ zoom_destino
+	)
+	var novo_offset: Vector2 = (
+		centro_canteiro
+		- _camera_bancada.global_position
+		+ compensacao
+	)
+
+	if _tween_camera != null and _tween_camera.is_valid():
+		_tween_camera.kill()
+
+	_tween_camera = create_tween()
+	_tween_camera.set_parallel(true)
+	_tween_camera.set_trans(Tween.TRANS_SINE)
+	_tween_camera.set_ease(Tween.EASE_IN_OUT)
+
+	_tween_camera.tween_property(
+		_camera_bancada, "offset", novo_offset, 0.3
+	)
+
+	_tween_camera.tween_property(
+		_camera_bancada, "zoom", zoom_destino, 0.3
+	)
+
+
+func _restaurar_enquadramento() -> void:
+	if _tween_camera != null and _tween_camera.is_valid():
+		_tween_camera.kill()
+
+	_tween_camera = null
+
+	if is_instance_valid(_camera_bancada):
+		_camera_bancada.offset = _offset_camera_anterior
+		_camera_bancada.zoom = _zoom_camera_anterior
+
+	_camera_bancada = null
 	
