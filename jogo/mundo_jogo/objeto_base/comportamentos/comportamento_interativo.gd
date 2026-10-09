@@ -22,20 +22,23 @@ func inicializar(objeto: ObjetoBase) -> void:
 func processar(objeto: ObjetoBase, _delta: float) -> void:
 	if _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
 		_label.hide()
-		objeto.animador.play("RESET")
+		if objeto.animador.has_animation("RESET"):
+			objeto.animador.play("RESET")
 		_interacao_em_execucao = true
 		emit_signal("interagiu")
 
 func ao_detectar_entrada(objeto: ObjetoBase, corpo: Node2D) -> void:
 	if _detecao_ativa and corpo.is_in_group("Jogador"):
 		_label.show()
-		objeto.animador.play("destacar_objeto")
+		if objeto.animador.has_animation("destacar_objeto"):
+			objeto.animador.play("destacar_objeto")
 		_jogador_dentro = true
 
 func ao_detectar_saida(objeto: ObjetoBase, corpo: Node2D) -> void:
 	if _detecao_ativa and corpo.is_in_group("Jogador"):
 		_label.hide()
-		objeto.animador.play("RESET")
+		if objeto.animador.has_animation("RESET"):
+			objeto.animador.play("RESET")
 		_interacao_em_execucao = false
 		_jogador_dentro = false
 
@@ -44,3 +47,9 @@ func ativar_interacao() -> void:
 
 func desativar_interacao() -> void:
 	_detecao_ativa = false
+	
+func liberar_interacao() -> void:
+	_interacao_em_execucao = false
+
+	if _jogador_dentro and _detecao_ativa:
+		_label.show()

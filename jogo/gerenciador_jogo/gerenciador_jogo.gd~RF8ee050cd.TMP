@@ -51,7 +51,6 @@ func _trocar_mundo_para_novo() -> void:
 	# Agora sim configura e executa
 	_gerenciador_missoes.configurar(mundo_jogo, interface_jogo)
 	_gerenciador_npcs.configurar(mundo_jogo, interface_jogo)
-	_conectar_baus()
 
 func _ao_clicar_continuar_jogo() -> void:
 	await _trocar_mundo_para_novo()
