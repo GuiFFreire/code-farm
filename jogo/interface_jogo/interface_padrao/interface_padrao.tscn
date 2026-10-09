@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cl8hd4fyrtkyh"]
 
 [ext_resource type="Texture2D" uid="uid://dics3kl13aipr" path="res://assets/imagens/interface/Sprite sheet for Basic Pack.png" id="1_ngjog"]
-[ext_resource type="Script" uid="uid://cs83wq253dnd1" path="res://interface_jogo/interface_padrao/menu_superior.gd" id="2_c10w6"]
+[ext_resource type="Script" uid="uid://8n73a7lf64s" path="res://interface_jogo/interface_padrao/menu_superior.gd" id="2_c10w6"]
 [ext_resource type="Script" uid="uid://dp5wquo0j6c6e" path="res://interface_jogo/interface_padrao/hotbar.gd" id="4_8sum0"]
 [ext_resource type="PackedScene" uid="uid://dujl6ijvm1jas" path="res://interface_jogo/interface_padrao/slot_hotbar/slot_hotbar.tscn" id="5_dnj68"]
-[ext_resource type="Script" uid="uid://bwygu6b5srqcy" path="res://interface_jogo/interface_padrao/container_moedas.gd" id="5_hdnhr"]
-[ext_resource type="Texture2D" uid="uid://cvunsahv22or1" path="res://assets/imagens/mundo/moeda.png" id="6_32x1g"]
+[ext_resource type="Script" uid="uid://biiwbouov6wyj" path="res://interface_jogo/interface_padrao/container_moedas.gd" id="5_hdnhr"]
+[ext_resource type="Texture2D" uid="uid://y7spfgpud5u7" path="res://assets/imagens/mundo/moeda.png" id="6_32x1g"]
 [ext_resource type="FontFile" uid="uid://8dyl8sjpwyl2" path="res://assets/fontes/ExpressionPro.ttf" id="7_po2go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35mjg"]

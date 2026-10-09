@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtllcjn1io0e" path="res://assets/imagens/jogador/Player_Actions.png" id="2_so6ri"]
 [ext_resource type="PackedScene" uid="uid://7pk4ytvxy4kb" path="res://mundo_jogo/objeto_coletavel/objeto_coletavel.tscn" id="2_y3nx0"]
 [ext_resource type="PackedScene" uid="uid://c732sy3bq8jbn" path="res://mundo_jogo/animacoes/texto_placa/texto_placa.tscn" id="4_emtbw"]
+[ext_resource type="Script" uid="uid://cmf03hdvjv7w8" path="res://mundo_jogo/jogador/seletor_interacao.gd" id="6_7iiir"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_likew"]
 radius = 1.0
@@ -845,5 +846,8 @@ scale = Vector2(0.3, 0.3)
 [node name="PontoFala" type="Marker2D" parent="." unique_id=31763645]
 unique_name_in_owner = true
 position = Vector2(0, -8)
+
+[node name="SeletorInteracao" type="Node" parent="." unique_id=352253200]
+script = ExtResource("6_7iiir")
 
 [connection signal="body_entered" from="AreaDetecao" to="." method="_ao_entrar_area_detecao"]

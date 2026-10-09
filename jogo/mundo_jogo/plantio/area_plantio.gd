@@ -1,3 +1,4 @@
+class_name AreaPlantio
 extends Area2D
 
 @onready var _label_plantio: Label = $LabelPlantio
@@ -27,28 +28,36 @@ func _preparar_estado_inicial():
 
 @warning_ignore('unused_parameter')
 func _process(delta: float) -> void:
+	var jogador := get_tree().get_first_node_in_group("Jogador") as Jogador
+	if jogador == null or not jogador.pode_interagir():
+		return
 	if _estado_atual == ESTADO.VAZIO:
 		_tentar_plantar()
 	elif _estado_atual == ESTADO.PLANTIO:
 		_tentar_regar()
 
 func _tentar_plantar() -> void:
-	if _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
-		_interacao_em_execucao = true
-		
-		if Global.inventario.verificar_tipo("semente"):
-			var item: Item = Global.inventario.remover()
-			_label_plantio.hide()
-			_estado_atual = ESTADO.PLANTIO
-			_plantar(item)
-			
-		else:
-			_label_plantio.hide()
-			_label_erro.show()
-			_timer.start(_tempo_exibicao)
-			await _timer.timeout
-			_label_erro.hide()
-		_interacao_em_execucao = false
+	if not _jogador_dentro or _interacao_em_execucao:
+		return
+
+	if not Input.is_action_just_pressed("interagir"):
+		return
+
+	_interacao_em_execucao = true
+
+	var inventario: Inventario = Global.inventario
+	var item: Item = inventario.slots[inventario.indice].item
+	var erro := plantar_semente(item, inventario)
+
+	if not erro.is_empty():
+		_label_plantio.hide()
+		_label_erro.text = erro
+		_label_erro.show()
+		_timer.start(_tempo_exibicao)
+		await _timer.timeout
+		_label_erro.hide()
+
+	_interacao_em_execucao = false
 
 func _plantar(item: Item):
 	var nome_plantio = item.nome.split("_")
@@ -65,7 +74,13 @@ func _criar_plantio(caminho: String) -> void:
 	add_child(_objeto_plantio)
 	
 func _tentar_regar():
+<<<<<<< HEAD
 	if _jogador_dentro and _para_regar and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
+=======
+	if not _para_regar:
+		return
+	if _jogador_dentro and Input.is_action_just_pressed("interagir") and not _interacao_em_execucao:
+>>>>>>> feature/reuniao_09_10
 		_interacao_em_execucao = true
 		molhar_terra(3.0)
 		_objeto_plantio._processo_plantio(_frame_plantio)
@@ -110,6 +125,7 @@ func _ao_terminar_de_crescer():
 func _ao_coletar():
 	_estado_atual = ESTADO.VAZIO
 
+<<<<<<< HEAD
 func obter_estado_plantio() -> Dictionary:
 	if not is_instance_valid(_objeto_plantio) or _objeto_plantio.foi_colhido():
 		return {}
@@ -149,3 +165,31 @@ func restaurar_estado_plantio(dados: Dictionary) -> void:
 		tween_secagem = create_tween()
 		tween_secagem.tween_property(_terra_molhada, "modulate:a", 0.0, 3.0 * umidade / 0.75)
 		tween_secagem.tween_callback(_terra_molhada.hide)
+=======
+# Retorna uma mensagem de erro ou "" quando consegue plantar.
+func plantar_semente(item: Item, origem: Inventario) -> String:
+	if _estado_atual != ESTADO.VAZIO:
+		return "Este espaço já está ocupado."
+
+	if origem == null:
+		return "Inventário de sementes não encontrado."
+
+	if item == null or item.tipo != "semente":
+		return "Escolha uma semente."
+
+	# Por enquanto, esta é a cultura implementada no projeto.
+	if item.nome != "semente_morango":
+		return "Esta semente ainda não possui plantio disponível."
+
+	if not origem.remover_item(item):
+		return "A semente não está mais disponível."
+
+	_estado_atual = ESTADO.PLANTIO
+	_frame_plantio = 0
+	_para_regar = false
+	_label_plantio.hide()
+	_label_regar.hide()
+
+	_plantar(item)
+	return ""
+>>>>>>> feature/reuniao_09_10

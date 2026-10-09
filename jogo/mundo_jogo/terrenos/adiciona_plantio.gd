@@ -1,6 +1,11 @@
+class_name RegistroPlantio	
 extends Node2D
 
 const CENA_AREA_PLANTIO = preload('res://mundo_jogo/plantio/area_plantio.tscn')
+const LINHAS: int = 5
+const COLUNAS: int = 2
+
+var _canteiros: Array = []
 
 var posicao_canteiro: Array[Vector2] = [
 	Vector2(-114.0, -274.0), Vector2(-93.0, -274.0),
@@ -41,6 +46,7 @@ func gerar_canteiros() -> void:
 
 
 func instanciar_grupo(deslocamento: Vector2) -> void:
+<<<<<<< HEAD
 	for posicao_area in posicao_canteiro:
 		var area_plantio = CENA_AREA_PLANTIO.instantiate()
 		
@@ -48,4 +54,39 @@ func instanciar_grupo(deslocamento: Vector2) -> void:
 		# Identificador estável entre instâncias do mundo e entre sessões.
 		area_plantio.name = "Canteiro_%d_%d" % [int(area_plantio.position.x), int(area_plantio.position.y)]
 		add_child(area_plantio)
+=======
+	var matriz: Array = []
+
+	for linha in range(LINHAS):
+		var espacos_da_linha: Array[Area2D] = []
+
+		for coluna in range(COLUNAS):
+			var indice_posicao := linha * COLUNAS + coluna
+			var area := CENA_AREA_PLANTIO.instantiate() as Area2D
+
+			area.position = posicao_canteiro[indice_posicao] + deslocamento
+			add_child(area)
+
+			espacos_da_linha.append(area)
+
+		matriz.append(espacos_da_linha)
+
+	_canteiros.append(matriz)
+	
+func obter_espaco(
+	id_canteiro: int,
+	linha: int,
+	coluna: int
+) -> Area2D:
+	if id_canteiro < 0 or id_canteiro >= _canteiros.size():
+		return null
+
+	if linha < 0 or linha >= LINHAS:
+		return null
+
+	if coluna < 0 or coluna >= COLUNAS:
+		return null
+
+	return _canteiros[id_canteiro][linha][coluna] as Area2D
+>>>>>>> feature/reuniao_09_10
 	

@@ -6,7 +6,7 @@ extends StaticBody2D
 @export var item: Item
 var _objeto_coletavel: PackedScene
 
-signal regar
+signal regar(frame: int)
 signal terminado
 
 var _frames: int

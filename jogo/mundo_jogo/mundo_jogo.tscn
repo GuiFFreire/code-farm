@@ -28,8 +28,10 @@
 [ext_resource type="PackedScene" uid="uid://bbaagvyi6w631" path="res://mundo_jogo/terrenos/terreno_ferreiro.tscn" id="16_a5oup"]
 [ext_resource type="PackedScene" uid="uid://yc0e2qahfkik" path="res://mundo_jogo/animais/galinha.tscn" id="16_dy05v"]
 [ext_resource type="PackedScene" uid="uid://gueeykda8uvu" path="res://mundo_jogo/terrenos/terreno_salao.tscn" id="16_muyhw"]
+[ext_resource type="PackedScene" uid="uid://bq0hr7dr7twfn" path="res://mundo_jogo/objeto_interativo/bau.tscn" id="16_n50el"]
 [ext_resource type="PackedScene" uid="uid://83xun8fp8ysk" path="res://mundo_jogo/animais/porco.tscn" id="17_muyhw"]
 [ext_resource type="PackedScene" uid="uid://x8q7i06nnq7h" path="res://mundo_jogo/npcs/marceneiro.tscn" id="17_r2s0a"]
+[ext_resource type="PackedScene" uid="uid://cux52ekdo6kop" path="res://mundo_jogo/objeto_interativo/bancada.tscn" id="17_wgyws"]
 [ext_resource type="PackedScene" uid="uid://ber3bclrl5uky" path="res://mundo_jogo/npcs/corvo_vendedor.tscn" id="19_u7fjk"]
 [ext_resource type="PackedScene" uid="uid://bufu2dd280qkf" path="res://mundo_jogo/npcs/atendente_salao.tscn" id="20_jf6b1"]
 [ext_resource type="PackedScene" uid="uid://c5u13eymo2tos" path="res://mundo_jogo/objeto_coletavel/objetos/caixado_robo.tscn" id="21_egxgh"]
@@ -85,7 +87,7 @@ descricao = "Caixa que contêm o robo"
 caminho_cena = "uid://c5u13eymo2tos"
 metadata/_custom_type_script = "uid://de8teor80qd8x"
 
-[sub_resource type="Resource" id="Resource_gh6wv"]
+[sub_resource type="Resource" id="Resource_wgyws"]
 resource_local_to_scene = true
 script = ExtResource("38_wgyws")
 itens_a_venda = Array[ExtResource("22_63weq")]([ExtResource("36_2je6l"), ExtResource("37_n50el")])
@@ -104,7 +106,7 @@ script = ExtResource("1_rswm3")
 metadata/_edit_horizontal_guides_ = [-276.0]
 
 [node name="TerrenoFazenda" parent="." unique_id=904896384 instance=ExtResource("1_848jc")]
-position = Vector2(23, 107)
+position = Vector2(17, 100)
 
 [node name="Passagem1" parent="TerrenoFazenda" unique_id=920476428 instance=ExtResource("2_gcw66")]
 position = Vector2(150, 38)
@@ -225,6 +227,15 @@ position = Vector2(591, -102)
 position = Vector2(631, -313)
 
 [node name="ObjetoColetavel" parent="TerrenoFazenda" unique_id=1057380000 instance=ExtResource("11_jtt2m")]
+
+[node name="ObjetoBase" parent="TerrenoFazenda" unique_id=1392569640 instance=ExtResource("16_n50el")]
+position = Vector2(-24, 89)
+
+[node name="bancada" parent="TerrenoFazenda" unique_id=353762870 node_paths=PackedStringArray("bau", "registro_plantio") instance=ExtResource("17_wgyws")]
+position = Vector2(-44, 89)
+bau = NodePath("../ObjetoBase")
+id_canteiro = 5
+registro_plantio = NodePath("../Chao")
 
 [node name="TerrenoCasa" parent="." unique_id=175163249 instance=ExtResource("1_4mwex")]
 y_sort_enabled = true
@@ -503,11 +514,12 @@ position = Vector2(-2, -28)
 
 [node name="corvoVendedor" parent="TerrenoSalao" unique_id=1814802250 instance=ExtResource("19_u7fjk")]
 position = Vector2(332, 969)
-estoque = SubResource("Resource_gh6wv")
+estoque = SubResource("Resource_wgyws")
 
 [node name="atendenteSalao" parent="TerrenoSalao" unique_id=779059810 instance=ExtResource("20_jf6b1")]
 position = Vector2(462, 951)
 
+[editable path="TerrenoFazenda"]
 [editable path="TerrenoFazenda/Passagem1"]
 [editable path="TerrenoFazenda/Missao2"]
 [editable path="TerrenoFazenda/Missao0"]

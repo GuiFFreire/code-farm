@@ -6,13 +6,16 @@ extends Resource
 @export var slots: Array[PilhaItens] = []
 var indice: int = 0
 
-func _init() -> void:
+func _init(capacidade: int = 6) -> void:
+	quantidade_max = maxi(1, capacidade)
+
 	for i in range(quantidade_max):
 		var pilha = PilhaItens.new()
 		pilha.item = null
 		pilha.quantidade = 0
 		slots.append(pilha)
-	Global.conectar_sinal(Global, "indice_atualizado", Callable(self, "atualizar_indice"))
+
+	Global.conectar_sinal(Global,"indice_atualizado",Callable(self, "atualizar_indice"))
 
 func atualizar_indice(_indice: int) -> void:
 	indice = _indice
@@ -111,3 +114,44 @@ func restaurar_dados_save(dados: Array, indice_salvo: int = 0) -> void:
 				slots[i].quantidade = quantidade
 	indice = clampi(indice_salvo, 0, slots.size() - 1)
 	Global.item_modificado.emit(null)
+	
+func transferir_para(indice_origem: int,destino: Inventario,indice_destino: int) -> bool:
+	if destino == null:
+		return false
+
+	if indice_origem < 0 or indice_origem >= slots.size():
+		return false
+
+	if indice_destino < 0 or indice_destino >= destino.slots.size():
+		return false
+
+	if destino == self and indice_origem == indice_destino:
+		return false
+
+	var origem: PilhaItens = slots[indice_origem]
+	var chegada: PilhaItens = destino.slots[indice_destino]
+
+	if origem.item == null or origem.quantidade <= 0:
+		return false
+
+	if chegada.item != null and chegada.pode_empilhar_com(origem):
+		# Junta as pilhas.
+		chegada.quantidade += origem.quantidade
+		origem.item = null
+		origem.quantidade = 0
+	else:
+		# Move para um espaço vazio ou troca as pilhas.
+		var item_anterior: Item = chegada.item
+		var quantidade_anterior: int = chegada.quantidade
+
+		chegada.item = origem.item
+		chegada.quantidade = origem.quantidade
+
+		origem.item = item_anterior
+		origem.quantidade = quantidade_anterior
+
+	# Só atualiza as interfaces depois de concluir a transferência.
+	Global.emit_signal("item_modificado", origem)
+	Global.emit_signal("item_modificado", chegada)
+
+	return true
