@@ -167,3 +167,6 @@ func largar_item_no_mundo() -> void:
 
 	objeto.global_position = global_position + offset
 	get_parent().add_child(objeto)
+	
+func pode_interagir() -> bool:
+	return _movimento_habilitado

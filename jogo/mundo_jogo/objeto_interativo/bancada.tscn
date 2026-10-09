@@ -50,3 +50,6 @@ metadata/_edit_use_anchors_ = true
 light_mask = 3
 visibility_layer = 3
 shape = SubResource("RectangleShape2D_uogkm")
+
+[connection signal="body_entered" from="AreaDetecao" to="." method="_ao_detectar_entrada"]
+[connection signal="body_exited" from="AreaDetecao" to="." method="_ao_detectar_saida"]
