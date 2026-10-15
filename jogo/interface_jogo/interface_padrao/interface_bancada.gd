@@ -11,7 +11,7 @@ signal execucao_solicitada(bancada: Bancada, codigo: String)
 @onready var _botao_glossario: Button = $BotaoGlossario
 @onready var _interface_padrao: Control = $"../InterfacePadrao"
 @onready var _painel_bancada: Control = $EditorCodigo/MarginContainer/FundoMenuLateral
-@export_range(1.0, 3.0, 0.1) var aproximacao_canteiro: float = 1.8
+@export_range(1.0, 3.0, 0.1) var aproximacao_canteiro: float = 1.6
 
 var _zoom_camera_anterior: Vector2
 var _camera_bancada: Camera2D
@@ -45,6 +45,8 @@ func _ready() -> void:
 	_http.body_size_limit = 1048576
 	add_child(_http)
 	_http.request_completed.connect(_ao_receber_plantio)
+	
+	visibility_changed.connect(_atualizar_referencias_matriz)
 
 
 func abrir(bancada: Bancada) -> void:
@@ -69,8 +71,6 @@ func abrir(bancada: Bancada) -> void:
 	if is_instance_valid(_jogador):
 		_jogador.desativar_movimento()
 
-	show()
-	_editor.grab_focus()
 	show()
 	_editor.grab_focus()
 	_iniciar_enquadramento()
@@ -321,3 +321,16 @@ func _restaurar_enquadramento() -> void:
 
 	_camera_bancada = null
 	
+func _atualizar_referencias_matriz() -> void:
+	if not is_instance_valid(_bancada_atual):
+		return
+
+	var registro := _bancada_atual.registro_plantio
+
+	if not is_instance_valid(registro):
+		return
+
+	if is_visible_in_tree():
+		registro.mostrar_referencias(_bancada_atual.id_canteiro)
+	else:
+		registro.ocultar_referencias()
