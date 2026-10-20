@@ -28,8 +28,8 @@ var _termos_disponiveis: Dictionary = {
 		"nome": "Variáveis",
 		"descricao": "Variáveis são usadas para armazenar informações. Elas recebem um nome e podem guardar textos, números, listas e outros valores que podem mudar durante a execução do programa.",
 		"tipo":"Exemplo:",
-		"exemplo": "copo = \"água\"",
-		"missao": 10
+		"exemplo": "nomeFazenda = \"Fazenda Girassol\"\nprint(nomeFazenda)",
+		"missao": 2
 	},
 	"for": {
 		"nome": "Laço for",
@@ -82,7 +82,7 @@ var _missoes_disponiveis: Dictionary = {
 	"nome": "Nomeando a fazenda",
 	"descricao": "O AGR.O é tem bastante potencial, vamos ver o que ele é capaz de fazer. Vou começar a dar a essa fazenda a minha cara. Primeiro ela precisa um nome.",
 	"tipo": "Tarefas:",
-	"exemplo": "Registre o nome da fazenda com a ajuda do robô usando o comando print().\n1. Interaja com a placa na entrada e use o print() para dar um nome à fazenda.",
+		"exemplo": "1. Interaja com a placa na entrada.\n2. Guarde o nome da fazenda na variável nomeFazenda.\n3. Exiba o valor usando print(nomeFazenda).",
 	"missao": 2
 	}
 }

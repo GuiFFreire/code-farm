@@ -23,12 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://cvmhhkg2ewojj" path="res://assets/imagens/terrenos/TopDownHouse_FurnitureState1.png" id="13_muyhw"]
 [ext_resource type="PackedScene" uid="uid://dskrr8ixlne8r" path="res://mundo_jogo/terrenos/terreno_marceneiro.tscn" id="15_a1tre"]
 [ext_resource type="PackedScene" uid="uid://c3l2v3b10hvkv" path="res://mundo_jogo/npcs/ferreiro.tscn" id="15_muyhw"]
+[ext_resource type="Resource" path="res://mundo_jogo/itens/milho.tres" id="15_nmvtg"]
 [ext_resource type="PackedScene" uid="uid://b2bp5aw8nemn1" path="res://mundo_jogo/animais/vaca.tscn" id="15_s2wpm"]
 [ext_resource type="PackedScene" uid="uid://dxo5dyjge5q60" path="res://mundo_jogo/animais/boi.tscn" id="15_v2ue8"]
 [ext_resource type="PackedScene" uid="uid://bbaagvyi6w631" path="res://mundo_jogo/terrenos/terreno_ferreiro.tscn" id="16_a5oup"]
 [ext_resource type="PackedScene" uid="uid://yc0e2qahfkik" path="res://mundo_jogo/animais/galinha.tscn" id="16_dy05v"]
-[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/cocho/cocho.tscn" id="cocho_galinhas"]
-[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/objetos_coletaveis/milho.tscn" id="milho_galinhas"]
 [ext_resource type="PackedScene" uid="uid://gueeykda8uvu" path="res://mundo_jogo/terrenos/terreno_salao.tscn" id="16_muyhw"]
 [ext_resource type="PackedScene" uid="uid://bq0hr7dr7twfn" path="res://mundo_jogo/objeto_interativo/bau.tscn" id="16_n50el"]
 [ext_resource type="PackedScene" uid="uid://83xun8fp8ysk" path="res://mundo_jogo/animais/porco.tscn" id="17_muyhw"]
@@ -43,6 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://c3hrv2w0c5yoy" path="res://mundo_jogo/terrenos/terreno_vila.tscn" id="36_rs3yu"]
 [ext_resource type="Resource" uid="uid://b6xfljq0cac3e" path="res://mundo_jogo/itens/semente_morango.tres" id="37_n50el"]
 [ext_resource type="Script" uid="uid://brdg340dgsxde" path="res://gerenciador_jogo/gerenciador_npcs/troca/estoques/estoque_troca.gd" id="38_wgyws"]
+[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/cocho/cocho.tscn" id="cocho_galinhas"]
+[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/objetos_coletaveis/milho.tscn" id="milho_galinhas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp83p"]
 size = Vector2(12, 11)
@@ -89,7 +90,7 @@ descricao = "Caixa que contêm o robo"
 caminho_cena = "uid://c5u13eymo2tos"
 metadata/_custom_type_script = "uid://de8teor80qd8x"
 
-[sub_resource type="Resource" id="Resource_wgyws"]
+[sub_resource type="Resource" id="Resource_ha228"]
 resource_local_to_scene = true
 script = ExtResource("38_wgyws")
 itens_a_venda = Array[ExtResource("22_63weq")]([ExtResource("36_2je6l"), ExtResource("37_n50el")])
@@ -225,16 +226,18 @@ position = Vector2(299, -287)
 [node name="galinha" parent="TerrenoFazenda" unique_id=1730074643 instance=ExtResource("16_dy05v")]
 position = Vector2(591, -102)
 
-[node name="CochoGalinhas" parent="TerrenoFazenda" instance=ExtResource("cocho_galinhas")]
+[node name="CochoGalinhas" parent="TerrenoFazenda" unique_id=1190438371 instance=ExtResource("cocho_galinhas")]
 position = Vector2(550, -65)
+capacidade = 10
+comida_aceita = ExtResource("15_nmvtg")
 
-[node name="MilhoGalinhas1" parent="TerrenoFazenda" instance=ExtResource("milho_galinhas")]
+[node name="MilhoGalinhas1" parent="TerrenoFazenda" unique_id=1409640773 instance=ExtResource("milho_galinhas")]
 position = Vector2(512, -72)
 
-[node name="MilhoGalinhas2" parent="TerrenoFazenda" instance=ExtResource("milho_galinhas")]
+[node name="MilhoGalinhas2" parent="TerrenoFazenda" unique_id=146695025 instance=ExtResource("milho_galinhas")]
 position = Vector2(512, -48)
 
-[node name="MilhoGalinhas3" parent="TerrenoFazenda" instance=ExtResource("milho_galinhas")]
+[node name="MilhoGalinhas3" parent="TerrenoFazenda" unique_id=315848554 instance=ExtResource("milho_galinhas")]
 position = Vector2(512, -24)
 
 [node name="porco" parent="TerrenoFazenda" unique_id=588687097 instance=ExtResource("17_muyhw")]
@@ -528,7 +531,7 @@ position = Vector2(-2, -28)
 
 [node name="corvoVendedor" parent="TerrenoSalao" unique_id=1814802250 instance=ExtResource("19_u7fjk")]
 position = Vector2(332, 969)
-estoque = SubResource("Resource_wgyws")
+estoque = SubResource("Resource_ha228")
 
 [node name="atendenteSalao" parent="TerrenoSalao" unique_id=779059810 instance=ExtResource("20_jf6b1")]
 position = Vector2(462, 951)

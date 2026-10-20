@@ -19,7 +19,8 @@ var _camera_bancada: Camera2D
 var _offset_camera_anterior: Vector2
 var _tween_camera: Tween
 
-const API_PLANTIO: String = "https://code-farm-x5um.onrender.com/analisar_plantio"
+#const API_PLANTIO: String = "https://code-farm-x5um.onrender.com/analisar_plantio" API develop
+const API_PLANTIO: String = "http://127.0.0.1:8000/analisar_plantio"
 
 var _http: HTTPRequest
 var _pedido_bancada: Bancada
