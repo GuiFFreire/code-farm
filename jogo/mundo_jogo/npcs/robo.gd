@@ -4,6 +4,8 @@ class_name Robo
 
 signal interagiu
 signal deslocamento_finalizado(sucesso: bool)
+signal conversa_solicitada
+
 
 @export_group("Configurações")
 @export var velocidade: float = 80.0
@@ -20,6 +22,8 @@ var _jogador_na_area: bool = false
 var _dono_trabalho: Node
 var _destino_trabalho: Vector2
 var _em_deslocamento: bool = false
+var _dono_conversa: Node
+var _texto_conversa: String = "conversar"
 
 func _ready() -> void:
 	add_to_group("Robo")
@@ -33,51 +37,89 @@ func _ready() -> void:
 	_area_detecao.body_exited.connect(_on_body_exited)
 
 func _process(_delta: float) -> void:
-	if is_instance_valid(_dono_trabalho):
-		return
+	if not is_instance_valid(_alvo):
+		_alvo = get_tree().get_first_node_in_group("Jogador")
 
-	if _alvo is Jogador and not _alvo.pode_interagir():
-		return
-	if _jogador_na_area and Input.is_action_just_pressed("interagir"):
-		_alternar_estado()
+	_atualizar_texto_instrucao()
 
-func _physics_process(_delta: float) -> void:
+	var jogador := _alvo as Jogador
+
+	var pode_mostrar := (
+		jogador != null
+		and _jogador_na_area
+		and jogador.pode_interagir()
+		and not is_instance_valid(_dono_trabalho)
+	)
+	if pode_mostrar and _ha_objeto_mais_proximo(jogador):
+		pode_mostrar = false
+
+	_label_interacao.visible = pode_mostrar
+
+func _physics_process(delta: float) -> void:
+	# Durante um trabalho, segue o destino da bancada.
 	if is_instance_valid(_dono_trabalho):
 		velocity = Vector2.ZERO
 
 		if _em_deslocamento:
 			global_position = global_position.move_toward(
 				_destino_trabalho,
-				maxf(velocidade, 1.0) * _delta
+				maxf(velocidade, 1.0) * delta
 			)
 
-			if global_position.distance_to(_destino_trabalho) <= 0.5:
+			if global_position.distance_to(
+				_destino_trabalho
+			) <= 0.5:
 				global_position = _destino_trabalho
 				_em_deslocamento = false
 				deslocamento_finalizado.emit(true)
-		return
-	if _estado_atual == Estados.SEGUINDO and _alvo:
-		var distancia = global_position.distance_to(_alvo.global_position)
 
-		if distancia < distancia_limite:
-			if distancia > distancia_minima:
-				var direcao = global_position.direction_to(_alvo.global_position)
-				velocity = direcao * velocidade
-			else:
-				velocity = Vector2.ZERO
+		return
+
+	# Pausa o acompanhamento durante as interfaces.
+	if _alvo is Jogador and not _alvo.pode_interagir():
+		velocity = Vector2.ZERO
+		return
+
+	if (
+		_estado_atual == Estados.SEGUINDO
+		and is_instance_valid(_alvo)
+	):
+		var distancia: float = global_position.distance_to(
+			_alvo.global_position
+		)
+
+		if (
+			distancia > distancia_minima
+			and distancia < distancia_limite
+		):
+			var direcao: Vector2 = (
+				global_position.direction_to(
+					_alvo.global_position
+				)
+			)
+
+			velocity = direcao * velocidade
 		else:
-			# O jogador sumiu ou entrou em uma passagem
 			velocity = Vector2.ZERO
 	else:
 		velocity = Vector2.ZERO
-	
+
 	move_and_slide()
 
 func _atualizar_texto_instrucao() -> void:
-	if _estado_atual == Estados.PARADO:
-		_label_interacao.text = "[E] Para Seguir"
+	var acao := (
+		"parar"
+		if _estado_atual == Estados.SEGUINDO
+		else "seguir"
+	)
+
+	if is_instance_valid(_dono_conversa):
+		_label_interacao.text = (
+			"[E] %s | [Shift+E] %s"
+			% [_texto_conversa, acao]
+		)
 	else:
-		_label_interacao.text = "[E] Para Parar"
+		_label_interacao.text = "[E] para %s" % acao
 
 func _alternar_estado() -> void:
 	if is_instance_valid(_dono_trabalho):
@@ -163,3 +205,93 @@ func _exit_tree() -> void:
 	if _em_deslocamento:
 		_em_deslocamento = false
 		deslocamento_finalizado.emit(false)
+
+func oferecer_conversa(
+	dono: Node,
+	texto: String = "conversar"
+) -> bool:
+	if not is_instance_valid(dono):
+		return false
+
+	if (
+		is_instance_valid(_dono_conversa)
+		and _dono_conversa != dono
+	):
+		return false
+
+	_dono_conversa = dono
+	_texto_conversa = texto
+	_atualizar_texto_instrucao()
+	return true
+
+
+func liberar_conversa(dono: Node) -> void:
+	if _dono_conversa != dono:
+		return
+
+	_dono_conversa = null
+	_texto_conversa = "conversar"
+	_atualizar_texto_instrucao()
+
+
+func _unhandled_input(evento: InputEvent) -> void:
+	if (
+		not evento.is_action_pressed("interagir")
+		or evento.is_echo()
+	):
+		return
+
+	var jogador := _alvo as Jogador
+
+	if (
+		jogador == null
+		or not _jogador_na_area
+		or not jogador.pode_interagir()
+		or is_instance_valid(_dono_trabalho)
+	):
+		return
+
+	# Evita conversar com o robô e abrir o baú/bancada
+	# com a mesma tecla.
+	if _ha_objeto_mais_proximo(jogador):
+		return
+
+	get_viewport().set_input_as_handled()
+
+	if (
+		is_instance_valid(_dono_conversa)
+		and not Input.is_key_pressed(KEY_SHIFT)
+	):
+		conversa_solicitada.emit()
+	else:
+		_alternar_estado()
+
+
+func _ha_objeto_mais_proximo(jogador: Jogador) -> bool:
+	var distancia_robo := jogador.global_position.distance_squared_to(
+		global_position
+	)
+
+	for candidato in get_tree().get_nodes_in_group(
+		"ObjetosInterativos"
+	):
+		var objeto := candidato as ObjetoBase
+
+		if objeto == null or objeto.is_queued_for_deletion():
+			continue
+
+		var comp := objeto.obter_comportamento(
+			ComportamentoInterativo
+		) as ComportamentoInterativo
+
+		if comp == null or not comp.pode_interagir():
+			continue
+
+		var distancia := jogador.global_position.distance_squared_to(
+			objeto.global_position
+		)
+
+		if distancia <= distancia_robo:
+			return true
+
+	return false

@@ -70,3 +70,10 @@ func _quando_editor_solicitar_dados():
 	
 func configurar_personagem(nome: String, caminho_foto: String) -> void:
 	_interface_missao.atualizar_personagem(nome, caminho_foto)
+	
+func preparar() -> void:
+	pass
+
+
+func manter_ativo_ao_fechar() -> bool:
+	return false

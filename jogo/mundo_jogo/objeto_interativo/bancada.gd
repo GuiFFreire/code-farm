@@ -2,6 +2,7 @@ class_name Bancada
 extends ObjetoBase
 
 signal abertura_solicitada(bancada: Bancada)
+signal acao_executada(acao: Dictionary)
 
 @export var bau: Bau
 @export_range(0, 5, 1) var id_canteiro: int = 0
@@ -155,6 +156,10 @@ func _executar_lista(acoes: Array, versao: int) -> String:
 
 		# A ação já aconteceu. Na colheita, falta o retorno visual.
 		concluidas += 1
+		
+		var evento: Dictionary = acao.duplicate(true)
+		evento["estado_plantio"] = espaco.obter_estado_plantio()
+		acao_executada.emit(evento)
 
 		if tipo == "colher":
 			var voltou: bool = await _mover_robo(

@@ -18,6 +18,7 @@ var _dialogo_ativo: bool = false
 var _exibindo_texto: bool = false
 var _exibicao_interrompida: bool = false
 var _aguardando_confirmacao: bool = false
+var _cancelado: bool = false
 
 signal escolha_selecionada(indice: int)
 
@@ -32,6 +33,7 @@ func _ao_passar_texto():
 			_aguardando_confirmacao = false
 
 func exibir_dialogo(texto: String, foto: String, personagem: String, tipo: TipoDeDialogo) -> void:
+	_cancelado = false
 	_personagem.text = personagem
 	_foto.texture = load(foto)
 	_dialogo.bbcode_enabled = true
@@ -49,7 +51,10 @@ func exibir_dialogo(texto: String, foto: String, personagem: String, tipo: TipoD
 	_dialogo.visible_characters = 0
 
 	await _exibir_texto_animado(texto)
-	await _aguardar_confirmacao_usuario()
+
+	if not _cancelado:
+		await _aguardar_confirmacao_usuario()
+	
 
 func _exibir_texto_animado(texto: String) -> void:
 	_exibindo_texto = true
@@ -63,7 +68,8 @@ func _exibir_texto_animado(texto: String) -> void:
 		if _exibicao_interrompida:
 			_dialogo.visible_characters = texto.length()
 			break
-		
+		if _cancelado:
+			break
 		await get_tree().create_timer(_velocidade_exibicao_char).timeout
 		_dialogo.visible_characters += 1
 		
@@ -153,3 +159,10 @@ func exibir_dialogo_com_escolhas(texto: String, foto: String, personagem_nome: S
 func _limpar_botoes() -> void:
 	for filho in _container_escolhas.get_children():
 		filho.queue_free()
+
+
+func cancelar_dialogo() -> void:
+	_cancelado = true
+	_exibicao_interrompida = true
+	_aguardando_confirmacao = false
+	parar_som()
