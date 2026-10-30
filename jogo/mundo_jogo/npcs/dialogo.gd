@@ -8,7 +8,6 @@ extends CharacterBody2D
 @onready var area_interacao = $ObjetoInterativo
 
 func _ready() -> void:
-	# Cada partida/NPC possui quantidades próprias; os Items continuam compartilhados.
 	if estoque:
 		estoque = estoque.duplicate()
 		estoque.quantidades = estoque.quantidades.duplicate()

@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_interacao"]
 script = ExtResource("4_interacao")
-texto_interacao = "[E] Colocar milho (0/10)"
+texto_interacao = "[E] Abastecer cocho (0/10)"
 
 [sub_resource type="RectangleShape2D" id="Rectangle_corpo"]
 size = Vector2(30, 12)
@@ -38,7 +38,7 @@ shape = SubResource("Circle_area")
 offset_top = -26.0
 offset_bottom = -12.0
 
-[node name="MilhoNoCocho" type="Polygon2D" parent="."]
+[node name="ComidaNoCocho" type="Polygon2D" parent="."]
 visible = false
 color = Color(0.96, 0.73, 0.25, 1)
 polygon = PackedVector2Array(-10, -3, 10, -3, 10, 0, -10, 0)

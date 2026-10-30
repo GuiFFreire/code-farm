@@ -14,6 +14,8 @@ nome = "Comida Vaca"
 icone = SubResource("AtlasTexture_ghv7g")
 pode_empilhar = true
 descricao = "Use para alimentar vacas"
+tipo = "alimento"
+caminho_cena = "res://mundo_jogo/objeto_coletavel/objetos/comida_vaca.tscn"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fks4g"]
 radius = 5.0

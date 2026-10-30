@@ -129,7 +129,11 @@ func restaurar(dados: Dictionary) -> void:
 			no.velocidade_movimento = animal["velocidade"]
 			no.timer.start(maxf(0.01, animal["tempo"]))
 		if no.has_method("restaurar_estado_alimentacao"):
-			no.restaurar_estado_alimentacao(estado.get("alimentacao", {}))
+			var alimentacao: Dictionary = estado.get("alimentacao", {}).duplicate()
+			# Migração dos saves anteriores ao armazenamento do tipo de alimento.
+			if no.is_in_group("Cochos") and alimentacao.get("quantidade", 0) > 0 and not alimentacao.has("alimento"):
+				alimentacao["alimento"] = load("res://mundo_jogo/itens/milho.tres")
+			no.restaurar_estado_alimentacao(alimentacao)
 		if "estoque" in no and no.estoque is EstoqueTroca:
 			for entrada in estado.get("estoque", []):
 				var item = entrada.get("item") as Item

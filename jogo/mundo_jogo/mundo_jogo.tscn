@@ -27,7 +27,9 @@
 [ext_resource type="PackedScene" uid="uid://dxo5dyjge5q60" path="res://mundo_jogo/animais/boi.tscn" id="15_v2ue8"]
 [ext_resource type="PackedScene" uid="uid://bbaagvyi6w631" path="res://mundo_jogo/terrenos/terreno_ferreiro.tscn" id="16_a5oup"]
 [ext_resource type="PackedScene" uid="uid://yc0e2qahfkik" path="res://mundo_jogo/animais/galinha.tscn" id="16_dy05v"]
-[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/cocho/cocho.tscn" id="cocho_galinhas"]
+[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/cocho/cocho.tscn" id="cocho"]
+[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_coletavel/objetos/comida_porco.tscn" id="comida_porcos"]
+[ext_resource type="PackedScene" path="res://mundo_jogo/objeto_coletavel/objetos/comida_vaca.tscn" id="comida_vacas"]
 [ext_resource type="PackedScene" path="res://mundo_jogo/objeto_base/objetos_coletaveis/milho.tscn" id="milho_galinhas"]
 [ext_resource type="PackedScene" uid="uid://gueeykda8uvu" path="res://mundo_jogo/terrenos/terreno_salao.tscn" id="16_muyhw"]
 [ext_resource type="PackedScene" uid="uid://bq0hr7dr7twfn" path="res://mundo_jogo/objeto_interativo/bau.tscn" id="16_n50el"]
@@ -225,8 +227,32 @@ position = Vector2(299, -287)
 [node name="galinha" parent="TerrenoFazenda" unique_id=1730074643 instance=ExtResource("16_dy05v")]
 position = Vector2(591, -102)
 
-[node name="CochoGalinhas" parent="TerrenoFazenda" instance=ExtResource("cocho_galinhas")]
+[node name="CochoGalinhas" parent="TerrenoFazenda" instance=ExtResource("cocho")]
 position = Vector2(550, -65)
+
+[node name="CochoPorcos" parent="TerrenoFazenda" instance=ExtResource("cocho")]
+position = Vector2(590, -285)
+
+[node name="CochoVacas" parent="TerrenoFazenda" instance=ExtResource("cocho")]
+position = Vector2(340, -255)
+
+[node name="ComidaPorcos1" parent="TerrenoFazenda" instance=ExtResource("comida_porcos")]
+position = Vector2(548, -305)
+
+[node name="ComidaPorcos2" parent="TerrenoFazenda" instance=ExtResource("comida_porcos")]
+position = Vector2(548, -281)
+
+[node name="ComidaPorcos3" parent="TerrenoFazenda" instance=ExtResource("comida_porcos")]
+position = Vector2(548, -257)
+
+[node name="ComidaVacas1" parent="TerrenoFazenda" instance=ExtResource("comida_vacas")]
+position = Vector2(388, -275)
+
+[node name="ComidaVacas2" parent="TerrenoFazenda" instance=ExtResource("comida_vacas")]
+position = Vector2(388, -251)
+
+[node name="ComidaVacas3" parent="TerrenoFazenda" instance=ExtResource("comida_vacas")]
+position = Vector2(388, -227)
 
 [node name="MilhoGalinhas1" parent="TerrenoFazenda" instance=ExtResource("milho_galinhas")]
 position = Vector2(512, -72)
