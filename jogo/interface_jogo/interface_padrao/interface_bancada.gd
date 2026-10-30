@@ -11,14 +11,16 @@ signal execucao_solicitada(bancada: Bancada, codigo: String)
 @onready var _botao_glossario: Button = $BotaoGlossario
 @onready var _interface_padrao: Control = $"../InterfacePadrao"
 @onready var _painel_bancada: Control = $EditorCodigo/MarginContainer/FundoMenuLateral
-@export_range(1.0, 3.0, 0.1) var aproximacao_canteiro: float = 1.8
+@export_range(1.0, 3.0, 0.1) var aproximacao_canteiro: float = 1.6
 
+var _sessao_bancada: int = 0
 var _zoom_camera_anterior: Vector2
 var _camera_bancada: Camera2D
 var _offset_camera_anterior: Vector2
 var _tween_camera: Tween
 
-const API_PLANTIO: String = "https://code-farm-x5um.onrender.com/analisar_plantio"
+#const API_PLANTIO: String = "https://code-farm-x5um.onrender.com/analisar_plantio" API develop
+const API_PLANTIO: String = "http://127.0.0.1:8000/analisar_plantio"
 
 var _http: HTTPRequest
 var _pedido_bancada: Bancada
@@ -45,6 +47,8 @@ func _ready() -> void:
 	_http.body_size_limit = 1048576
 	add_child(_http)
 	_http.request_completed.connect(_ao_receber_plantio)
+	
+	visibility_changed.connect(_atualizar_referencias_matriz)
 
 
 func abrir(bancada: Bancada) -> void:
@@ -71,12 +75,14 @@ func abrir(bancada: Bancada) -> void:
 
 	show()
 	_editor.grab_focus()
-	show()
-	_editor.grab_focus()
 	_iniciar_enquadramento()
 
 
 func fechar() -> void:
+	_sessao_bancada += 1
+
+	if is_instance_valid(_bancada_atual):
+		_bancada_atual.cancelar_execucao()
 	_restaurar_enquadramento()
 	_cancelar_consulta()
 
@@ -152,6 +158,7 @@ func _definir_consulta(ativa: bool) -> void:
 	_botao_executar.disabled = ativa
 	_botao_limpar.disabled = ativa
 	_editor.editable = not ativa
+	_botao_glossario.disabled = ativa
 
 
 func _cancelar_consulta() -> void:
@@ -219,7 +226,22 @@ func _ao_receber_plantio(
 		_mensagens.text = "A resposta não contém uma lista de ações."
 		return
 
-	_mensagens.text = bancada.executar_acoes(acoes)
+	var sessao := _sessao_bancada
+
+	_definir_consulta(true)
+	_mensagens.text = "O robô está executando os comandos..."
+
+	var mensagem: String = await bancada.executar_acoes(acoes)
+
+	# A interface pode ter sido fechada ou usada por outra bancada.
+	if sessao != _sessao_bancada:
+		return
+
+	if not is_instance_valid(bancada) or bancada != _bancada_atual:
+		return
+
+	_definir_consulta(false)
+	_mensagens.text = mensagem
 	
 func _iniciar_enquadramento() -> void:
 	_camera_bancada = get_viewport().get_camera_2d()
@@ -321,3 +343,16 @@ func _restaurar_enquadramento() -> void:
 
 	_camera_bancada = null
 	
+func _atualizar_referencias_matriz() -> void:
+	if not is_instance_valid(_bancada_atual):
+		return
+
+	var registro := _bancada_atual.registro_plantio
+
+	if not is_instance_valid(registro):
+		return
+
+	if is_visible_in_tree():
+		registro.mostrar_referencias(_bancada_atual.id_canteiro)
+	else:
+		registro.ocultar_referencias()

@@ -8,7 +8,14 @@ func executar() -> void:
 	interface_jogo.exibir_interface(interface_jogo.Interface.MISSAO)
 
 	configurar_personagem(Global.nome_robo, Global.foto_robo)
-	await dialogo("Use a função print() para indicar o nome da fazenda.")
+	await dialogo("%s, nossa fazenda precisa de um nome! Desta vez, vamos aprender a guardar uma informação usando uma variável." % Global.nome_jogador)
+	await dialogo("Uma variável associa um nome a um valor. Vamos usar nomeFazenda para guardar o nome que você escolher.")
+	await dialogo("Em Python, fazemos isso com o sinal de igual. O texto precisa ficar entre aspas:")
+	await codigo("nomeFazenda = \"Fazenda Girassol\"")
+	await dialogo("Agora podemos usar print(nomeFazenda) para exibir o texto guardado nessa variável.")
+	await dialogo("Observe que nomeFazenda fica sem aspas dentro do print(). Com aspas, apareceriam as palavras nomeFazenda, em vez do valor guardado.")
+	await codigo("nomeFazenda = \"Fazenda Girassol\"\nprint(nomeFazenda)")
+	await dialogo("Sua vez! Escreva essas duas instruções: primeiro guarde o nome escolhido na variável nomeFazenda; depois exiba o valor com print(nomeFazenda). Respeite as letras maiúsculas e minúsculas!")
 
 	var sucesso_fazenda = false
 
