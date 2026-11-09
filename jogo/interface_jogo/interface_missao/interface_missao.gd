@@ -43,10 +43,11 @@ func _ao_passar_mouse_termo(meta: Variant):
 func _ao_tirar_mouse_termo(meta: Variant):
 	var _termo = str(meta)
 	_tooltip.esconder()
-
+	
 func _ao_clicar_fechar_missao():
 	hide()
-	
-	_caixa_dialogo.parar_som()
-	
+	_caixa_dialogo.cancelar_dialogo()
 	Global.emit_signal("missao_fechada")
+	
+func definir_editor_visivel(visivel: bool) -> void:
+	_editor_codigo.visible = visivel

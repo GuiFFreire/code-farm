@@ -45,6 +45,9 @@ func obter_dados() -> Dictionary:
 			"terreno": no.get_meta("terreno", ""),
 			"visivel": no.visible, "processamento": no.process_mode
 		}
+		if no is Bau:
+			dados["inventario_bau"] = \
+				no.inventario_bau.obter_dados_save()
 		if no.has_method("obter_estado_plantio"):
 			dados["plantio"] = no.obter_estado_plantio()
 		if no.has_method("obter_estado_alimentacao"):
@@ -106,6 +109,10 @@ func restaurar(dados: Dictionary) -> void:
 		no.position = estado.get("posicao", no.position)
 		no.visible = estado.get("visivel", true)
 		no.process_mode = estado.get("processamento", Node.PROCESS_MODE_INHERIT)
+		if no is Bau and estado.has("inventario_bau"):
+			no.inventario_bau.restaurar_dados_save(
+				estado["inventario_bau"]
+			)
 		if no.has_method("restaurar_estado_plantio"):
 			no.restaurar_estado_plantio(estado.get("plantio", {}))
 		if no is ObjetoColetavel:
